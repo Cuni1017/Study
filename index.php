@@ -10,7 +10,8 @@
     <meta name="keywords" content="專題,企業實習,測試" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--width=device-width 根據瀏覽的裝置大小做畫面調整,initial-scale=1.0 初始縮放比為100%-->
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/dist/index.css">
+    <link rel="stylesheet" href="style/dist/style.css">
     <title>文化大學企業實習媒合網站</title>
 </head>
 <?php require_once "user_connect.php";
