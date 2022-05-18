@@ -1,0 +1,25 @@
+#content {
+  margin-left: auto;
+  margin-right: auto;
+}
+#content .post {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#content .post ul {
+  border: solid 1px;
+  border-radius: 16px;
+  padding: 20px;
+}
+#content .post li {
+  list-style: none;
+  border: solid 1px;
+  line-height: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#content .messageboard {
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=student.css.map */
