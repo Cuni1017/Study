@@ -5,10 +5,11 @@ html, body {
   margin: 0px;
   background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%);
   display: flex;
+  position: relative;
 }
 
-.LoginBox {
-  position: relative;
+.RegisterBox {
+  top: 100px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -21,7 +22,7 @@ html, body {
   text-align: center;
 }
 
-.Login_text {
+.Register_text {
   display: inline-block;
   width: 400px;
   height: 40px;
@@ -35,19 +36,20 @@ html, body {
   letter-spacing: 0.5px;
 }
 
+.verification {
+  margin-top: 10px;
+}
+
 .bottom_row {
   position: absolute;
   bottom: 0px;
   padding: 40px;
+  padding-top: 51px;
+  padding-bottom: 50px;
   width: 818px;
   left: 0px;
   border: solid 1px #dde0e7;
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
-}
-
-.register {
-  position: relative;
-  left: -200px;
 }
 
 .Submit_button {
@@ -60,4 +62,15 @@ html, body {
   height: 40px;
   font-weight: bold;
   cursor: pointer;
-}/*# sourceMappingURL=login.css.map */
+}
+
+.verification_button {
+  border: solid 2px black;
+  padding: 5px;
+  border-radius: 25px;
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
+}
+/*# sourceMappingURL=student_register.css.map */

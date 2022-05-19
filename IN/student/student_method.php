@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--width=device-width 根據瀏覽的裝置大小做畫面調整,initial-scale=1.0 初始縮放比為100%-->
     <title>文化大學企業實習媒合網站</title>
-    <link rel="stylesheet" href="../../style/dist/style.css">
-    <link rel="stylesheet" href="../../style/dist/student.css">
+    <link rel="stylesheet" href="../../style/css/style.css">
+    <link rel="stylesheet" href="../../style/css/student.css">
 </head>
 
 <body>
@@ -62,29 +62,7 @@
                         <li><a href="student_response.php">學生意見反應</a></li>
                     </ul>
                 </div>
-                <!-- CPN -->
-                <div class="CPN">
-                    <ul id="CPN">
-                        <li><a href="#CPN01">廠商申請辦法</a></li>
-                        <li><a href="#CPN02">實習進度公告</a></li>
-                        <li><a href="#CPN03">學生意見反應</a></li>
-                        <li><a href="#CPN04">專案表單</a></li>
-                        <li><a href="#CPN05">雇主滿意度調查</a></li>
-                    </ul>
 
-                </div>
-                <!-- TCH -->
-                <div class="TCH">
-                    <ul id="TCH">
-                        <li><a href="#TCH01">實習進度公告</a></li>
-                        <li><a href="#TCH02">實習職務列表</a></li>
-                        <li><a href="#TCH03">實習課程/專案</a></li>
-                        <li><a href="#TCH04">教師訪視紀錄</a></li>
-                        <li><a href="#TCH05">學生意見反應處理</a></li>
-                        <li><a href="#TCH06">專案表單</a></li>
-                    </ul>
-
-                </div>
                 <!-- US -->
                 <div class="US">
                     <ul id="US">
@@ -99,7 +77,6 @@
         <div id="content">
             <h1>實習應徵方法</h1>
             <div class="text">透過實習維護先行上傳履歷，再利用實習應徵功能發送履歷至心儀的公司</div>
-
 
         </div> <!-- content -->
     </div> <!-- wrap -->

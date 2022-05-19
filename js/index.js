@@ -1,13 +1,11 @@
-// 用戶切換
+// 用戶切換 mainNavTop
 
 var content=document.getElementById("mainNavTop"); 
 var items=content.getElementsByTagName("ul"); 
 var iSTU=items[0].getElementsByTagName("li");
 // var iCPN=items[1].getElementsByTagName("li");
 
-console.log(STU)
-
-
+// console.log(STU)
 
 $(function(){
     $(".CPN").hide(); $(".CPN-inner").hide();
@@ -42,7 +40,7 @@ $(function(){
     })
 })
 
-// 用戶內選單
+// 用戶內選單 mainNavCon
 // STU
 $(function(){
     var $li = $('ul#STU li');

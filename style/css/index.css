@@ -6,9 +6,11 @@ html, body {
 
 #content .news {
   max-width: 1248px;
+  margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
+
 #content .newscont {
   min-width: 300px;
   min-height: 400px;
@@ -24,6 +26,7 @@ html, body {
   overflow: hidden;
   box-sizing: border-box;
 }
+
 #content .newscont .moreINFO_btn {
   position: absolute;
   left: 50%;
@@ -34,13 +37,16 @@ html, body {
   width: 45px;
   cursor: pointer;
 }
+
 #content .newscont .moreINFO_btn:hover {
   background-color: #ddd;
 }
+
 #content .newscont .news_t {
   text-align: center;
   font-size: 24px;
 }
+
 #content .newscont .moreINFO_btn {
   cursor: pointer;
   position: absolute;
@@ -53,4 +59,5 @@ html, body {
   text-align: center;
   width: 60px;
   font-size: 42px;
-}/*# sourceMappingURL=index.css.map */
+}
+/*# sourceMappingURL=index.css.map */

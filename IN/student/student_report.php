@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--width=device-width 根據瀏覽的裝置大小做畫面調整,initial-scale=1.0 初始縮放比為100%-->
     <title>文化大學企業實習媒合網站</title>
-    <link rel="stylesheet" href="../../style/dist/style.css">
-    <link rel="stylesheet" href="../../style/dist/student.css">
+    <link rel="stylesheet" href="../../style/css/style.css">
+    <link rel="stylesheet" href="../../style/css/student.css">
 </head>
 
 <body>
