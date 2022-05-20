@@ -3,10 +3,9 @@
 
 @mixin center
     position: absolute
-    left:50%
-    top:50%
-    transform: translateX(-50%) translateY(-50%) 
-
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
 
 @mixin trans($s)
     transition: $s
@@ -16,8 +15,8 @@
     height: $h
 
 @mixin fill
-    width:100%
-    height:100%
+    width: 100%
+    height: 100%
 
 @mixin text($size,$spacing,$color)
     font-size: $size
@@ -32,8 +31,10 @@ html,body
     margin: 0px
     background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%)
     display: flex
+    position: relative
 
 .RegisterBox
+    top: 100px
     +center
     background-color: #fefefe
     border: solid 1px #cdd8dc
@@ -42,11 +43,9 @@ html,body
     height: 500px
     text-align: center
 
-    
-
 .Register_text
     display: inline-block
-    width: 400px 
+    width: 400px
     height: 40px
     border: solid 1px #d4d8db
     /* #b5d4e9 #f3f7f7*/
@@ -65,7 +64,7 @@ html,body
     bottom: 0px
     padding: 40px
     padding-top: 51px
-    padding-bottom:50px
+    padding-bottom: 50px
     width: 818px
     left: 0px
 
@@ -88,5 +87,36 @@ html,body
     height: 40px
     cursor: pointer
     background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
-    
+
     &:hover
+
+.Register_select
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .selectBox
+        background-color: #f6f6f6
+        height: 200px
+        width: 200px
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-left: 15px
+        margin-right: 15px
+        box-sizing: border-box
+        &:hover
+            border: solid 3px #888888
+            cursor: pointer
+    a
+        color:
+        text-decoration: none
+        img
+            margin-top: 10px
+            width: 100px
+            height: 100px
+        p
+            font-size: 30px
+            font-weight: 500
+            color: black

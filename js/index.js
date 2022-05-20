@@ -1,11 +1,11 @@
-// 用戶切換 mainNavTop
+// // 用戶切換 mainNavTop
 
-var content=document.getElementById("mainNavTop"); 
-var items=content.getElementsByTagName("ul"); 
-var iSTU=items[0].getElementsByTagName("li");
-// var iCPN=items[1].getElementsByTagName("li");
+// // var content=document.getElementById("mainNavTop"); 
+// // var items=content.getElementsByTagName("ul"); 
+// // var iSTU=items[0].getElementsByTagName("li");
+// // var iCPN=items[1].getElementsByTagName("li");
 
-// console.log(STU)
+// // console.log(STU)
 
 $(function(){
     $(".CPN").hide(); $(".CPN-inner").hide();
@@ -40,57 +40,48 @@ $(function(){
     })
 })
 
-// 用戶內選單 mainNavCon
-// STU
-$(function(){
-    var $li = $('ul#STU li');
-        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.STU-inner').hide(); 
+// // 用戶內選單 mainNavCon
+// // STU
+// $(function(){
+//     var $li = $('ul#STU li');
+//         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.STU-inner').hide(); 
     
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.STU-inner').hide();
-            $(this).addClass('active'). siblings ('.active').removeClass('active');
-        });
-});
+//         $li.click(function(){
+//             $($(this).find('a'). attr ('href')).show().siblings ('.STU-inner').hide();
+//             $(this).addClass('active'). siblings ('.active').removeClass('active');
+//         });
+// });
 
-// CPN
-$(function(){
-    var $li = $('ul#CPN li');
-        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.CPN-inner').hide(); 
+// // CPN
+// $(function(){
+//     var $li = $('ul#CPN li');
+//         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.CPN-inner').hide(); 
     
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.CPN-inner').hide();
-            $(this).addClass('active'). siblings ('.active').removeClass('active');
-        });
-});
-// TCH
-$(function(){
-    var $li = $('ul#TCH li');
-        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.TCH-inner').hide(); 
+//         $li.click(function(){
+//             $($(this).find('a'). attr ('href')).show().siblings ('.CPN-inner').hide();
+//             $(this).addClass('active'). siblings ('.active').removeClass('active');
+//         });
+// });
+// // TCH
+// $(function(){
+//     var $li = $('ul#TCH li');
+//         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.TCH-inner').hide(); 
     
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.TCH-inner').hide();
-            $(this).addClass('active'). siblings ('.active').removeClass('active');
-        });
-});
-// US
-$(function(){
-    var $li = $('ul#US li');
-        $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.US-inner').hide(); 
+//         $li.click(function(){
+//             $($(this).find('a'). attr ('href')).show().siblings ('.TCH-inner').hide();
+//             $(this).addClass('active'). siblings ('.active').removeClass('active');
+//         });
+// });
+// // US
+// $(function(){
+//     var $li = $('ul#US li');
+//         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.US-inner').hide(); 
     
-        $li.click(function(){
-            $($(this).find('a'). attr ('href')).show().siblings ('.US-inner').hide();
-            $(this).addClass('active'). siblings ('.active').removeClass('active');
-        });
-});
+//         $li.click(function(){
+//             $($(this).find('a'). attr ('href')).show().siblings ('.US-inner').hide();
+//             $(this).addClass('active'). siblings ('.active').removeClass('active');
+//         });
+// });
 
 
-const fileUploader = document.getElementById('file-uploader');
 
-fileUploader.addEventListener('change', (event) => {
-    const files = event.target.files;
-    console.log('files', files);
-    
-    const feedback = document.getElementById('feedback');
-    const msg = `File ${files[0].name} uploaded successfully!`;
-    feedback.innerHTML = msg;
-});

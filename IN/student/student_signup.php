@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/css/student_register.css">
+    <link rel="stylesheet" href="../../style/css/register.css">
 </head>
 
 <body>
@@ -20,8 +20,8 @@
             </div>
 
             <!-- 回登入 回首頁 -->
-            <a href="login.php"><img src="image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
-            <a href="index.php"><img src="image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
+            <a href="../../register_select.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
+            <a href="../../index.php"><img src="../../image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
         </div>
     </form>
 </body>

@@ -5,9 +5,11 @@ html, body {
   margin: 0px;
   background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%);
   display: flex;
+  position: relative;
 }
 
 .RegisterBox {
+  top: 100px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -70,4 +72,44 @@ html, body {
   height: 40px;
   cursor: pointer;
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
-}/*# sourceMappingURL=register.css.map */
+}
+
+.Register_select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Register_select .selectBox {
+  background-color: #f6f6f6;
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+
+.Register_select .selectBox:hover {
+  border: solid 3px #888888;
+  cursor: pointer;
+}
+
+.Register_select a {
+  text-decoration: none;
+}
+
+.Register_select a img {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.Register_select a p {
+  font-size: 30px;
+  font-weight: 500;
+  color: black;
+}
+/*# sourceMappingURL=register.css.map */

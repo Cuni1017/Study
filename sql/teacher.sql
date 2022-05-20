@@ -23,26 +23,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `user`
+-- 資料表結構 `teacher`
 --
 
-CREATE TABLE `user` (
-  `user_id` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
-  `user_name` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `user_password` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `user_email` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `user_level` varchar(2) CHARACTER SET utf8mb4 NOT NULL
+CREATE TABLE `teacher` (
+  `teacher_id` varchar(11) CHARACTER SET latin1 NOT NULL,
+  `teacher_username` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `teacher_password` varchar(30) CHARACTER SET latin1 NOT NULL,
+  `teacher_real_name` varchar(5) CHARACTER SET latin1 NOT NULL,
+  `teacher_email` varchar(40) CHARACTER SET latin1 NOT NULL,
+  `teacher_level` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 資料表的匯出資料 `user`
+-- 資料表的匯出資料 `teacher`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_level`) VALUES
-('U2205130001', 'mikeliu900106', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130002', 'cuni', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130003', 'root', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130004', 'rootsb', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1');
+INSERT INTO `teacher` (`teacher_id`, `teacher_username`, `teacher_password`, `teacher_real_name`, `teacher_email`, `teacher_level`) VALUES
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3),
+('T2022520000', '', '', '', '', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

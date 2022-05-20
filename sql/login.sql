@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- 主機： 127.0.0.1
--- 產生時間： 2022-05-18 05:01:12
--- 伺服器版本： 10.4.21-MariaDB
--- PHP 版本： 7.4.25
+-- 主機: 127.0.0.1
+-- 產生時間： 
+-- 伺服器版本: 10.1.16-MariaDB
+-- PHP 版本： 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- 資料庫: `專題`
+-- 資料庫： `study`
 --
 
 -- --------------------------------------------------------
@@ -28,19 +27,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `login` (
-  `id` varchar(20) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `level` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `username` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `password` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `level` varchar(2) CHARACTER SET utf8mb4 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 傾印資料表的資料 `login`
+-- 資料表的匯出資料 `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`, `level`) VALUES
-('U2205180006', 'root0101', '1qaz2wsx', '1');
-COMMIT;
+('U2205180006', 'root0101', '1qaz2wsx', '1'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', '', '', '2'),
+('C202252000008', 'cunisb', '1qaz2wsx', '2'),
+('C202252000009', 'mikeliu900106', '1qaz2wsx', '2'),
+('C2022520000010', 'mikeliu900106', '1qaz2wsx', '2'),
+('C2022520000011', '', '', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

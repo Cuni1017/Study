@@ -2,7 +2,7 @@
 
 <head>
     <!-- <link rel="stylesheet" href="style/dist/style.css"> -->
-    <link rel="stylesheet" href="style/css/login.css" type="text/css"   >
+    <link rel="stylesheet" href="style/css/login.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 
             <!-- 註冊 提交 -->
             <div class="bottom_row">
-                <a href="register.php" class="register" style="border-radius: 35px; color: #333; font-weight: bold;">Register</a>
+                <a href="register_select.php" class="register" style="border-radius: 35px; color: #333; font-weight: bold;">Register</a>
                 <input class="Submit_button " type="submit" value="Submit" />
             </div>
 

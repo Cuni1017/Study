@@ -1,28 +1,3 @@
-@mixin indep
-    position: absolute
-
-@mixin center
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translateX(-50%) translateY(-50%)
-
-@mixin trans($s)
-    transition: $s
-
-@mixin size($w,$h)
-    width: $w
-    height: $h
-
-@mixin fill
-    width: 100%
-    height: 100%
-
-@mixin text($size,$spacing,$color)
-    font-size: $size
-    letter-spacing: $spacing
-    color: $color
-
 html,body
     width: 100%
     height: 100%
@@ -59,24 +34,47 @@ html,body
         img
             max-width: 400px
 
-
     #UserBox
         position: absolute
         right: 2%
         margin-top: 5px
+
         .button
-            display: inline-block
-            text-align: center
+            position: relative
+            display: inline-flex
+            align-items: center
+            justify-content: center
+
             border: solid 2px black
             width: 70px
+            height: 30px
             padding: 5px
-            border-radius: 8px
-
-            font-size: 18px
             cursor: pointer
-            background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
-            a
-                text-decoration: none
+            // background-color: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
+            background-color: #43c7a6
+        a
+            text-decoration: none
+        p
+            font-size: 18px
+
+.btn
+    box-shadow: 3px 4px 0px 0px #899599
+    background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%)
+    background-color: #ededed
+    border-radius: 15px
+    border: 1px solid #d6bcd6
+    display: inline-block
+    cursor: pointer
+    color: #3a8a9e
+    font-family: Arial
+    font-size: 17px
+    padding: 7px 25px
+    text-decoration: none
+    text-shadow: 0px 1px 0px #e1e2ed
+
+    &:hover
+        background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%)
+        background-color: #bab1ba
 
 #mainNav
     width: 100%
@@ -92,13 +90,8 @@ html,body
 
     ul
         float: left
-        max-width: 1170px
         padding: 0px
         margin: 0px auto
-        display: flex
-        justify-content: center
-        align-items: center
-
     li
         margin-left: 10px
         margin-right: 10px

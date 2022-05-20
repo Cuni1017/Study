@@ -88,30 +88,21 @@
                 <!-- US -->
                 <div class="US">
                     <ul id="US">
-                        <li><a href="#US01">關於我們</a></li>
+                        <li><a href ="#US01">關於我們</a></li>
                         <li><a href="#US02">參考資料</a></li>
                     </ul>
 
                 </div>
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
+
         <div id="content">
             <h1>履歷維護</h1>
+            <!-- <input type="file" id="file-uploader"> -->
 
         </div> <!-- content -->
-        <form method="post" enctype="multipart/form-data" action="student_upload.php">
-            <input type="file" name="my_file">
-            <br>
-            <input type="submit" value="Upload">
-        </form>
-
     </div> <!-- wrap -->
-    <!-- 
-        <form method="post" enctype="multipart/form-data" action="upload.php">
-            <input type="file" name="my_file">
-            <br>
-            <input type="submit" value="Upload">
-        </form> -->
+
 
     <script src="../../js/jquery-3.6.0.min.js"></script>
     <script src="../../js/index.js"></script>
