@@ -41,13 +41,13 @@
 
         switch ($level) {
             case 1:
-                header('location:IN/student/student_index.php');
+                header('location:IN/student/student_index.php?id='.$id);
                 break;
             case 2:
-                header("location:IN/student/teacher_index.php");
+                header("location:IN/student/teacher_index.php?id=".$id);
                 break;
             case 3:
-                header("location:IN/student/company_index.php");
+                header("location:IN/student/company_index.php?id=".$id);
                 break;
         }
     }

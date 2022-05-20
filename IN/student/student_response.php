@@ -81,18 +81,16 @@
                     <ul>
                         <?php
                         include "user_connect.php";
-                        $sql1 = "sets names 'utf8'";
-                        $total1 = $con -> query($sql1);
                         $sql = "SELECT `chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date` FROM `chat`  ";
                         $total = select($sql);
                         while ($num = f_array($total)) {
                         ?>
                             <li>
-                                <div class="author"><?php echo $num["chat_maker"] ?></div>
-                                <div class="article"><?php echo $num["chat_subject"] ?></div>
-                                <div class="time"><?php echo $num["chat_content"] ?></div>
+                                <div class="author"><? echo $num["chat_maker"] ?></div>
+                                <div class="article"><? echo $num["chat_subject"] ?></div>
+                                <div class="time"><? echo $num["chat_content"] ?></div>
                                 <hr>
-                                <div class="message"><?php echo $num["chat_date"] ?></div>
+                                <div class="message"><? echo $num["chat_date"] ?></div>
                             </li>
                         <?php } ?>
                     </ul>

@@ -95,14 +95,23 @@
                 </div>
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
-
         <div id="content">
             <h1>履歷維護</h1>
-            <input type="file" id="file-uploader">
 
         </div> <!-- content -->
-    </div> <!-- wrap -->
+        <form method="post" enctype="multipart/form-data" action="student_upload.php">
+            <input type="file" name="my_file">
+            <br>
+            <input type="submit" value="Upload">
+        </form>
 
+    </div> <!-- wrap -->
+    <!-- 
+        <form method="post" enctype="multipart/form-data" action="upload.php">
+            <input type="file" name="my_file">
+            <br>
+            <input type="submit" value="Upload">
+        </form> -->
 
     <script src="../../js/jquery-3.6.0.min.js"></script>
     <script src="../../js/index.js"></script>
