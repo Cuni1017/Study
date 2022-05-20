@@ -2,7 +2,7 @@
 
 <head>
     <!-- <link rel="stylesheet" href="style/dist/style.css"> -->
-    <link rel="stylesheet" href="style/css/login.css">
+    <link rel="stylesheet" href="style/css/login.css" type="text/css"   >
 </head>
 
 <body>

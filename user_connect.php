@@ -4,7 +4,7 @@
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PWD', 'smhfjf96@');
+define('DB_PWD', '1qaz2wsx');
 define('DB_NAME', 'study');
 
 
@@ -39,4 +39,9 @@ function totalnums($sql)
 {
     $result = con()->query($sql);
     return $result->num_rows;
+}
+function utf($sql)
+{
+    $utf =  con()->query($sql);
+    return $utf;
 }

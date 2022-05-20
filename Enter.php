@@ -9,6 +9,7 @@
     require_once "user_connect.php";
     $test_username = @$_POST["login_username"];
     $test_password = @$_POST["login_password"];
+    
     echo  $test_username;
     echo  $test_password;
     $sql = "SELECT `id`, `username`, `password`, `level` FROM `login` WHERE `username`= ?";
@@ -20,6 +21,7 @@
     echo $username;
     echo $password;
     echo $email;
+
     if (($test_password) == "" && ($test_username) == "") {
         echo "帳號密碼沒寫,兩秒後返回登入畫面";
         header("Refresh:2;url=login.php");
@@ -39,13 +41,13 @@
 
         switch ($level) {
             case 1:
-                header('location:IN/student/student_index.php');
+                header('location:IN/student/student_index.php?id='.$id);
                 break;
             case 2:
-                header("location:IN/student/teacher_index.php");
+                header("location:IN/student/teacher_index.php?id=".$id);
                 break;
             case 3:
-                header("location:IN/student/company_index.php");
+                header("location:IN/student/company_index.php?id=".$id);
                 break;
         }
     }

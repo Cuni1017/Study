@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/css/forgetPW.css">
+    <link rel="stylesheet" href="style/dist/forgetPW.css">
 </head>
 
 <body>

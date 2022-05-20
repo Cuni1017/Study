@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="style/style.css">
     <title>文化大學企業實習媒合網站</title>
 </head>
-
+<?
+$id = $_GET["id"];
+?>
 <body>
     <div id="wrap" >
         
@@ -49,11 +51,11 @@
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="IN/student/student_method.php">申請辦法</a></li>
-                        <li><a href="IN/student/student_resume.php">履歷維護</a></li>
-                        <li><a href="IN/student/student_apply.php">實習應徵</a></li>
-                        <li><a href="IN/student/student_report.php">繳交實習報告</a></li>
-                        <li><a href="IN/student/student_response.php">學生意見反應</a></li>
+                        <li><a href="IN/student/student_method.php?id=".$id>申請辦法</a></li>
+                        <li><a href="IN/student/student_resume.phpid=".$id>履歷維護</a></li>
+                        <li><a href="IN/student/student_apply.phpid=".$id>實習應徵</a></li>
+                        <li><a href="IN/student/student_report.phpid=".$id>繳交實習報告</a></li>
+                        <li><a href="IN/student/student_response.phpid=".$id>學生意見反應</a></li>
                     </ul>
                 </div>
                 <!-- CPN -->
