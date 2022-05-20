@@ -106,73 +106,8 @@
                         </a>
                     </div>
                 </li>
-
             </ul>
-
         </div>
-        <!-- <div class="STU">
-                <div id="STU01" class="STU-inner">
-                    <p>STU01的內容</p>
-                </div>
-                <div id="STU02" class="STU-inner">
-                    <p>STU02的內容</p>
-                </div>
-                <div id="STU03" class="STU-inner">
-                    <p>STU03的內容</p>
-                </div>
-                <div id="STU04" class="STU-inner">
-                    <p>STU04的內容</p>
-                </div>
-                <div id="STU05" class="STU-inner">
-                    <p>STU05的內容</p>
-                </div>
-            </div> -->
-
-        <!-- <div class="CPN">
-                <div id="CPN01" class="CPN-inner">
-                    <p>CPN01的內容</p>
-                </div>
-                <div id="CPN02" class="CPN-inner">
-                    <p>CPN02的內容</p>
-                </div>
-                <div id="CPN03" class="CPN-inner">
-                    <p>CPN03的內容</p>
-                </div>
-                <div id="CPN04" class="CPN-inner">
-                    <p>CPN04的內容</p>
-                </div>
-                <div id="CPN05" class="CPN-inner">
-                    <p>CPN05的內容</p>
-                </div>
-            </div> -->
-        <!-- <div class="TCH">
-                <div id="TCH01" class="TCH-inner">
-                    <p>TCH01的內容</p>
-                </div>
-                <div id="TCH02" class="TCH-inner">
-                    <p>TCH02的內容</p>
-                </div>
-                <div id="TCH03" class="TCH-inner">
-                    <p>TCH03的內容</p>
-                </div>
-                <div id="TCH04" class="TCH-inner">
-                    <p>TCH04的內容</p>
-                </div>
-                <div id="TCH05" class="TCH-inner">
-                    <p>TCH05的內容</p>
-                </div>
-                <div id="TCH06" class="TCH-inner">
-                    <p>TCH06的內容</p>
-                </div>
-            </div> -->
-        <!-- <div class="US">
-                <div id="US01" class="US-inner">
-                    <p>關於我們的內容</p>
-                </div>
-                <div id="US02" class="US-inner">
-                    <p>參考資料的內容</p>
-                </div>
-            </div> -->
     </div> <!-- content -->
 
 
