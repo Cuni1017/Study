@@ -81,6 +81,7 @@
                     <ul>
                         <?php
                         include "../../user_connect.php";
+                        
                         $sql = "SELECT `chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date` FROM `chat`  ";
                         $total = select($sql);
                         while ($num = f_array($total)) {

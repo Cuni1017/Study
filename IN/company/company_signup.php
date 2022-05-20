@@ -16,7 +16,7 @@
         $stmt->execute();
         $num = $stmt->get_result()->fetch_assoc();
         $row_num = $num["num"];
-        $com_num = "C" . ($today * 10000) . ($row_num + 1);
+        $com_num = "C" . (($today * 10000) + ($row_num + 1));
         echo $com_num;
         ?>
 
@@ -88,7 +88,7 @@
         </div>
     </form>
 
-    <?php
+     <?php
 
 
     $company_name = @$_POST["company_name"];
@@ -107,15 +107,22 @@
     $company_department = @$_POST["company_department"];
     $company_other = @$_POST["company_other"];
     $company_safe = @$_POST["company_safe"];
-    $level = "2";
+    $level = "2"; 
+    $sql = ("SET NAMES 'UTF8'");
+    $total = $con->query($sql);
+
+    $sql = ("SET NAMES 'UTF8'");
+    $total = $con->query($sql);
     $sql = "INSERT INTO `company` VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("ssssissssssssssss", $com_num, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
     $stmt->execute();
 
+    $sql = ("SET NAMES 'UTF8'");
+    $total = $con->query($sql);
     $sql1 = "INSERT INTO `login`(`id`, `username`, `password`, `level`) VALUES ('" . $com_num . "','" . $company_username . "','" . $company_password . "','" . $level . "')";
     $stmt = $con->prepare($sql1);
-    $stmt->execute();
+    $stmt->execute(); 
 
     ?>
 </body>
