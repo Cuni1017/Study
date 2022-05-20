@@ -16,9 +16,21 @@ html, body {
 }
 
 #header #LogoBox {
+  min-width: 100px;
+  max-width: 600px;
   position: absolute;
   left: 2%;
   top: 2%;
+}
+
+#header #LogoBox span {
+  border-left: solid 1px;
+  padding-left: 10px;
+  font-size: 42px;
+}
+
+#header #LogoBox img {
+  max-width: 400px;
 }
 
 #header #UserBox {

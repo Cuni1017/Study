@@ -76,7 +76,7 @@
 
         <div id="content">
             <h1>實習應徵方法</h1>
-            <div class="text">透過實習維護先行上傳履歷，再利用實習應徵功能發送履歷至心儀的公司</div>
+            <div class="text">透過履歷維護先行上傳履歷，再利用實習應徵功能發送履歷至心儀的公司</div>
 
         </div> <!-- content -->
     </div> <!-- wrap -->

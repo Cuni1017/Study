@@ -34,7 +34,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 <span style="border-left: solid 1px; padding-left: 10px ; font-size: 42px">實習平台</span>
             </div>
 
-
             <div id="UserBox">
                 <p>您好 XXX</p>
             </div>

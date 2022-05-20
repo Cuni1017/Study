@@ -28,7 +28,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
         <div id="header">
             <div id="LogoBox">
                 <a href="https://www.pccu.edu.tw/"><img src="image/skyLogo.png" /></a>
-                <span style="border-left: solid 1px; padding-left: 10px ; font-size: 42px">實習平台</span>
+                <span>實習平台</span>
             </div>
 
             <div id="UserBox">
