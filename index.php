@@ -21,8 +21,6 @@ $stmt->execute();
 $num = $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
 
 ?>
-<link rel="stylesheet" href="style/index.css">
-<link rel="stylesheet" href="style/style.css">
 
 <body>
     <div id="wrap">
@@ -46,7 +44,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
         <div id="mainNav">
             <div id="mainNavTop">
                 <ul>
-                    <li class="">
+                    <li>
                         <a class="STUctrl" href="login.php">
                             <img src="image/畢業帽帽.png" style="top: 55px; width: 50px" />
                             <span>學生實習入口</span>
@@ -143,28 +141,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <h1>最新消息</h1>
             <div class="news">
                 <?php while ($stmt->fetch()) { ?>
-                    <!-- <ul id="grid">
-
-                    <li>
-                        <div class="newscont">
-                            <a href="https://reurl.cc/rD6VEb">
-                                <div class="news_img">
-                                    <img style="width: 500px;" src="image/content1.jpg" /></img>
-                                </div>
-                                <div class="news_t">
-                                    <p></p>
-                                </div>
-
-                                <div class="moreINFO">
-                                    <div class="moreINFO_btn">➤</div>
-                                    <div class="INFO">
-                                        <p>moreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFOmoreINFO</p>
-                                    </div>
-                                </div> 
-                            </a>
-                        </div>
-                    </li> -->
-
                     <div class="newscont">
                         <!-- <a href="https://www.facebook.com/AIESECGlobalTalent.Taiwan/"> -->
                         <div class="news_img">
@@ -174,7 +150,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                             <p><?php echo $company_name ?></p>
                         </div>
                         <div class="moreINFO_btn">➤</div>
-
                         <!-- </a> -->
                     </div>
                     <!-- </ul> -->

@@ -98,7 +98,7 @@
 
         <div id="content">
             <h1>履歷維護</h1>
-            <input type="file" id="file-uploader">
+            <!-- <input type="file" id="file-uploader"> -->
 
         </div> <!-- content -->
     </div> <!-- wrap -->

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/dist/student_register.css">
+    <link rel="stylesheet" href="style/css/student_register.css">
 </head>
 
 <body>

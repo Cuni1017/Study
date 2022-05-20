@@ -1,28 +1,3 @@
-@mixin indep
-    position: absolute
-
-@mixin center
-    position: absolute
-    left: 50%
-    top: 50%
-    transform: translateX(-50%) translateY(-50%)
-
-@mixin trans($s)
-    transition: $s
-
-@mixin size($w,$h)
-    width: $w
-    height: $h
-
-@mixin fill
-    width: 100%
-    height: 100%
-
-@mixin text($size,$spacing,$color)
-    font-size: $size
-    letter-spacing: $spacing
-    color: $color
-
 html,body
     width: 100%
     height: 100%
@@ -34,39 +9,38 @@ html,body
         margin-top: 10px
         margin-left: auto
         margin-right: auto
+        .newscont
+            min-width: 300px
+            min-height: 400px
+            // max-width: 
+            display: inline-block
+            position: relative
+            text-align: center
+            // width: 350px
+            width: 30%
+            height: 35%
+            font-size: 32px
+            margin: 15px
+            border: solid 1px #000000
+            border-radius: 16px
+            overflow: hidden
+            box-sizing: border-box
 
-    .newscont
-        min-width: 300px
-        min-height: 400px
-        // max-width: 
-        display: inline-block
-        position: relative
-        text-align: center
-        // width: 350px
-        width: 30%
-        height: 35%
-        font-size: 32px
-        margin: 15px
-        border: solid 1px #000000
-        border-radius: 16px
-        overflow: hidden
-        box-sizing: border-box
+            .moreINFO_btn
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                bottom: 0px
+                border: solid 1px
+                border-radius: 100%
+                width: 45px
+                cursor: pointer
 
-        .moreINFO_btn
-            position: absolute
-            left: 50%
-            transform: translateX(-50%)
-            bottom: 0px
-            border: solid 1px
-            border-radius: 100%
-            width: 45px
-            cursor: pointer
-
-            &:hover
-                background-color: #ddd
-                // width: 50px
-                // height: 50px
-                // font-size: 
+                &:hover
+                    background-color: #ddd
+                    // width: 50px
+                    // height: 50px
+                    // font-size: 
 
         .news_img
             // width: 500px

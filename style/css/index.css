@@ -11,7 +11,7 @@ html, body {
   margin-right: auto;
 }
 
-#content .newscont {
+#content .news .newscont {
   min-width: 300px;
   min-height: 400px;
   display: inline-block;
@@ -27,7 +27,7 @@ html, body {
   box-sizing: border-box;
 }
 
-#content .newscont .moreINFO_btn {
+#content .news .newscont .moreINFO_btn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -38,16 +38,16 @@ html, body {
   cursor: pointer;
 }
 
-#content .newscont .moreINFO_btn:hover {
+#content .news .newscont .moreINFO_btn:hover {
   background-color: #ddd;
 }
 
-#content .newscont .news_t {
+#content .news .news_t {
   text-align: center;
   font-size: 24px;
 }
 
-#content .newscont .moreINFO_btn {
+#content .news .moreINFO_btn {
   cursor: pointer;
   position: absolute;
   left: 50%;
