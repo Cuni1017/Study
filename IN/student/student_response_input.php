@@ -8,7 +8,7 @@
     <input type="button" name="register" value="註冊" onclick="window.location.href='login.php'" />
 </body>
 <?php
-include "../user_connect.php";
+include "../../user_connect.php";
 $maker = @$_POST['maker'];
 $subject = @$_POST['subject'];
 $content = @$_POST['content'];

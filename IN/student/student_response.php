@@ -95,7 +95,7 @@
                         <?php } ?>
                     </ul>
 
-                    <form class="leavecomment" action=" " method="post">
+                    <form class="leavecomment" action="student_response_input.php" method="post">
                         <input name="maker" type="text">作者
                         <input name="subject" type="text">大綱
                         <input name="content" type="text">內容
