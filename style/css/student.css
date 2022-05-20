@@ -2,25 +2,193 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 #content .post {
   width: 80%;
   min-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
-
 #content ul {
   border: solid 1px;
   border-radius: 16px;
   padding: 20px;
 }
-
 #content ul li {
   list-style: none;
   border: solid 1px;
   line-height: 25px;
   padding: 10px;
   margin-bottom: 10px;
+}/*# sourceMappingURL=student.css.map */� {
+  position: relative;
+  top: 50px;
 }
-/*# sourceMappingURL=student.css.map */
+
+.logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: inline-block;
+  top: 0px;
+  left: 0px;
+}
+
+.Log {
+  position: absolute;
+  display: flex;
+  right: 0px;
+  top: 0px;
+}
+
+.用戶端 {
+  top: 200px;
+  position: relative;
+  margin: 20px;
+  padding: 50px;
+  background-color: #64A6BD;
+}
+
+.button {
+  display: inline-block;
+  border: solid 1px black;
+  background-color: #FFBE0B;
+  border-radius: 7px;
+  margin: 5px;
+  padding: 5px;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.LoginBox {
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fefefe;
+  border: solid 1px #cdd8dc;
+  border-radius: 6px;
+  width: 600px;
+  height: 350px;
+  text-align: center;
+}
+
+.LoginPage_button {
+  display: inline-block;
+  width: 360px;
+  height: 40px;
+  border: solid 1px #d4d8db;
+  /* #b5d4e9 #f3f7f7*/
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.LoginPage_login input[type=text]:focus, .LoginPage_login input[type=password]:focus {
+  box-shadow: 0 0 0 3px #b5d4e9;
+  outline-offset: none;
+  transition: 0.5s;
+  width: 400px;
+}
+
+.bottom_row {
+  position: relative;
+  padding: 40px;
+  buttom: 0px;
+  border: solid 1px #dde0e7;
+  background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
+}
+
+.register {
+  position: relative;
+  left: -200px;
+}
+
+.Submit_button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 35px;
+  width: 220px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.RegisterBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fefefe;
+  border: solid 1px #cdd8dc;
+  border-radius: 6px;
+  width: 600px;
+  height: 350px;
+  text-align: center;
+}
+.Register_button {
+  display: inline-block;
+  width: 360px;
+  height: 40px;
+  border: solid 1px #d4d8db;
+  /* #b5d4e9 #f3f7f7*/
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.RPWBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #fefefe;
+  border: solid 1px #cdd8dc;
+  border-radius: 6px;
+  width: 600px;
+  height: 350px;
+  text-align: center;
+}
+
+.buttom_controll {
+  width: 100%;
+  height: 60px;
+}
+
+.student_buttom {
+  width: 300px;
+  height: 60px;
+  display: inline-block;
+  border: solid 1px;
+  position: relative;
+  margin-left: 10px;
+  right: 0px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.student_buttom1 {
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  margin-left: 160px;
+  display: inline-block;
+  border: solid 1px;
+  position: relative;
+  right: 5px;
+  text-align: center;
+}
+
+.bottom {
+  width: 100%;
+  height: 1800px;
+}
+
+/*# sourceMappingURL=style.css.map *//*# sourceMappingURL=student.css.map */

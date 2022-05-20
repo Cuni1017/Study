@@ -14,19 +14,16 @@ html, body {
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
   border-bottom: solid 1px;
 }
-
 #header #LogoBox {
   position: absolute;
   left: 2%;
   top: 2%;
 }
-
 #header #UserBox {
   position: absolute;
   right: 2%;
   margin-top: 5px;
 }
-
 #header #UserBox .button {
   display: inline-block;
   text-align: center;
@@ -38,7 +35,6 @@ html, body {
   cursor: pointer;
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
 }
-
 #header #UserBox .button a {
   text-decoration: none;
 }
@@ -56,7 +52,6 @@ html, body {
   border-bottom: solid 1px;
   height: 65px;
 }
-
 #mainNavTop ul {
   float: left;
   max-width: 1170px;
@@ -66,7 +61,6 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-
 #mainNavTop li {
   margin-left: 10px;
   margin-right: 10px;
@@ -76,37 +70,30 @@ html, body {
   display: inline-block;
   cursor: pointer;
 }
-
 #mainNavTop ul li {
   display: flex;
   justify-content: space-evenly;
   float: left;
   font-weight: bold;
 }
-
 #mainNavTop ul li:hover {
   background-color: #4b8eda;
   transition: all 0.5s;
 }
-
 #mainNavTop ul li:hover a {
   color: #fff;
 }
-
 #mainNavTop a {
   color: #4b5b6a;
   text-decoration: none;
 }
-
 #mainNavTop img {
   vertical-align: text-bottom;
 }
-
 #mainNavTop .Topactive {
   background-color: #4b8eda;
   transition: all 0.5s;
 }
-
 #mainNavTop .Topactive a {
   color: #fff;
 }
@@ -116,7 +103,6 @@ html, body {
   margin: 0px;
   display: flex;
 }
-
 #mainNavCon ul li {
   margin: 0px;
   border-right: solid 1px #ddd;
@@ -127,12 +113,10 @@ html, body {
   padding-bottom: 20px;
   cursor: pointer;
 }
-
 #mainNavCon ul li:hover {
   border-bottom: solid 5px #2274d3;
   padding-bottom: 5px;
 }
-
 #mainNavCon a {
   padding-left: 15px;
   padding-right: 15px;
@@ -144,11 +128,9 @@ html, body {
   width: 100%;
   border-top: solid 1px;
 }
-
 #content h1 {
   margin: 0;
   text-align: center;
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
   border-bottom: solid 1px;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
