@@ -6,8 +6,8 @@
 
 <body>
 
-    <form method="post" action="">
-        <?php
+    <form method="post" action="company_verification.php">
+        <?php /*
         require_once "../../user_connect.php";
         $today = date("Ynj");
 
@@ -17,7 +17,7 @@
         $num = $stmt->get_result()->fetch_assoc();
         $row_num = $num["num"];
         $com_num = "C" . (($today * 10000) + ($row_num + 1));
-        echo $com_num;
+        echo $com_num;*/
         ?>
 
         <div>
@@ -90,7 +90,7 @@
 
      <?php
 
-
+/*
     $company_name = @$_POST["company_name"];
     $company_username = @$_POST["company_username"];
     $company_password = @$_POST["company_password"];
@@ -103,7 +103,6 @@
     $company_work_experience = @$_POST["company_work_experience"];
     $company_type = @$_POST["company_type"];
     $company_Education = @$_POST["company_Education"];
-    $company_category = @$_POST["company_category"];
     $company_department = @$_POST["company_department"];
     $company_other = @$_POST["company_other"];
     $company_safe = @$_POST["company_safe"];
@@ -123,7 +122,7 @@
     $sql1 = "INSERT INTO `login`(`id`, `username`, `password`, `level`) VALUES ('" . $com_num . "','" . $company_username . "','" . $company_password . "','" . $level . "')";
     $stmt = $con->prepare($sql1);
     $stmt->execute(); 
-
+*/
     ?>
 </body>
 

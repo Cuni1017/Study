@@ -69,7 +69,7 @@ var_dump($result);
 
                 </div>
                     <?php
-                    $sql = "SELECT * FROM `user` where `user_name` ='".$username."'";
+                    $sql = "SELECT * FROM `login` where `username` ='".$username."'";
                     //$rs = $con->query($sql) -> num_rows > 0;
                     //echo($rs);
             if($email == "" && $password == "" && $username == ""){
@@ -162,7 +162,6 @@ try {
                     <input type = "hidden" value = "<?echo $password?>" name= "password">
                     <input type = "hidden" value = "<?echo $yanzhen?>" name= "ram_num">
                     <input type = "hidden" value = "<?echo $email?>" name= "email">
-
                     <input class="Submit_button" type="submit" value="驗證" /> 
                 </div>
 <?php
