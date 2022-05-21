@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,500;1,400&display=swap')
+
 @mixin indep
     position: absolute
 
@@ -41,6 +43,8 @@ html,body
     width: 900px
     height: 500px
     text-align: center
+    h1
+        font-size: 50px
 
 .Login_text
     display: inline-block
@@ -54,7 +58,7 @@ html,body
     padding: 5px
     color: #333
     letter-spacing: 0.5px
-
+    font-size: 16px
 .bottom_row
     position: absolute
     bottom: 0px
@@ -65,6 +69,13 @@ html,body
 
     border: solid 1px #dde0e7
     background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
+    a
+        border-radius: 8px
+        color: #333
+        font-weight: bold
+        // text-decoration: none
+        &:hover
+            // background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%)
 
 .register
     position: relative
@@ -77,3 +88,6 @@ html,body
     height: 40px
     font-weight: bold
     cursor: pointer
+
+    &:hover
+        background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%)

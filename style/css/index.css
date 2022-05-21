@@ -27,36 +27,23 @@ html, body {
   box-sizing: border-box;
 }
 
+#content .news .newscont .news_t h5 {
+  font-weight: 400;
+}
+
 #content .news .newscont .moreINFO_btn {
   position: absolute;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0px;
   border: solid 1px;
-  width: 56px;
+  border-radius: 10px;
   cursor: pointer;
+  padding: 5px;
+  font-size: 24px;
 }
 
 #content .news .newscont .moreINFO_btn:hover {
   background-color: #ddd;
-}
-
-#content .news .news_t {
-  text-align: center;
-  font-size: 24px;
-}
-
-#content .news .moreINFO_btn {
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0px;
-  overflow: visible;
-  border: solid 1px;
-  border-radius: 100%;
-  text-align: center;
-  width: 60px;
-  font-size: 42px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -28,7 +28,7 @@ html, body {
   /* #b5d4e9 #f3f7f7*/
   background-color: #ffffff;
   border-radius: 3px;
-  margin: 10px;
+  margin: 10 0 10 0px;
   padding: 5px;
   color: #333;
   letter-spacing: 0.5px;
@@ -79,6 +79,9 @@ html, body {
   width: 90px;
   height: 40px;
   cursor: pointer;
-  background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
+}
+
+.verification_button:hover {
+  background-color: #dfdfdf;
 }
 /*# sourceMappingURL=forgetPW.css.map */

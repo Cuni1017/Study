@@ -15,8 +15,6 @@
     <title>文化大學企業實習媒合網站</title>
 </head>
 <?php require_once "user_connect.php";
-
-
 $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
 $stmt = $con->prepare($sql);
 $stmt->execute();
@@ -34,10 +32,10 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             </div>
 
             <div id="UserBox">
-                <a href="login.php" class="button btn">
+                <a href="login.php" class="button btnGray">
                     <p>LogIn</p>
                 </a>
-                <a href="register_select.php" class="button btn">
+                <a href="register_select.php" class="button btnGray">
                     <p>Sign Up</p>
                 </a>
             </div>
@@ -48,26 +46,25 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 <ul>
                     <li>
                         <a class="STUctrl" href="login.php">
-                            <img src="image/畢業帽帽.png" style="top: 55px; width: 50px" />
+                            <img src="image/畢業帽帽.png" />
                             <span>學生實習入口</span>
                         </a>
                     </li>
                     <li>
                         <a class="CPNctrl" href="login.php">
-                            <img src="image/廠商.png" style="width: 50px" />
+                            <img src="image/廠商.png" />
                             <span>廠商實習管理</span>
                         </a>
-
                     </li>
                     <li>
                         <a class="TCHctrl" href="login.php">
-                            <img src="image/教師3.jpg" style="width: 50px" />
+                            <img src="image/教師3.jpg" />
                             <span>教師管理</span>
                         </a>
                     </li>
                     <li>
                         <a class="USctrl" href="login.php">
-                            <img src="image/關於我們.png" style="width: 50px" />
+                            <img src="image/關於我們.png" />
                             <span>關於我們</span>
                         </a>
                     </li>
@@ -146,12 +143,13 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                     <div class="newscont">
                         <!-- <a href="https://www.facebook.com/AIESECGlobalTalent.Taiwan/"> -->
                         <div class="news_img">
-                            <img style="width: 500px;" src="image/content2.jpg"></img>
+                            <img style="max-width: 500px;" src="image/content2.jpg"></img>
                         </div>
                         <div class="news_t">
-                            <p><?php echo $company_name ?></p>
+                            <h5><?php echo $company_name ?></h5>
+                            <p></p>
                         </div>
-                        <div class="moreINFO_btn">➤</div>
+                        <div class="moreINFO_btn">更多資訊</div>
                         <!-- </a> -->
                     </div>
                     <!-- </ul> -->

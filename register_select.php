@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="style/css/register.css">
+    <link rel="stylesheet" href="style/css/style.css">
 </head>
 
 <body>
@@ -32,7 +33,6 @@
             </div>
 
             <!-- 登入 提交 -->
-
             <div class="bottom_row">
                 <!-- <input class="Submit_button" type="submit" value="Submit" /> -->
             </div>

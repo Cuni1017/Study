@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Open+Sans:ital,wght@0,300;0,500;1,400&display=swap')
+
 html,body
     width: 100%
     height: 100%
     margin: 0px
+    padding: 0px
 //     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif
 //     background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%)
 //     display: flex    
 
-// *
+*
+    font-family: 'Noto Sans TC', sans-serif
     // border: solid 1px
 
 #wrap
@@ -31,6 +35,7 @@ html,body
             border-left: solid 1px
             padding-left: 10px
             font-size: 42px
+            font-weight: 400
         img
             max-width: 400px
 
@@ -44,14 +49,16 @@ html,body
             display: inline-flex
             align-items: center
             justify-content: center
-
+            color: black
             border: solid 2px black
+            font-weight: 400
+            font-family:
+            // border-radius: 20px
             width: 70px
             height: 30px
             padding: 5px
             cursor: pointer
             // background-color: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
-            background-color: #43c7a6
         a
             text-decoration: none
         p
@@ -66,22 +73,46 @@ html,body
     display: inline-block
     cursor: pointer
     color: #3a8a9e
-    font-family: Arial
     font-size: 17px
     padding: 7px 25px
     text-decoration: none
     text-shadow: 0px 1px 0px #e1e2ed
-
     &:hover
         background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%)
         background-color: #bab1ba
+.btnLightGray
+    box-shadow: inset 0px 1px 0px 0px #ffffff
+    background: linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%)
+    background-color: #f9f9f9
+    border: 1px solid #dcdcdc
+    display: inline-block
+    cursor: pointer
+    color: #666666
+    font-size: 15px
+    font-weight: bold
+    padding: 6px 24px
+    text-decoration: none
+    text-shadow: 0px 1px 0px #ffffff
+    &:hover
+        background: linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%)
+        background-color: #e9e9e9
+.btnGray
+    box-shadow: inset 0px 1px 0px 0px #ffffff
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%)
+    background-color: #ededed
+    border: 1px solid #dcdcdc
+    color: #777777
+    text-shadow: 0px 1px 0px #ffffff
+    &:hover
+        background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%)
+        background-color: #dfdfdf
 
 #mainNav
     width: 100%
 
 #mainNavTop
     padding-left: 30px
-    text-align: center
+    // text-align: center
     overflow: auto
     background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
     font-size: 22px
@@ -89,51 +120,40 @@ html,body
     height: 65px
 
     ul
-        float: left
         padding: 0px
         margin: 0px auto
-    li
+        box-sizing: border-box
+        display: inline-flex
+        flex-direction: row
+        // justify-content: center
+        align-items: center
+    ul li
         margin-left: 10px
         margin-right: 10px
         box-sizing: border-box
-        width: 250px
+        width: 220px
         height: 65px
-        display: inline-block
+        list-style: none
         cursor: pointer
-        // vertical-align: middle
-    ul li
-        display: flex
-        justify-content: space-evenly
-        // left: 1px
-        // width: 19.93%
-        // border-right: solid 1px #000
-        // border-left: solid 1px #000
-        float: left
         font-weight: bold
-        // height: 30px
-        // text-align: center
-        // border-right: solid 1px
-        // border-left: solid 1px
         &:hover
             background-color: #4b8eda
             transition: all 0.5s
             a
                 color: #fff
-
     a
         color: #4b5b6a
         text-decoration: none
-
-    img
-        vertical-align: text-bottom
-    .Topactive
-        background-color: #4b8eda
-        transition: all 0.5s
-        a
-            color: #fff
+        text-align: center
+        img
+            width: 50px
+            margin-top: 8px
+        .Topactive
+            background-color: #4b8eda
+            transition: all 0.5s
+        span
 
 #mainNavCon
-
     ul
         // float: left
         background-color: #fff

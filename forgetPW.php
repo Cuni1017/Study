@@ -2,12 +2,13 @@
 
 <head>
     <link rel="stylesheet" href="style/css/forgetPW.css">
+    <link rel="stylesheet" href="style/css/style.css">
 </head>
 
 <body>
     <form action="action.js">
         <div class="RPWBox">
-            <h1 style="font-size: 50px;">Retrieve password</h1>
+            <h1 style="font-size: 50px;">找回密碼</h1>
             <!-- 帳密輸入欄 -->
             <p style="font-size: 20px;">請輸入你的電子郵件地址以找回帳號密碼。</p>
             <div class="Email_row">
