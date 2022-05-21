@@ -18,6 +18,7 @@
     <!-- <link rel="stylesheet" href="../../style/css/index.css"> -->
 </head>
 <?php require_once "user_connect.php";
+$user_id = @$_GET["user_id"];
 $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
 $stmt = $con->prepare($sql);
 $stmt->execute();
@@ -62,11 +63,11 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="student_method.php">申請辦法</a></li>
-                        <li><a href="student_resume.php">履歷維護</a></li>
-                        <li><a href="student_apply.php">實習應徵</a></li>
-                        <li><a href="student_report.php">繳交實習報告</a></li>
-                        <li><a href="student_response.php">學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">>實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
                 <!-- CPN -->
@@ -115,7 +116,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                         <div class="news_t">
                             <p><?php echo $company_name ?></p>
                         </div>
-                        <div class="moreINFO_btn">➤</div>
+                        <a class="moreINFO_btn" href="student_applyfor.php?user_id=<?=$user_id?>&company_id=<?=$company_id?>">➤</a>
                         <!-- </a> -->
                     </div>
                     <!-- </ul> -->

@@ -42,13 +42,21 @@
             echo $company_email;
             $level = "3";
             $sql = "SELECT * FROM `login` where `username` ='" . $company_username . "'";
+            $sql = "SELECT * FROM `login` where `company_name` ='" . $company_name. "'";
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
             } elseif ($con->query($sql)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
-                echo "使用者名稱已存在,三秒後版回註冊畫面，請重新註冊！";
+                echo "帳號名稱已存在,三秒後版回註冊畫面，請重新註冊！";
+
+                echo "<a href=company_signup.php>[註冊]<br></a>";
+                header("Refresh:3;url=company_signup.php");
+            }elseif ($con->query($sql1)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
+            {
+                //var_dump($con);
+                echo "公司名稱已存在,三秒後版回註冊畫面，請重新註冊！";
 
                 echo "<a href=company_signup.php>[註冊]<br></a>";
                 header("Refresh:3;url=company_signup.php");

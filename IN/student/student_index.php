@@ -18,6 +18,10 @@
 </head>
 
 <body>
+    <?php 
+     require_once "user_connect.php";
+    $user_id = @$_GET["user_id"];
+    ?>
     <div id="wrap">
 
         <div id="header">
@@ -54,11 +58,11 @@
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="student_method.php?id=" $id>申請辦法</a></li>
-                        <li><a href="student_resume.php?id=" $id>履歷維護</a></li>
-                        <li><a href="student_apply.php?id=" $id>實習應徵</a></li>
-                        <li><a href="student_report.php?id=" $id>繳交實習報告</a></li>
-                        <li><a href="student_response.php?id=" $id>學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
 
