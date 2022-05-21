@@ -1,15 +1,12 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 0px;
   background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%);
-  display: flex;
   position: relative;
 }
 
 .RegisterBox {
-  top: 100px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -20,28 +17,38 @@ html, body {
   width: 900px;
   height: 500px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .RegisterBox h1 {
   font-size: 50px;
 }
 
-.Bigger_RegisterBox {
+.RegisterBox a {
+  font-size: 14px;
+  color: #b1a9a9;
+  align-self: flex-end;
+}
+
+.CPN_RegisterBox {
   margin-top: 300px;
+  margin-bottom: 300px;
   width: 900px;
   height: 1300px;
 }
 
-.Bigger_RegisterBox h3 {
+.CPN_RegisterBox h3 {
   font-size: 24px;
 }
 
-.Bigger_RegisterBox ul {
+.CPN_RegisterBox ul {
   padding: 0;
   margin: 0;
 }
 
-.Bigger_RegisterBox ul li {
+.CPN_RegisterBox ul li {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
@@ -49,37 +56,37 @@ html, body {
   list-style: none;
 }
 
-.Bigger_RegisterBox ul li label {
+.CPN_RegisterBox ul li label {
   align-self: flex-start;
   font-size: 16px;
   margin-left: 10px;
 }
 
-.Bigger_RegisterBox ul li input[type="text"], .Bigger_RegisterBox ul li input[type="password"] {
+.CPN_RegisterBox ul li input[type="text"], .CPN_RegisterBox ul li input[type="password"] {
   padding: 12px;
   width: 400px;
   align-self: flex-start;
 }
 
-.Bigger_RegisterBox ul .li-inline {
+.CPN_RegisterBox ul .li-inline {
   margin-left: 0px;
   display: inline-flex;
 }
 
-.Bigger_RegisterBox ul .li-inline label {
+.CPN_RegisterBox ul .li-inline label {
   margin-left: 10px;
 }
 
-.Bigger_RegisterBox ul .li-inline input[type="text"], .Bigger_RegisterBox ul .li-inline input[type="password"] {
+.CPN_RegisterBox ul .li-inline input[type="text"], .CPN_RegisterBox ul .li-inline input[type="password"] {
   padding: 12px;
   width: 400px;
 }
 
-.Bigger_RegisterBox .Section {
+.CPN_RegisterBox .Section {
   position: relative;
 }
 
-.Bigger_RegisterBox textarea {
+.CPN_RegisterBox textarea {
   padding: 10px;
   margin-left: -15px;
   width: 850px;
@@ -101,23 +108,17 @@ html, body {
   font-size: 16px;
 }
 
-.verification {
-  margin-top: 10px;
-}
-
 .bottom_row {
   position: absolute;
+  display: flex;
   bottom: 0px;
   padding: 40px;
-  padding-top: 51px;
-  padding-bottom: 50px;
   width: 818px;
-  left: 0px;
   border: solid 1px #dde0e7;
   background: linear-gradient(to bottom, #f4f5f7, #f0f5f8, #eff4f7);
 }
 
-.Submit_button {
+.bottom_row .Submit_button {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -129,9 +130,8 @@ html, body {
   cursor: pointer;
 }
 
-.Submit_button:hover {
+.bottom_row .Submit_button:hover {
   background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-  background-color: #dfdfdf;
 }
 
 .verification_button {
@@ -183,4 +183,4 @@ html, body {
   font-weight: 500;
   color: black;
 }
-/*# sourceMappingURL=register.css.map */
+/*# sourceMappingURL=registerRe.css.map */

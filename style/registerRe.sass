@@ -1,0 +1,179 @@
+@mixin indep
+    position: absolute
+
+@mixin center
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+
+@mixin trans($s)
+    transition: $s
+
+@mixin size($w,$h)
+    width: $w
+    height: $h
+
+@mixin fill
+    width: 100%
+    height: 100%
+
+@mixin text($size,$spacing,$color)
+    font-size: $size
+    letter-spacing: $spacing
+    color: $color
+    @charset "UTF-8"
+
+html,body
+    width: 100%
+    height: 100%
+    margin: 0px
+    background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%)
+    position: relative
+
+.RegisterBox
+    +center
+    background-color: #fefefe
+    border: solid 1px #cdd8dc
+    border-radius: 6px
+    width: 900px
+    height: 500px
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    h1
+        font-size: 50px
+    a
+        font-size: 14px
+        color: rgb(177, 169, 169)
+        align-self: flex-end
+//CPN
+.CPN_RegisterBox
+    margin-top: 300px
+    margin-bottom: 300px
+    width: 900px
+    height: 1300px
+    h3
+        font-size: 24px
+    ul
+        padding: 0
+        margin: 0
+
+        li
+            margin-left: 15px
+            display: flex
+            flex-direction: column
+            align-items: center
+            list-style: none
+            label
+                align-self: flex-start
+                font-size: 16px
+                margin-left: 10px
+            input[type="text"],input[type="password"]
+                padding: 12px
+                width: 400px
+                align-self: flex-start
+
+        .li-inline
+            margin-left: 0px
+            display: inline-flex
+            label
+                margin-left: 10px
+                // margin: 5 60 5 60px
+                // flex-basis: 30%
+            input[type="text"],input[type="password"]
+                padding: 12px
+                width: 400px
+                // margin: 0 60 5 60px
+                // flex-basis: 70%
+    .Section
+        position: relative
+    textarea
+        padding: 10px
+        margin-left: -15px
+
+        width: 850px
+        height: 90px
+//CPN^
+
+.Register_text
+    display: inline-block
+    width: 400px
+    height: 40px
+    border: solid 1px #d4d8db
+    /* #b5d4e9 #f3f7f7*/
+    background-color: #ffffff
+    border-radius: 3px
+    margin: 10px
+    padding: 5px
+    color: #333
+    letter-spacing: 0.5px
+    font-size: 16px
+
+// .verification
+//     margin-top: 10px
+
+.bottom_row
+    position: absolute
+    display: flex
+    bottom: 0px
+    padding: 40px
+    width: 818px
+
+    border: solid 1px #dde0e7
+    background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
+
+    .Submit_button
+        +center
+        border-radius: 35px
+        width: 220px
+        height: 40px
+        font-weight: bold
+        cursor: pointer
+        &:hover
+            background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%)
+
+.verification_button
+    border: solid 2px black
+    padding: 5px
+    border-radius: 25px
+    width: 90px
+    height: 40px
+    cursor: pointer
+    background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
+
+    &:hover
+
+// Register_select
+.Register_select
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .selectBox
+        background-color: #f6f6f6
+        height: 200px
+        width: 200px
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-left: 15px
+        margin-right: 15px
+        box-sizing: border-box
+        &:hover
+            border: solid 3px #888888
+            cursor: pointer
+    a
+        border-radius: 8px
+        text-decoration: none
+        img
+            margin-top: 10px
+            width: 100px
+            height: 100px
+        p
+            font-size: 30px
+            font-weight: 500
+            color: black
+// Register_select^

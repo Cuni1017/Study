@@ -1,26 +1,24 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/css/login.css">
+    <link rel="stylesheet" href="style/css/account.css">
     <link rel="stylesheet" href="style/css/style.css">
 </head>
 
 <body>
-
-
-
     <form action="Enter.php" method="post">
-        <div class="LoginBox">
+        <div class="AccountBox">
             <h1>登入</h1>
             <!-- 帳密輸入欄 -->
-            <input class="Login_text" type="text" placeholder="Username" name="login_username"> <br>
-            <a href="forgetPW.php" style="font-size: 14px; margin-left: 260px; color: rgb(177, 169, 169);">Forget your password?</a> <br>
-            <input class="Login_text" type="password" placeholder="Password" name="login_password" /> <br> <br>
-
+            <div class="Loginsection">
+                <input class="Account_text" type="text" placeholder="Username" name="login_username">
+                <a href="forgetPW.php">忘記密碼?</a>
+                <input class="Account_text" type="password" placeholder="Password" name="login_password" /> <br> <br>
+            </div>
             <!-- 註冊 提交 -->
             <div class="bottom_row">
-                <a href="register_select.php" class="register">Register</a>
-                <input class="Submit_button " type="submit" value="Submit" />
+                <a href="register_select.php">註冊</a>
+                <input class="Submit_button " type="submit" value="提交" />
             </div>
 
             <!-- 回首頁 -->

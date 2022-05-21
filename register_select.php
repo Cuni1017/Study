@@ -1,14 +1,14 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style/css/register.css">
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="stylesheet" href="style/css/Account.css">
 </head>
 
 <body>
     <form action="" method="post">
-        <div class="RegisterBox">
-            <h1 class="" style="font-size: 50px">Register</h1>
+        <div class="AccountBox">
+            <h1 class="" style="font-size: 50px">註冊</h1>
             <!-- 客戶端選擇 -->
             <!-- <select class="Register_select">
                 <option>請選擇身分</option>
