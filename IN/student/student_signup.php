@@ -18,7 +18,7 @@
             <!-- 登入 提交 -->
 
             <div class="bottom_row">
-                <input class="Submit_button" type="submit" value="提交" />
+                <input class="submit_button" type="submit" value="提交" />
             </div>
 
             <!-- 回登入 回首頁 -->

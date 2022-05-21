@@ -22,7 +22,7 @@
 
             <div class="bottom_row">
                 <a href="register_select.php">註冊</a>
-                <input class="Submit_button" type="submit" value="提交" />
+                <input class="submit_button" type="submit" value="提交" />
             </div>
             <!-- 回登入 回首頁 -->
             <a href="login.php"><img src="image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>

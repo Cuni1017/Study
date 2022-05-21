@@ -2,7 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="style/css/style.css">
-    <link rel="stylesheet" href="style/css/Account.css">
+    <link rel="stylesheet" href="style/css/account.css">
 </head>
 
 <body>
