@@ -33,10 +33,10 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
 
             <div id="UserBox">
                 <a href="login.php" class="button btnGray">
-                    <p>LogIn</p>
+                    Login
                 </a>
                 <a href="register_select.php" class="button btnGray">
-                    <p>Sign Up</p>
+                    Sign Up
                 </a>
             </div>
         </div>
@@ -141,7 +141,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <div class="news">
                 <?php while ($stmt->fetch()) { ?>
                     <div class="newscont">
-                        <!-- <a href="https://www.facebook.com/AIESECGlobalTalent.Taiwan/"> -->
                         <div class="news_img">
                             <img style="max-width: 500px;" src="image/content2.jpg"></img>
                         </div>
@@ -150,9 +149,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                             <p></p>
                         </div>
                         <div class="moreINFO_btn">更多資訊</div>
-                        <!-- </a> -->
                     </div>
-                    <!-- </ul> -->
                 <?php } ?>
             </div>
 

@@ -45,7 +45,7 @@
 
             <!-- 登入 提交 -->
             <div class="bottom_row">
-                <input class="Submit_button" type="submit" value="提交" />
+                <input class="submit_button" type="submit" value="提交" />
             </div>
             <!-- 回登入 回首頁 -->
             <a href="../../register_select.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>

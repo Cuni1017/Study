@@ -15,11 +15,13 @@
     <title>文化大學企業實習媒合網站</title>
     <link rel="stylesheet" href="../../style/css/style.css">
     <link rel="stylesheet" href="../../style/css/student.css">
+
 </head>
 <?php require_once "user_connect.php";
-$user_id= @$_GET["user_id"];
-$test_company_id= @$_GET["company_id"];
+$user_id = @$_GET["user_id"];
+$company_id = @$_GET["company_id"];
 ?>
+
 <body>
     <div id="wrap">
 
@@ -31,7 +33,7 @@ $test_company_id= @$_GET["company_id"];
 
 
             <div id="UserBox">
-                <p>您好 XXX</p>
+                <p>您好 XXX</p> <span>登出</span>
             </div>
 
         </div>
@@ -58,11 +60,11 @@ $test_company_id= @$_GET["company_id"];
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
-                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
-                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">實習應徵</a></li>
-                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
-                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=" . $user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=" . $user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=" . $user_id ?>">實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=" . $user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=" . $user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
 
@@ -77,26 +79,108 @@ $test_company_id= @$_GET["company_id"];
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
 
-        <div id="content">
-            <h1>實習應徵方法</h1>
-            <div class="text"></div>
+        <div id="content" style="background-color: #ddd">
+            <div class="job_Navigationbar"></div>
+            <h1>徵才標題</h1>
+            <div id="job_Content">
+                <div class="job-description" style="text-align: center; font-size: 40px;">公司名稱
+                </div>
 
-        </div> <!-- content -->
-        <?php
-        require_once "user_connect.php";
-        $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` where `company_id` ='".$test_company_id."'";
-        $stmt = $con->prepare($sql);
-        $stmt->execute();
-        $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
-        $num = $stmt->fetch();
+                <div class="job-description">工作內容
+                    <li style="margin-top: 5px;">123...</li>
+                </div>
 
-        ?>
-        <p>工作內容:</p><?echo $company_content;?>
+                <div class="job-description">工作資訊
+                    <li>
+                        <img src="../../image/clock.svg"></img>
+                        <p>上班時段：</p><span style="color: #007cff">時段</span>
+                    </li>
+                    <li>
+                        <img src="../../image/coin.svg"></img>
+                        <p>工作待遇：</p><span style="color: #8b00ff">2000</span>
+                    </li>
+                    <li>
+                        <img src="../../image/briefcase.svg"></img>
+                        <p>職務類別：</p><span>123</span>
+                    </li>
+                    <li>
+                        <img src="../../image/geo-alt.svg"></img>
+                        <p>上班地點：</p><span>123</span>
+                    </li>
+                </div>
+
+                <div class="job-description">要求條件
+                    <!-- <br> -->
+                    <li>
+                        <p>工作經驗：</p><span></span>
+                    </li>
+                    <li>
+                        <p> 學歷限制：</p><span></span>
+                    </li>
+                    <li>
+                        <p>條件限制：</p><span></span>
+                    </li>
+                </div>
+
+                <div class="job-description">公司福利
+                    <li>員工保險：</li>
+                </div>
+            </div>
+            <div class="bottom_row">
+                <a class="btn" href="#">我要應徵</a>
+            </div>
+
+
+        </div>
+
+
+        <!-- 工作內容
+                1.協助編寫 design flow script / IC tape-out QC flow script。
+                2.了解整個IC design及tape-out 的流程。
+
+                職務類別
+                電子工程師、半導體工程師
+
+                工作待遇
+                待遇面議（經常性薪資達 4 萬元或以上）
+
+                工作性質
+                全職
+
+                上班地點
+                新竹市東區力行路9號 (新竹科學園區)
+
+                管理責任
+                不需負擔管理責任
+
+                出差外派
+                無需出差外派
+
+                上班時段
+                日班，08:30~17:30
+
+                休假制度
+                週休二日
+
+                可上班日
+                不限
+
+                需求人數
+                1人 -->
+
+
+    </div> <!-- content -->
+    <?php
+
+
+
+    ?>
     </div> <!-- wrap -->
 
 
     <script src="../../js/jquery-3.6.0.min.js"></script>
     <script src="../../js/index.js"></script>
+    <script src="../../bootstrap-5.2.0-beta1-dist//js/bootstrap.min.js"></script>
 </body>
 
 </html>

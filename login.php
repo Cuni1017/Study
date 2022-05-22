@@ -18,7 +18,7 @@
             <!-- 註冊 提交 -->
             <div class="bottom_row">
                 <a href="register_select.php">註冊</a>
-                <input class="Submit_button " type="submit" value="提交" />
+                <input class="submit_button " type="submit" value="提交" />
             </div>
 
             <!-- 回首頁 -->

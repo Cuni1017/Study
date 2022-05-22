@@ -3,9 +3,10 @@
 <head>
     <link rel="stylesheet" href="../../style/css/style.css">
     <link rel="stylesheet" href="../../style/css/account.css">
+
 </head>
 
-<body>
+<body style="height: 1500px">
 
     <form method="post" action="company_verification.php">
         <?php /*
@@ -30,10 +31,6 @@
                 <li>
                     <label for="compamny_name">公司名稱</label>
                     <input type="text" name="company_name" class="Account_text" style="width: 500px" placeholder="請輸入您的公司名稱">
-                </li>
-                <li class="li-inline" style="margin-left: -25px">
-                    <label calss="" for="company_title">行業大綱</label>
-                    <input type="text" name="company_title" class="Account_text" placeholder="請輸入公司行業類別">
                 </li>
                 <li class="li-inline" style="margin-left: -25px">
                     <label calss="" for="company_type">行業類別</label>
@@ -100,7 +97,7 @@
             <!-- <input type="submit" value="新增公司"> -->
             <!-- 登入 提交 -->
             <div class="bottom_row">
-                <input class="Submit_button" type="submit" value="提交" />
+                <input class="submit_button" type="submit" value="提交" />
             </div>
             <!-- 回登入 回首頁 -->
             <a href="../../register_select.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>

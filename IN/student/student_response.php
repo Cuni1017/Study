@@ -19,9 +19,9 @@
 
 <body>
     <div id="wrap">
-<?php
-    $user_id = @$_GET["user_id"];
-    ?>
+        <?php
+        $user_id = @$_GET["user_id"];
+        ?>
 
         <div id="header">
             <div id="LogoBox">
@@ -31,7 +31,7 @@
 
 
             <div id="UserBox">
-                <p>您好 XXX</p>
+                <p>您好 XXX</p> <span>登出</span>
             </div>
 
         </div>
@@ -58,11 +58,11 @@
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
-                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
-                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">>實習應徵</a></li>
-                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
-                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=" . $user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=" . $user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=" . $user_id ?>">實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=" . $user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=" . $user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
 

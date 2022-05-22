@@ -29,7 +29,6 @@ html,body
     height: 100%
     margin: 0px
     background: radial-gradient(ellipse at center, #CBCBD4 0%, #e5e9ec 100%)
-    display: flex
 
 .AccountBox
     +center
@@ -44,7 +43,7 @@ html,body
     align-items: center
     h1
         font-size: 50px
-    a
+    a //註冊
         margin-left: 120px
         font-size: 18px
         color: #888
@@ -53,7 +52,7 @@ html,body
     .Loginsection
         display: inline-flex
         flex-direction: column
-        a
+        a //忘記密碼
             margin-right: 10px
             color: #888
             align-self: flex-end
@@ -82,7 +81,7 @@ html,body
     border: solid 1px #dde0e7
     background: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
 
-    .Submit_button
+    .submit_button
         +center
         font-size: 20px
         font-weight: 500
@@ -112,7 +111,8 @@ html,body
 // CPN_register.php
 .CPN_RegisterBox
     margin-top: 300px
-    margin-bottom: 300px
+    position: absolute
+    bottom: 600px
     width: 900px
     height: 1300px
     h3

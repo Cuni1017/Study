@@ -25,7 +25,6 @@
             require '../../PHPMailer-master/src/SMTP.php';
 
             $company_name = @$_POST["company_name"];
-            $company_title = @$_POST["company_title"];
             $company_username = @$_POST["company_username"];
             $company_password = @$_POST["company_password"];
             $company_number = @$_POST["company_number"];
@@ -44,7 +43,7 @@
             $level = "3";
             $sql = "SELECT * FROM `login` where `username` ='" . $company_username . "'";
             $sql = "SELECT * FROM `login` where `company_name` ='" . $company_name. "'";
-            if ($company_name == "" || $company_title == "" || $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
+            if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
             } elseif ($con->query($sql)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
@@ -138,9 +137,9 @@
                 $sql = ("SET NAMES 'UTF8'");
                 $total = $con->query($sql);
 
-                $sql = "INSERT INTO `company`(`company_id`, `company_name`,`company_title`,`company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO `company`(`company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $stmt = $con->prepare($sql);
-                $stmt->bind_param("ssssissssssssssss", $com_num, $company_name,$company_title, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
+                $stmt->bind_param("ssssissssssssssss", $com_num, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
                 $stmt->execute();
 
                 $sql = ("SET NAMES 'UTF8'");

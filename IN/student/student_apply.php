@@ -36,7 +36,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             </div>
 
             <div id="UserBox">
-                <p>您好 XXX</p>
+                <p>您好 XXX</p> <span>登出</span>
             </div>
 
         </div>
@@ -63,11 +63,11 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
-                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
-                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">>實習應徵</a></li>
-                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
-                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=" . $user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=" . $user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=" . $user_id ?>">實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=" . $user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=" . $user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
                 <!-- CPN -->
@@ -109,21 +109,20 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <div class="news">
                 <?php while ($stmt->fetch()) { ?>
                     <div class="newscont">
-                        <!-- <a href="https://www.facebook.com/AIESECGlobalTalent.Taiwan/"> -->
                         <div class="news_img">
                             <img style="width: 500px;" src="../../image/content2.jpg"></img>
                         </div>
                         <div class="news_t">
                             <p><?php echo $company_name ?></p>
                         </div>
-                        <a class="moreINFO_btn" href="student_apply_for.php?user_id=<?=$user_id?>&company_id=<?=$company_id?>">➤</a>
-                        <!-- </a> -->
+                        <a class="moreINFO_btn" href="student_apply_for.php?user_id=<?= $user_id ?>&company_id=<?= $company_id ?>">更多資訊</a>
                     </div>
-                    <!-- </ul> -->
                 <?php } ?>
             </div>
+        </div>
 
-        </div> <!-- content -->
+
+    </div> <!-- content -->
     </div> <!-- wrap -->
 
 
