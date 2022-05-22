@@ -42,7 +42,7 @@
             echo $company_email;
             $level = "3";
             $sql = "SELECT * FROM `login` where `username` ='" . $company_username . "'";
-            $sql = "SELECT * FROM `login` where `company_name` ='" . $company_name. "'";
+            $sql1 = "SELECT * FROM `login` where `company_name` ='" . $company_name. "'";
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");

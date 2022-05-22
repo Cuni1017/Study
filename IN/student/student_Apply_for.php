@@ -135,7 +135,7 @@ $test_company_id = @$_GET["company_id"];
                 </div>
             </div>
             <div class="bottom_row">
-                <a class="btn" href="#">我要應徵</a>
+                <a class="btn" href="student_email_controll.phpe?company_id=<?=$company_id?>&user_id=<?=$user_id?>">我要應徵</a>
             </div>
 
 

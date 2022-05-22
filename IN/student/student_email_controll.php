@@ -20,6 +20,7 @@
 <body>
 <?php require_once "user_connect.php";
 $user_id = @$_GET["user_id"];
+$company_id= @$_GET["company_id"];
 ?>
     <div id="wrap">
 
@@ -108,6 +109,8 @@ $user_id = @$_GET["user_id"];
             <textarea name="email_content"  rows="5" cols="33"></textarea>
             <label for="email_content">email 內容填寫 </label>
             <br>
+            <inuput type = hidden name ="user_id" value = "<?=$user_id?>">
+            <inuput type = hidden name ="company_id" value = "<?=$company_id?>">
             <input type = "submit"  value = "送出">
 
 
