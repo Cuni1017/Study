@@ -21,18 +21,20 @@
   box-sizing: border-box;
 }
 
-#content .news .newscont .moreINFO_btn {
+#content .news .newscont a {
   position: absolute;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0px;
   border: solid 1px;
-  border-radius: 100%;
-  width: 45px;
+  border-radius: 10px;
   cursor: pointer;
+  padding: 5px;
+  font-size: 24px;
+  text-decoration: none;
 }
 
-#content .news .newscont .moreINFO_btn:hover {
+#content .news .newscont a:hover {
   background-color: #ddd;
 }
 
@@ -55,5 +57,65 @@
   line-height: 25px;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+#job_Content {
+  background-color: #fff;
+  padding: 0px 40px;
+  margin-top: 50px;
+  width: 900px;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px;
+}
+
+#job_Content .job-description {
+  margin-bottom: 40px;
+  display: block;
+  font-size: 24px;
+}
+
+#job_Content .job-description li {
+  opacity: .8;
+  height: 50px;
+  line-height: 40px;
+  display: block;
+  list-style: none;
+  margin-left: 20px;
+  font-weight: 300;
+}
+
+#job_Content .job-description img {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+#job_Content .job-description p {
+  opacity: .8;
+  line-height: 40px;
+  font-weight: 300;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.bottom_row {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f0f5f8;
+  border: solid 1px;
+}
+
+.bottom_row .btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  padding: 5px;
 }
 /*# sourceMappingURL=student.css.map */

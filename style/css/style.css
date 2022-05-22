@@ -46,6 +46,13 @@ html, body {
   margin-top: 5px;
 }
 
+#header #UserBox p {
+  display: inline-block;
+  border-right: solid 1px;
+  margin-right: 5px;
+  padding-right: 10px;
+}
+
 #header #UserBox .button {
   position: relative;
   display: inline-flex;

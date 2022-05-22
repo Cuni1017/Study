@@ -85,3 +85,4 @@ $(function(){
 
 
 
+document.write("<script language=javascript src="+"../"+"></script>")
