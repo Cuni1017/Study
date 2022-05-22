@@ -16,11 +16,11 @@
     <link rel="stylesheet" href="../../style/css/style.css">
     <link rel="stylesheet" href="../../style/css/student.css">
 </head>
-<?php require_once "user_connect.php";
-$user_id= @$_GET["user_id"];
-$test_company_id= @$_GET["company_id"];
-?>
+
 <body>
+<?php require_once "user_connect.php";
+$user_id = @$_GET["user_id"];
+?>
     <div id="wrap">
 
         <div id="header">
@@ -65,7 +65,29 @@ $test_company_id= @$_GET["company_id"];
                         <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
+                <!-- CPN -->
+                <div class="CPN">
+                    <ul id="CPN">
+                        <li><a href="#CPN01">廠商申請辦法</a></li>
+                        <li><a href="#CPN02">實習進度公告</a></li>
+                        <li><a href="#CPN03">學生意見反應</a></li>
+                        <li><a href="#CPN04">專案表單</a></li>
+                        <li><a href="#CPN05">雇主滿意度調查</a></li>
+                    </ul>
 
+                </div>
+                <!-- TCH -->
+                <div class="TCH">
+                    <ul id="TCH">
+                        <li><a href="#TCH01">實習進度公告</a></li>
+                        <li><a href="#TCH02">實習職務列表</a></li>
+                        <li><a href="#TCH03">實習課程/專案</a></li>
+                        <li><a href="#TCH04">教師訪視紀錄</a></li>
+                        <li><a href="#TCH05">學生意見反應處理</a></li>
+                        <li><a href="#TCH06">專案表單</a></li>
+                    </ul>
+
+                </div>
                 <!-- US -->
                 <div class="US">
                     <ul id="US">
@@ -78,20 +100,18 @@ $test_company_id= @$_GET["company_id"];
         </div> <!-- mainNav  -->
 
         <div id="content">
-            <h1>實習應徵方法</h1>
-            <div class="text"></div>
+            <h1>實習報告</h1>
 
         </div> <!-- content -->
-        <?php
-        require_once "user_connect.php";
-        $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` where `company_id` ='".$test_company_id."'";
-        $stmt = $con->prepare($sql);
-        $stmt->execute();
-        $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
-        $num = $stmt->fetch();
+        <form method="POST" action = "student_email_go.php">
+            
+            <textarea name="email_content"  rows="5" cols="33"></textarea>
+            <label for="email_content">email 內容填寫 </label>
+            <br>
+            <input type = "submit"  value = "送出">
 
-        ?>
-        <p>工作內容:</p><?echo $company_content;?>
+
+        </form>
     </div> <!-- wrap -->
 
 

@@ -116,7 +116,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                         <div class="news_t">
                             <p><?php echo $company_name ?></p>
                         </div>
-                        <a class="moreINFO_btn" href="student_applyfor.php?user_id=<?=$user_id?>&company_id=<?=$company_id?>">➤</a>
+                        <a class="moreINFO_btn" href="student_apply_for.php?user_id=<?=$user_id?>&company_id=<?=$company_id?>">➤</a>
                         <!-- </a> -->
                     </div>
                     <!-- </ul> -->

@@ -32,6 +32,10 @@
                     <input type="text" name="company_name" class="Account_text" style="width: 500px" placeholder="請輸入您的公司名稱">
                 </li>
                 <li class="li-inline" style="margin-left: -25px">
+                    <label calss="" for="company_title">行業大綱</label>
+                    <input type="text" name="company_title" class="Account_text" placeholder="請輸入公司行業類別">
+                </li>
+                <li class="li-inline" style="margin-left: -25px">
                     <label calss="" for="company_type">行業類別</label>
                     <input type="text" name="company_type" class="Account_text" placeholder="請輸入公司行業類別">
                 </li>
