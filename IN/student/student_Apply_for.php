@@ -19,7 +19,7 @@
 </head>
 <?php require_once "user_connect.php";
 $user_id = @$_GET["user_id"];
-$company_id = @$_GET["company_id"];
+$test_company_id = @$_GET["company_id"];
 ?>
 
 <body>
@@ -78,52 +78,60 @@ $company_id = @$_GET["company_id"];
                 </div>
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
-
+        <?php 
+        $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` where `company_id` = '".$test_company_id."' ";
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
+        while($stmt->fetch()){
+        
+        
+        ?>
         <div id="content" style="background-color: #ddd">
             <div class="job_Navigationbar"></div>
             <h1>徵才標題</h1>
             <div id="job_Content">
-                <div class="job-description" style="text-align: center; font-size: 40px;">公司名稱
+                <div class="job-description" style="text-align: center; font-size: 40px;"><?echo $company_name?>
                 </div>
 
                 <div class="job-description">工作內容
-                    <li style="margin-top: 5px;">123...</li>
+                    <li style="margin-top: 5px;"><?echo $company_content?></li>
                 </div>
 
                 <div class="job-description">工作資訊
                     <li>
                         <img src="../../image/clock.svg"></img>
-                        <p>上班時段：</p><span style="color: #007cff">時段</span>
+                        <p>上班時段：</p><span style="color: #007cff"><?echo $company_time?></span>
                     </li>
                     <li>
                         <img src="../../image/coin.svg"></img>
-                        <p>工作待遇：</p><span style="color: #8b00ff">2000</span>
+                        <p>工作待遇：</p><span style="color: #8b00ff"><?echo $company_money?></span>
                     </li>
                     <li>
                         <img src="../../image/briefcase.svg"></img>
-                        <p>職務類別：</p><span>123</span>
+                        <p>職務類別：</p><span><?echo $company_type?></span>
                     </li>
                     <li>
                         <img src="../../image/geo-alt.svg"></img>
-                        <p>上班地點：</p><span>123</span>
+                        <p>上班地點：</p><span><? echo $company_place?></span>
                     </li>
                 </div>
 
                 <div class="job-description">要求條件
                     <!-- <br> -->
                     <li>
-                        <p>工作經驗：</p><span></span>
+                        <p>工作經驗：</p><span><? echo $company_work_experience?></span>
                     </li>
                     <li>
-                        <p> 學歷限制：</p><span></span>
+                        <p>學歷限制：</p><span><? echo $company_Education?></span>
                     </li>
                     <li>
-                        <p>條件限制：</p><span></span>
+                        <p>科系限制：</p><span><? echo $company_department?></span>
                     </li>
                 </div>
 
                 <div class="job-description">公司福利
-                    <li>員工保險：</li>
+                    <li>員工保險：<span><? echo $company_safe?></span></li>
                 </div>
             </div>
             <div class="bottom_row">
@@ -132,7 +140,7 @@ $company_id = @$_GET["company_id"];
 
 
         </div>
-
+        <? } ?>
 
         <!-- 工作內容
                 1.協助編寫 design flow script / IC tape-out QC flow script。
