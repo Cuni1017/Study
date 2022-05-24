@@ -110,7 +110,7 @@
                             <br>
                         </div>
                         <div class="content">
-                            <p>內容</p><textarea name="" id="" cols="30" rows="10"></textarea>
+                            <p>內容</p><textarea name="content" id="" cols="30" rows="10"></textarea>
                             <input type="submit" value="送出">
                         </div>
                     </form>
