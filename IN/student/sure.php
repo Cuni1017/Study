@@ -41,7 +41,7 @@
             $stmt=$con->prepare($sql2);
             $stmt->bind_param('ssss',$id,$username,$password,$one);
             $stmt->execute();
-            header("Refresh:3;url=login.php");
+            header("Refresh:3;url=../../login.php");
         }
         elseif($verification_button != $ram_num){
             echo "驗證瑪輸入錯誤,請回註冊頁面重新登入";

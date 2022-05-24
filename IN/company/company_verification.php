@@ -42,7 +42,7 @@
             echo $company_email;
             $level = "3";
             $sql = "SELECT * FROM `login` where `username` ='" . $company_username . "'";
-            $sql1 = "SELECT * FROM `login` where `company_name` ='" . $company_name. "'";
+            $sql1 = "SELECT * FROM `company` where `company_name` ='" . $company_name. "'";
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
@@ -96,7 +96,7 @@
                 $mail->Port = 465; //Gamil的SMTP主機的埠號(Gmail為465)。
                 $mail->CharSet = "utf-8"; //郵件編碼
                 $mail->Username = "mikeliu20010106@gmail.com"; //Gamil帳號
-                $mail->Password = "1qaz2wsx3edc4rfv5tgb"; //Gmail密碼
+                $mail->Password = "mikeliu900106"; //Gmail密碼
                 $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->FromName = "liu mike"; //寄件者姓名
                 $mail->AddAddress($company_email); //收件者郵件及名稱
