@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <meta charset="UTF-8" />
     <!--網頁利用UTF-8編碼方式 才能顯示中文-->
     <!--<meta charset="UTF-8"></meta> 因為meta中間無內容,</meta>可省略-->
@@ -79,7 +78,43 @@
 
         <div id="content">
             <h1>實習應徵方法</h1>
-            <div class="text">透過履歷維護先行上傳履歷，再利用實習應徵功能發送履歷至心儀的公司</div>
+            <div id="methodBox">
+                <h2>實習流程申請</h2><br>
+                <div class="process">
+                    <li class="step">
+                        <h3>Step1</h3>
+                        <hr>
+                        <p class="action">點擊"履歷維護"</p>
+                        <p>上傳PDF履歷、編輯自我介紹</p>
+                    </li>
+                    <li class="step">
+                        <h3>Step2</h3>
+                        <hr>
+                        <p class="action">點擊"實習應徵"</p>
+                        <p>觀看各廠商的徵才資訊</p>
+                    </li>
+                    <li class="step">
+                        <h3>Step3</h3>
+                        <hr>
+                        <p class="action">點擊"更多資訊"</p>
+                        <p>了解廠商的詳細資料</p>
+                    </li>
+                    <li class="step">
+                        <h3>Step4</h3>
+                        <hr>
+                        <p class="action">點擊"我要應徵"</p>
+                        <p>將履歷寄信至廠商</p>
+                    </li>
+                    <li class="step">
+                        <h3>完成 !</h3>
+                    </li>
+                </div>
+
+                <h2>實習權益</h2><br>
+                <div class="info">
+                    <p>實習權益請至 <a href="https://intern2.pccu.edu.tw/">https://intern2.pccu.edu.tw/</a></p>
+                </div>
+            </div>
 
         </div> <!-- content -->
     </div> <!-- wrap -->

@@ -76,11 +76,11 @@
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
 
-        <div id="content">
+        <div id="content" style="height: 1300px;">
             <h1>意見反應</h1>
 
             <div class="messageboard">
-                <div class="post">
+                <div id="responseBox">
                     <ul>
                         <?php
                         include "../../user_connect.php";
@@ -102,10 +102,17 @@
                     </ul>
 
                     <form class="leavecomment" action="student_response_input.php" method="post">
-                        作者<input name="maker" type="text">
-                        大綱<input name="subject" type="text">
-                        內容<input name="content" type="text">
-                        <input type="submit" value="送出">
+                        <div class="author">
+                            <p>作者</p><input name="maker" type="text">
+                        </div>
+                        <div class="gist">
+                            <p>主旨</p><input name="subject" type="text">
+                            <br>
+                        </div>
+                        <div class="content">
+                            <p>內容</p><textarea name="" id="" cols="30" rows="10"></textarea>
+                            <input type="submit" value="送出">
+                        </div>
                     </form>
                 </div>
             </div> <!-- content -->

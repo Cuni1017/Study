@@ -103,6 +103,7 @@ html,body
     background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%)
     background-color: #ededed
     border: 1px solid #dcdcdc
+    font-weight: 400
     color: #777777
     text-shadow: 0px 1px 0px #ffffff
     &:hover
@@ -138,22 +139,28 @@ html,body
         list-style: none
         cursor: pointer
         font-weight: bold
+        display: flex
+        // border-radius: 10px
+        padding: 10px
         &:hover
             background-color: #4b8eda
             transition: all 0.5s
             a
                 color: #fff
     a
+        display: inline-flex
+        justify-content: center
+        align-items: center
         color: #4b5b6a
         text-decoration: none
         text-align: center
         img
             width: 50px
-            margin-top: 8px
         .Topactive
             background-color: #4b8eda
             transition: all 0.5s
         span
+            margin-left: 10px
 
 #mainNavCon
     ul
@@ -162,20 +169,18 @@ html,body
         margin: 0px
         display: flex
         // justify-content: center
-
     ul li
         margin: 0px
         // height: 100%
         border-right: solid 1px #ddd
         // border-left: solid 1px #ddd
-        display: inline-flex
         // margin-left: 50px
         align-items: stretch
         left: 50px
         padding-top: 20px
         padding-bottom: 20px
         cursor: pointer
-
+        list-style: none
         &:hover
             border-bottom: solid 5px #2274d3
             padding-bottom: 5px

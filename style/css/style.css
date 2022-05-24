@@ -120,6 +120,7 @@ html, body {
   background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
   background-color: #ededed;
   border: 1px solid #dcdcdc;
+  font-weight: 400;
   color: #777777;
   text-shadow: 0px 1px 0px #ffffff;
 }
@@ -160,6 +161,8 @@ html, body {
   list-style: none;
   cursor: pointer;
   font-weight: bold;
+  display: flex;
+  padding: 10px;
 }
 
 #mainNavTop ul li:hover {
@@ -172,6 +175,9 @@ html, body {
 }
 
 #mainNavTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   color: #4b5b6a;
   text-decoration: none;
   text-align: center;
@@ -179,12 +185,15 @@ html, body {
 
 #mainNavTop a img {
   width: 50px;
-  margin-top: 8px;
 }
 
 #mainNavTop a .Topactive {
   background-color: #4b8eda;
   transition: all 0.5s;
+}
+
+#mainNavTop a span {
+  margin-left: 10px;
 }
 
 #mainNavCon ul {
@@ -196,12 +205,12 @@ html, body {
 #mainNavCon ul li {
   margin: 0px;
   border-right: solid 1px #ddd;
-  display: inline-flex;
   align-items: stretch;
   left: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
   cursor: pointer;
+  list-style: none;
 }
 
 #mainNavCon ul li:hover {

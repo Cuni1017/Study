@@ -18,10 +18,9 @@
 </head>
 
 <body>
-<?php require_once "user_connect.php";
-$user_id = @$_GET["user_id"];
-$company_id= @$_GET["company_id"];
-?>
+    <?php require_once "user_connect.php";
+    $user_id = @$_GET["user_id"];
+    ?>
     <div id="wrap">
 
         <div id="header">
@@ -59,11 +58,11 @@ $company_id= @$_GET["company_id"];
                 <!-- STU -->
                 <div class="STU">
                     <ul id="STU">
-                        <li><a href="<?php echo "student_method.php?user_id=".$user_id ?>">申請辦法</a></li>
-                        <li><a href="<?php echo "student_resume.php?user_id=".$user_id ?>">履歷維護</a></li>
-                        <li><a href="<?php echo "student_apply.php?user_id=".$user_id ?>">實習應徵</a></li>
-                        <li><a href="<?php echo "student_report.php?user_id=".$user_id ?>">繳交實習報告</a></li>
-                        <li><a href="<?php echo "student_response.php?user_id=".$user_id ?>">學生意見反應</a></li>
+                        <li><a href="<?php echo "student_method.php?user_id=" . $user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "student_resume.php?user_id=" . $user_id ?>">履歷維護</a></li>
+                        <li><a href="<?php echo "student_apply.php?user_id=" . $user_id ?>">實習應徵</a></li>
+                        <li><a href="<?php echo "student_report.php?user_id=" . $user_id ?>">繳交實習報告</a></li>
+                        <li><a href="<?php echo "student_response.php?user_id=" . $user_id ?>">學生意見反應</a></li>
                     </ul>
                 </div>
                 <!-- CPN -->
@@ -73,7 +72,6 @@ $company_id= @$_GET["company_id"];
                         <li><a href="#CPN02">實習進度公告</a></li>
                         <li><a href="#CPN03">學生意見反應</a></li>
                         <li><a href="#CPN04">專案表單</a></li>
-                        <li><a href="#CPN05">雇主滿意度調查</a></li>
                     </ul>
 
                 </div>
@@ -100,21 +98,27 @@ $company_id= @$_GET["company_id"];
             </div> <!-- mainNavCon -->
         </div> <!-- mainNav  -->
 
-        <div id="content">
-            <h1>實習報告</h1>
+        <div id="content" style="background-color: #ddd">
+            <h1>寄出履歷</h1>
+            <form method="POST" action="student_email_go.php">
+                <div id="emailBox">
+                    <div class="Towho">
+                        <p>公司：</p><span>公司名稱</span><br>
+                        <p>信箱：</p><span><input type="email" value="service@company.com"></span>
+                    </div>
+                    <div class="Content">
+                        <label for="email_content">Email 內容填寫：</label><br><br>
+                        <textarea name="email_content"></textarea>
+                        <input type="file">
+                        <br>
+                    </div>
+                    <input type="submit" class="btn" value="寄出">
+                </div>
+
+            </form>
 
         </div> <!-- content -->
-        <form method="POST" action = "student_email_go.php">
-            
-            <textarea name="email_content"  rows="5" cols="33"></textarea>
-            <label for="email_content">email 內容填寫 </label>
-            <br>
-            <inuput type = hidden name ="user_id" value = "<?=$user_id?>">
-            <inuput type = hidden name ="company_id" value = "<?=$company_id?>">
-            <input type = "submit"  value = "送出">
 
-
-        </form>
     </div> <!-- wrap -->
 
 

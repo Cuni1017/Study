@@ -10,7 +10,7 @@
     <meta name="keywords" content="專題,企業實習,測試" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--width=device-width 根據瀏覽的裝置大小做畫面調整,initial-scale=1.0 初始縮放比為100%-->
-    <link rel="stylesheet" href="style/css/index.css">
+    <link rel="stylesheet" href="style/css/index1.css">
     <link rel="stylesheet" href="style/css/style.css">
     <title>文化大學企業實習媒合網站</title>
 </head>
@@ -148,7 +148,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                             <h5><?php echo $company_name ?></h5>
                             <p></p>
                         </div>
-                        <div class="moreINFO_btn">更多資訊</div>
+                        <a href="login.php"><img src="image/info-circle.svg" class="moreInfobtn"></a>
                     </div>
                 <?php } ?>
             </div>
