@@ -101,7 +101,14 @@
             <h1>履歷維護</h1>
             <!-- <input type="file" id="file-uploader"> -->
 
+            <form action="student_upload.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="fileUpload" />
+                <input type="hidden" name="user_id" value ="<?=$user_id ?>">
+                <input type="submit" value="上传" />
+            </form>
         </div> <!-- content -->
+        
+
     </div> <!-- wrap -->
 
 

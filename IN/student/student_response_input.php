@@ -20,16 +20,16 @@ if ($maker == "" && $subject == "" &&  $content == "") {
     echo "全部沒填,五秒後返回註冊畫面";
    //header("Refresh:5;url=student_response.php");
 } elseif ($subject == "" && $content == "") {
-    echo "大綱和內容都為空,五秒後返回心得填寫畫面";
+    echo "大綱和內容都為空,五秒後返回學生意見反映畫面";
     //header("Refresh:5;url=student_response.php");
 } elseif ($maker == "") {
-    echo "作者不得為空,五秒後返回心得填寫畫面";
+    echo "作者不得為空,五秒後返回學生意見反映畫面";
     //header("Refresh:5;url=student_response.php");
 } elseif ($subject == "") {
-    echo "大綱不得為空,五秒後返回心得填寫畫面";
+    echo "大綱不得為空,五秒後返回學生意見反映畫面";
     //header("Refresh:5;url=student_response.php");
 } elseif ($content == "") {
-    echo "內容不得為空,五秒後返回心得填寫畫面";
+    echo "內容不得為空,五秒後返回學生意見反映畫面";
     //header("Refresh:5;url=student_response.php");
 } else //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
 {
