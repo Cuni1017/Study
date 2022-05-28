@@ -1,5 +1,8 @@
-#content {
-  height: 900px;
+#newBox {
+  max-width: 1248px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #applyBox {
@@ -62,11 +65,16 @@
 }
 
 #responseBox ul li {
+  background-color: #DCE8F1;
   list-style: none;
   border: solid 1px;
   line-height: 25px;
-  padding: 10px;
   margin-bottom: 10px;
+}
+
+#responseBox ul li div {
+  padding: 2px;
+  margin-right: 10px;
 }
 
 #responseBox .leavecomment {
@@ -98,6 +106,7 @@
 
 #responseBox .leavecomment .author input[type="text"], #responseBox .leavecomment .gist input[type="text"] {
   width: 90%;
+  height: 20px;
   max-width: 500px;
   margin: 10px;
 }
@@ -214,6 +223,83 @@
   right: 30px;
   bottom: 0px;
   font-size: 20px;
+}
+
+#resumeBox {
+  background-color: #ddd;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 10px;
+  height: auto;
+  min-height: 900px;
+  border: solid 1px;
+}
+
+#resumeBox .profile {
+  background-color: #fff;
+  border: solid 1px #DCE8F1;
+  display: inline-block;
+}
+
+#resumeBox .profile .profile-info-row {
+  display: flex;
+  margin: 5px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-name {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  width: 150px;
+  background-color: #DCE8F1;
+  padding: 5px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-name p {
+  margin: 0px;
+  letter-spacing: 0.5em;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #DCE8F1;
+  width: 350px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value input {
+  flex: 1;
+  height: 100%;
+  color: black;
+  border: none;
+  font-size: 16px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value select {
+  flex: 1;
+  height: 100%;
+  font-size: 16px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value span {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #72828a;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value .erTWZipcode select {
+  margin-bottom: 3px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value .erTWZipcode #address {
+  width: 99%;
+  height: 30px;
 }
 
 #methodBox {

@@ -2,17 +2,8 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <!--網頁利用UTF-8編碼方式 才能顯示中文-->
-    <meta name="description" content="文化大學企業實習媒合網站" />
-    <!--讓搜尋引擎更了解這個網站的內容-->
-    <meta name="author" content="Cuni" />
-    <meta name="keywords" content="專題,企業實習,測試" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--width=device-width 根據瀏覽的裝置大小做畫面調整,initial-scale=1.0 初始縮放比為100%-->
-    <link rel="stylesheet" href="style/css/index1.css">
-    <link rel="stylesheet" href="style/css/style.css">
-    <title>文化大學企業實習媒合網站</title>
+    <link rel="stylesheet" href="style/css/index.css">
+    <?php include 'header.php'; ?>
 </head>
 <?php require_once "user_connect.php";
 $sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
@@ -202,8 +193,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
         </div> -->
 
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/index.js"></script>
 </body>
 
 </html>

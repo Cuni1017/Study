@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <form action="verification.php" method="post">
+    <form action="student_verification.php" method="post">
         <div class="AccountBox">
             <h1>學生註冊</h1>
             <!-- 註冊資料輸入欄 -->

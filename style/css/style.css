@@ -200,6 +200,7 @@ html, body {
   background-color: #fff;
   margin: 0px;
   display: flex;
+  border-bottom: solid 1px;
 }
 
 #mainNavCon ul li {
@@ -227,7 +228,6 @@ html, body {
 
 #content {
   width: 100%;
-  border-top: solid 1px;
 }
 
 #content h1 {

@@ -19,7 +19,7 @@
     $stmt->fetch();
     echo $username;
     echo $password;
-    
+
     $user_id = $id;
     if (($test_password) == "" && ($test_username) == "") {
         echo "帳號密碼沒寫,兩秒後返回登入畫面";
@@ -40,13 +40,13 @@
 
         switch ($level) {
             case 1:
-                header('location:IN/student/student_index.php?user_id='.$user_id);
+                header('location:IN\student\student_method.php?user_id=' . $user_id);
                 break;
             case 2:
-                header("location:IN/student/teacher_index.php?user_id=".$user_id);
+                header("location:IN/student/teacher_index.php?user_id=" . $user_id);
                 break;
             case 3:
-                header("location:IN/student/company_index.php?user_id=".$user_id);
+                header("location:IN/student/company_index.php?user_id=" . $user_id);
                 break;
         }
     }

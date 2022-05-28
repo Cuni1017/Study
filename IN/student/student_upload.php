@@ -1,16 +1,16 @@
 <?php
 echo $_FILES["fileUpload"]["tmp_name"];
 
-$uploadfile = iconv("utf-8", "big5",$_FILES["fileUpload"]["name"]);
+$uploadfile = iconv("utf-8", "big5", $_FILES["fileUpload"]["name"]);
 
-if($_FILES["fileUpload"]["error"]==0){
-    
-    if(move_uploaded_file($_FILES["fileUpload"]["tmp_name"], "C:/staff_mysql/origin/upload/".$uploadfile)){
+if ($_FILES["fileUpload"]["error"] == 0) {
+
+    if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], "C:/staff_mysql/origin/upload/" . $uploadfile)) {
         echo "上傳成功<br />";
-        echo "檔案名稱：".$_FILES["fileUpload"]["name"]."<br />";
-        echo "檔案類型：".$_FILES["fileUpload"]["type"]."<br />";
-        echo "檔案大小：".$_FILES["fileUpload"]["size"]."<br />";
-    }else{
+        echo "檔案名稱：" . $_FILES["fileUpload"]["name"] . "<br />";
+        echo "檔案類型：" . $_FILES["fileUpload"]["type"] . "<br />";
+        echo "檔案大小：" . $_FILES["fileUpload"]["size"] . "<br />";
+    } else {
         echo "上傳失敗! ";
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     }
@@ -53,4 +53,3 @@ $sql = "insert into wenjian values('','{$uid}','{$urls}','{$times}','{$name}')";
  
 $db->Query($sql,0);
  */
-?>

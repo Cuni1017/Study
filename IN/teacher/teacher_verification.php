@@ -1,16 +1,17 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../../style/css/register.css">
+    <link rel="stylesheet" href="../../style/css/account.css">
+    <link rel="stylesheet" href="../../style/css/style.css">
 </head>
 
 <body>
     <form action="teacher_signup_sure.php" method="POST">
 
-        <div class="RegisterBox">
+        <div class="accountBox">
             <h1 class="" style="font-size: 50px">Register</h1>
             <div class="verification">
-                <input class="Register_text" type="text" placeholder="驗證碼" name="verification_button" style="width: 300px; margin-left: -5px;" />
+                <input class="account_text" type="text" placeholder="驗證碼" name="verification_button" style="width: 300px; margin-left: -5px;" />
 
             </div>
             <?php
@@ -24,32 +25,31 @@
             require '../../PHPMailer-master/src/PHPMailer.php';
             require '../../PHPMailer-master/src/SMTP.php';
 
-
             $teacher_username = @$_POST["teacher_username"];
             $teacher_password = @$_POST["teacher_password"];
             $teacher_real_name = @$_POST["teacher_real_name"];
             $teacher_email = @$_POST["teacher_email"];
             echo $teacher_email;
             $sql = " select count( * ) as num from company";
-                $stmt = $con->prepare($sql);
-                $stmt->execute();
-                $today = date("Ynj");
-                $num = $stmt->get_result()->fetch_assoc();
-                $row_num = $num["num"];
-                $com_num = "T" . (($today * 10000) + ($row_num + 1));
-                echo $com_num;
+            $stmt = $con->prepare($sql);
+            $stmt->execute();
+            $today = date("Ynj");
+            $num = $stmt->get_result()->fetch_assoc();
+            $row_num = $num["num"];
+            $com_num = "T" . (($today * 10000) + ($row_num + 1));
+            echo $com_num;
             $level = "2";
-            $sql = "SELECT * FROM `login` where `username` ='".$teacher_username."'";
+            $sql = "SELECT * FROM `login` where `username` ='" . $teacher_username . "'";
             if ($teacher_username == "" ||  $teacher_password == "" || $teacher_real_name == "" || $teacher_email == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
-                //header("Refresh:5;url=teacher_signup.php");
+                header("Refresh:5;url=teacher_signup.php");
             } elseif ($con->query($sql)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
                 echo "使用者名稱已存在,三秒後版回註冊畫面，請重新註冊！";
 
                 echo "<a href=teacher_signup.php>[註冊]<br></a>";
-               // header("Refresh:3;url=teacher_signup.php");
+                header("Refresh:3;url=teacher_signup.php");
             }
             function codestr()
             {
@@ -63,10 +63,6 @@
                 }
                 return $res;
             }
-
-
-
-
 
             $mail = new PHPMailer(true);       // Passing `true` enables exceptions
             try {
@@ -94,11 +90,7 @@
                 $mail->AltBody = '歡迎使傻逼往,您的身份驗證碼是：' . $yanzhen . date('Y-m-d H:i:s');
 
                 $mail->send();
-
             ?>
-
-                <!-- 註冊資料輸入欄 -->
-
                 <!-- 登入 提交 -->
                 <div class="bottom_row">
                     <input type="hidden" value="<? echo $com_num ?>" name="id">
@@ -106,9 +98,6 @@
                     <input class="Submit_button" type="submit" value="驗證" />
                 </div>
                 <?php
-                
-
-
 
                 $sql = ("SET NAMES 'UTF8'");
                 $total = $con->query($sql);
@@ -131,20 +120,10 @@
             }
             ?>
             <!-- 回登入 回首頁 -->
-            <a href="login.html"><img src="image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
-            <a href="index.html"><img src="image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
+            <a href="../../login.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
+            <a href="../../index.php"><img src="../../image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
         </div>
     </form>
 </body>
 
 </html>
-*/
-
-
-
-
-
-
-
-
-?>

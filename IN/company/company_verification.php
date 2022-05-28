@@ -1,16 +1,18 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../../style/css/register.css">
+    <link rel="stylesheet" href="../../style/css/account.css">
+    <link rel="stylesheet" href="../../style/css/account.css">
+
 </head>
 
 <body>
     <form action="company_signup_sure.php" method="POST">
 
-        <div class="RegisterBox">
+        <div class="accountBox">
             <h1 class="" style="font-size: 50px">Register</h1>
             <div class="verification">
-                <input class="Register_text" type="text" placeholder="驗證碼" name="verification_button" style="width: 300px; margin-left: -5px;" />
+                <input class="account_text" type="text" placeholder="驗證碼" name="verification_button" style="width: 300px; margin-left: -5px;" />
 
             </div>
             <?php
@@ -42,7 +44,7 @@
             echo $company_email;
             $level = "3";
             $sql = "SELECT * FROM `login` where `username` ='" . $company_username . "'";
-            $sql1 = "SELECT * FROM `company` where `company_name` ='" . $company_name. "'";
+            $sql1 = "SELECT * FROM `company` where `company_name` ='" . $company_name . "'";
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == "" || $company_money == "" || $company_time == "" || $company_place == "" || $company_content == "" || $company_work_experience == "" || $company_type == "" || $company_Education == "" || $company_department == "" || $company_other == "" || $company_safe == "") {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
@@ -53,7 +55,7 @@
 
                 echo "<a href=company_signup.php>[註冊]<br></a>";
                 header("Refresh:3;url=company_signup.php");
-            }elseif ($con->query($sql1)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
+            } elseif ($con->query($sql1)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
                 echo "公司名稱已存在,三秒後版回註冊畫面，請重新註冊！";
@@ -155,8 +157,8 @@
             }
             ?>
             <!-- 回登入 回首頁 -->
-            <a href="login.html"><img src="image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
-            <a href="index.html"><img src="image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
+            <a href="../../login.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
+            <a href="../../index.php"><img src="../../image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
         </div>
     </form>
 </body>

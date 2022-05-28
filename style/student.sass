@@ -1,5 +1,19 @@
 #content
-    height: 900px
+    // height: 900px
+
+//STU_index.php
+#newBox
+    max-width: 1248px
+    margin-top: 10px
+    margin-left: auto
+    margin-right: auto
+    // .newscont
+    //     ul
+    //         border: solid 1px
+    //         list-style: none
+    //     li
+    //         border: solid 1px
+    //         list-style: none
 
 //STU_apply.php
 #applyBox
@@ -38,6 +52,7 @@
                 &:hover
                     background-color: #ddd
 //STU_response.php
+$outer_color: #ddd
 #responseBox
     width: 80%
     min-width: 600px
@@ -45,18 +60,23 @@
     margin-left: auto
     margin-right: auto
     ul
-        background-color: #ddd
+        background-color: $outer_color
         border: solid 1px
         border-radius: 16px
         padding: 20px
         li
+            background-color: #DCE8F1
             list-style: none
             border: solid 1px
             line-height: 25px
-            padding: 10px
+            // padding: 10px
             margin-bottom: 10px
+            div
+                padding: 2px
+                // display: inline-block
+                margin-right: 10px
     .leavecomment
-        background-color: #ddd
+        background-color: $outer_color
         border: solid 1px
         border-radius: 20px
         padding: 10px
@@ -78,6 +98,7 @@
             width: 49%
             input[type="text"]
                 width: 90%
+                height: 20px
                 max-width: 500px
                 margin: 10px
         .content
@@ -185,6 +206,67 @@
         font-size: 20px
 
 //STU_resume.php
+$input_size: 16px
+$input_color: black
+#resumeBox
+    background-color: #ddd
+    margin-top: 50px
+    margin-left: auto
+    margin-right: auto
+    max-width: 1200px
+    padding: 10px
+    height: auto
+    min-height: 900px
+    border: solid 1px
+    .profile
+        background-color: #fff
+        border: solid 1px #DCE8F1
+        display: inline-block
+        .profile-info-row
+            display: flex
+            margin: 5px
+            // height: 40px
+            .profile-info-name
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                border: solid 1px
+                width: 150px
+                background-color: #DCE8F1
+                padding: 5px
+                p
+                    margin: 0px
+                    letter-spacing: 0.5em
+            .profile-info-value
+                display: inline-flex
+                justify-content: center
+                align-items: center
+                border: solid 1px #DCE8F1
+                width: 350px
+                padding: 5px
+                box-sizing: border-box
+                input
+                    flex: 1
+                    height: 100%
+                    color: $input_color
+                    // text-align: center
+                    border: none
+                    font-size: $input_size
+                select
+                    // text-align: center
+                    flex: 1
+                    height: 100%
+                    font-size: $input_size
+                span
+                    margin-left: 5px
+                    margin-right: 5px
+                    color: #72828a
+                .erTWZipcode
+                    select
+                        margin-bottom: 3px
+                    #address
+                        width: 99%
+                        height: 30px
 
 //STU_method.php
 #methodBox
