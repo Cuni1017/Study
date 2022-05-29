@@ -69,6 +69,8 @@ html, body {
 
 #header #UserBox a {
   text-decoration: none;
+  color: blue;
+  opacity: .7;
 }
 
 #header #UserBox p {
@@ -162,6 +164,8 @@ html, body {
   cursor: pointer;
   font-weight: bold;
   display: flex;
+  justify-content: center;
+  color: #4b5b6a;
   padding: 10px;
 }
 
@@ -170,36 +174,19 @@ html, body {
   transition: all 0.5s;
 }
 
-#mainNavTop ul li:hover a {
+#mainNavTop ul li:hover span {
   color: #fff;
 }
 
-#mainNavTop a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  color: #4b5b6a;
-  text-decoration: none;
-  text-align: center;
-}
-
-#mainNavTop a img {
-  width: 50px;
-}
-
-#mainNavTop a .Topactive {
-  background-color: #4b8eda;
-  transition: all 0.5s;
-}
-
-#mainNavTop a span {
-  margin-left: 10px;
+#mainNavTop ul li span {
+  align-self: center;
+  margin-left: 5px;
 }
 
 #mainNavCon ul {
   background-color: #fff;
   margin: 0px;
-  display: flex;
+  display: none;
   border-bottom: solid 1px;
 }
 
