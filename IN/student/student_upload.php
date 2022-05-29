@@ -1,15 +1,42 @@
 <?php
-echo $_FILES["fileUpload"]["tmp_name"];
+include 'user_connect.php';
 
-$uploadfile = iconv("utf-8", "big5", $_FILES["fileUpload"]["name"]);
+$name = @$_POST["name"]; 
+$sex = @$_POST["sex"]; 
+$birthday = @$_POST["birthday"]; 
+$email = @$_POST["email"]; 
+$contact = @$_POST["contact"]; 
+$phone= @$_POST["phone"]; 
+$home = @$_POST["home"]; 
+$other = @$_POST["other"]; 
+$county = @$_POST["county"]; 
+$district = @$_POST["district"]; 
+$address = @$_POST["address"]; 
+$user_id = @$_POST["user_id"]; 
+ echo $name."<br>";
+ echo $sex."<br>";
+ echo $birthday."<br>";
+ echo $email."<br>";
+ echo $contact."<br>";
+ echo $phone."<br>";
+ echo $home."<br>";
+ echo $other."<br>";
+ echo $county."<br>";
+ echo $district."<br>";
+ echo $address."<br>";
+ echo $user_id."<br>"  ;
 
-if ($_FILES["fileUpload"]["error"] == 0) {
+echo $_FILES["file_Upload"]["tmp_name"];
 
-    if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"], "C:/staff_mysql/origin/upload/" . $uploadfile)) {
+$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);
+
+if ($_FILES["file_Upload"]["error"] == 0) {
+
+    if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], "C:/staff_mysql/origin/upload/" . $uploadfile)) {
         echo "上傳成功<br />";
-        echo "檔案名稱：" . $_FILES["fileUpload"]["name"] . "<br />";
-        echo "檔案類型：" . $_FILES["fileUpload"]["type"] . "<br />";
-        echo "檔案大小：" . $_FILES["fileUpload"]["size"] . "<br />";
+        echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
+        echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
+        echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
     } else {
         echo "上傳失敗! ";
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
