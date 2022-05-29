@@ -38,7 +38,7 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
     } else {
-        echo "上傳失敗! ";
+        echo "上傳失敗! " ; 
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     }
 }
