@@ -6,9 +6,6 @@
 </head>
 
 <body>
-    <?php require_once "user_connect.php";
-    $user_id = @$_GET["user_id"];
-    ?>
     <div id="wrap">
         <div id="content">
             <h1>實習應徵方法</h1>

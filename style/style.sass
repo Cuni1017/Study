@@ -63,6 +63,8 @@ html,body
             // background-color: linear-gradient(to bottom, #f4f5f7 , #f0f5f8 , #eff4f7)
         a
             text-decoration: none
+            color: blue
+            opacity: .7
         p
             font-size: 18px
 
@@ -140,34 +142,25 @@ html,body
         cursor: pointer
         font-weight: bold
         display: flex
-        // border-radius: 10px
+        justify-content: center
+
+        color: #4b5b6a
         padding: 10px
         &:hover
             background-color: #4b8eda
             transition: all 0.5s
-            a
+            span
                 color: #fff
-    a
-        display: inline-flex
-        justify-content: center
-        align-items: center
-        color: #4b5b6a
-        text-decoration: none
-        text-align: center
-        img
-            width: 50px
-        .Topactive
-            background-color: #4b8eda
-            transition: all 0.5s
         span
-            margin-left: 10px
+            align-self: center
+            margin-left: 5px
 
 #mainNavCon
     ul
         // float: left
         background-color: #fff
         margin: 0px
-        display: flex
+        display: none
         border-bottom: solid 1px
         // justify-content: center
     ul li

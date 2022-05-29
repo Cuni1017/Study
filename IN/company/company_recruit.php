@@ -12,8 +12,7 @@
         ?>
 
         <div id="content">
-            <h1>申請辦法</h1>
-
+            <h1>刊登徵才</h1>
 
         </div> <!-- content -->
     </div> <!-- wrap -->

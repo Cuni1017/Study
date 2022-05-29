@@ -1,44 +1,56 @@
-// // 用戶切換 mainNavTop
+// 用戶切換 mainNavTop
+var oNavTop = document.getElementById("mainNavTop")
+var oNavCon = document.getElementById("mainNavCon")
+var aTopul = oNavTop.getElementsByTagName("ul")
+var aConul = oNavCon.getElementsByTagName("ul")
+var aTopli = oNavTop.getElementsByTagName("li")
+var aConli = oNavCon.getElementsByTagName("li")
 
-// // var content=document.getElementById("mainNavTop"); 
-// // var items=content.getElementsByTagName("ul"); 
-// // var iSTU=items[0].getElementsByTagName("li");
-// // var iCPN=items[1].getElementsByTagName("li");
+aConul[0].style.display = "flex"
 
-// // console.log(STU)
+for(var i=0;i<aTopli.length;i++){
+    aTopli[i].index=i   
+    aTopli[i].onclick = function(){
+        for(var i=0;i<aConul.length;i++){
+            aConul[i].style.display = "none"
+        }
+        aConul[this.index].style.display = "flex"
+    }
+}
 
-$(function(){
-    $(".CPN").hide(); $(".CPN-inner").hide();
-    $(".TCH").hide(); $(".TCH-inner").hide();
-    $(".US").hide(); $(".US-inner").hide();
-    // $("#mainNavTop ul"). eq(0).click(function(){
-    //     console.log("87")
-    // })
-    $(".STUctrl").click(function(){
-        $(".STU").show(); 
-        $(".CPN").hide(); $(".CPN-inner").hide();
-        $(".TCH").hide(); $(".TCH-inner").hide();
-        $(".US").hide(); $(".US-inner").hide();
-    })
-    $(".CPNctrl").click(function(){
-        $(".STU").hide(); $(".STU-inner").hide();
-        $(".CPN").show(); $("#CPN01").show();
-        $(".TCH").hide(); $(".TCH-inner").hide();
-        $(".US").hide(); $(".US-inner").hide();
-    })
-    $(".TCHctrl").click(function(){
-        $(".STU").hide(); $(".STU-inner").hide();
-        $(".CPN").hide(); $(".CPN-inner").hide();
-        $(".TCH").show(); $("#TCH01").show();
-        $(".US").hide(); $(".US-inner").hide();
-    })
-    $(".USctrl").click(function(){
-        $(".STU").hide(); $(".STU-inner").hide();
-        $(".CPN").hide(); $(".CPN-inner").hide();
-        $(".TCH").hide(); $(".TCH-inner").hide();
-        $(".US").show(); $("#US01").show();
-    })
-})
+// $(function(){
+//     $(".CPN").hide(); $(".CPN-inner").hide();
+//     $(".TCH").hide(); $(".TCH-inner").hide();
+//     $(".US").hide(); $(".US-inner").hide();
+//     // $("#mainNavTop ul"). eq(0).click(function(){
+//     //     console.log("87")
+//     // })
+//     $(".STUctrl").click(function(){
+//         $(".STU").show(); 
+//         $(".CPN").hide(); $(".CPN-inner").hide();
+//         $(".TCH").hide(); $(".TCH-inner").hide();
+//         $(".US").hide(); $(".US-inner").hide();
+//     })
+//     $(".CPNctrl").click(function(){
+//         $(".STU").hide(); $(".STU-inner").hide();
+//         $(".CPN").show(); $("#CPN01").show();
+//         $(".TCH").hide(); $(".TCH-inner").hide();
+//         $(".US").hide(); $(".US-inner").hide();
+//     })
+//     $(".TCHctrl").click(function(){
+//         $(".STU").hide(); $(".STU-inner").hide();
+//         $(".CPN").hide(); $(".CPN-inner").hide();
+//         $(".TCH").show(); $("#TCH01").show();
+//         $(".US").hide(); $(".US-inner").hide();
+//     })
+//     $(".USctrl").click(function(){
+//         $(".STU").hide(); $(".STU-inner").hide();
+//         $(".CPN").hide(); $(".CPN-inner").hide();
+//         $(".TCH").hide(); $(".TCH-inner").hide();
+//         $(".US").show(); $("#US01").show();
+//     })
+// })
+
 
 // // 用戶內選單 mainNavCon
 // // STU
@@ -52,7 +64,7 @@ $(function(){
 //         });
 // });
 
-// // CPN
+// CPN
 // $(function(){
 //     var $li = $('ul#CPN li');
 //         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.CPN-inner').hide(); 
@@ -62,7 +74,7 @@ $(function(){
 //             $(this).addClass('active'). siblings ('.active').removeClass('active');
 //         });
 // });
-// // TCH
+// TCH
 // $(function(){
 //     var $li = $('ul#TCH li');
 //         $($li. eq(0) .addClass('active').find('a').attr('href')).siblings('.TCH-inner').hide(); 

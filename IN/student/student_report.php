@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <?php require_once "user_connect.php";
+    <?php
     $user_id = @$_GET["user_id"];
     ?>
     <div id="wrap">

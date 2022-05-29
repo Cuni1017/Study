@@ -43,10 +43,10 @@
                 header('location:IN\student\student_method.php?user_id=' . $user_id);
                 break;
             case 2:
-                header("location:IN/student/teacher_index.php?user_id=" . $user_id);
+                header("location:IN\student\teacher_index.php?user_id=" . $user_id);
                 break;
             case 3:
-                header("location:IN/student/company_index.php?user_id=" . $user_id);
+                header("location:IN\student\company_method.php?user_id=" . $user_id);
                 break;
         }
     }

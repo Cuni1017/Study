@@ -36,99 +36,66 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <div id="mainNavTop">
                 <ul>
                     <li>
-                        <a class="STUctrl" href="login.php">
-                            <img src="image/畢業帽帽.png" />
-                            <span>學生實習入口</span>
-                        </a>
+                        <img src="image/畢業帽帽.png" />
+                        <span>學生實習入口</span>
                     </li>
                     <li>
-                        <a class="CPNctrl" href="login.php">
-                            <img src="image/廠商.png" />
-                            <span>廠商實習管理</span>
-                        </a>
+                        <img src="image/廠商.png" />
+                        <span>廠商實習管理</span>
                     </li>
                     <li>
-                        <a class="TCHctrl" href="login.php">
-                            <img src="image/教師3.jpg" />
-                            <span>教師管理</span>
-                        </a>
+                        <img src="image/教師3.jpg" />
+                        <span>教師管理</span>
                     </li>
                     <li>
-                        <a class="USctrl" href="login.php">
-                            <img src="image/關於我們.png" />
-                            <span>關於我們</span>
-                        </a>
+                        <img src="image/關於我們.png" />
+                        <span>關於我們</span>
                     </li>
                 </ul>
             </div>
-
-            <!-- <div class="STU">
-                <div id="STU01" class="STU-inner">
-                    <p>STU01的內容</p>
-                </div>
-                <div id="STU02" class="STU-inner">
-                    <p>STU02的內容</p>
-                </div>
-                <div id="STU03" class="STU-inner">
-                    <p>STU03的內容</p>
-                </div>
-                <div id="STU04" class="STU-inner">
-                    <p>STU04的內容</p>
-                </div>
-                <div id="STU05" class="STU-inner">
-                    <p>STU05的內容</p>
-                </div>
-            </div> -->
-
-            <!-- <div class="CPN">
-                <div id="CPN01" class="CPN-inner">
-                    <p>CPN01的內容</p>
-                </div>
-                <div id="CPN02" class="CPN-inner">
-                    <p>CPN02的內容</p>
-                </div>
-                <div id="CPN03" class="CPN-inner">
-                    <p>CPN03的內容</p>
-                </div>
-                <div id="CPN04" class="CPN-inner">
-                    <p>CPN04的內容</p>
-                </div>
-                <div id="CPN05" class="CPN-inner">
-                    <p>CPN05的內容</p>
-                </div>
-            </div> -->
-            <!-- <div class="TCH">
-                <div id="TCH01" class="TCH-inner">
-                    <p>TCH01的內容</p>
-                </div>
-                <div id="TCH02" class="TCH-inner">
-                    <p>TCH02的內容</p>
-                </div>
-                <div id="TCH03" class="TCH-inner">
-                    <p>TCH03的內容</p>
-                </div>
-                <div id="TCH04" class="TCH-inner">
-                    <p>TCH04的內容</p>
-                </div>
-                <div id="TCH05" class="TCH-inner">
-                    <p>TCH05的內容</p>
-                </div>
-                <div id="TCH06" class="TCH-inner">
-                    <p>TCH06的內容</p>
-                </div>
-            </div> -->
-            <!-- <div class="US">
-                <div id="US01" class="US-inner">
-                    <p>關於我們的內容</p>
-                </div>
-                <div id="US02" class="US-inner">
-                    <p>參考資料的內容</p>
-                </div>
-            </div> -->
         </div> <!-- mainNav -->
 
+        <div id="mainNavCon">
+            <!-- STU -->
+            <div class="STU">
+                <ul>
+                    <li><a href="login.php">申請辦法</a></li>
+                    <li><a href="login.php">履歷維護</a></li>
+                    <li><a href="login.php">實習應徵</a></li>
+                    <li><a href="login.php">實習配對填寫</a></li>
+                    <li><a href="login.php">繳交實習報告</a></li>
+                    <li><a href="login.php">學生意見反應</a></li>
+                    <li><a href="login.php">瀏覽實習心得</a></li>
+                </ul>
+            </div>
+            <!-- CPN -->
+            <div class="CPN">
+                <ul>
+                    <li><a href="login.php">申請辦法</a></li>
+                    <li><a href="login.php">刊登徵才</a></li>
+                    <li><a href="login.php">實習評論</a></li>
+                    <li><a href="login.php">學生意見反應</a></li>
+                </ul>
+            </div>
+            <!-- TCH -->
+            <div class="TCH">
+                <ul>
+                    <li><a href="login.php">實習資訊公告</a></li>
+                    <li><a href="login.php">學生實習配對</a></li>
+                    <li><a href="login.php">實習職務列表</a></li>
+                </ul>
+            </div>
+            <!-- US -->
+            <div class="US">
+                <ul>
+                    <li><a href="#US01">關於我們</a></li>
+                    <li><a href="#US02">參考資料</a></li>
+                </ul>
+            </div>
+        </div> <!-- mainNavCon -->
+
         <div id="content">
-            <h1>最新消息</h1>
+            <h1>最新徵才消息</h1>
             <div class="news">
                 <?php while ($stmt->fetch()) { ?>
                     <div class="newscont">
@@ -153,46 +120,8 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <img src="image/PogU.jpg" height="300px">
         </marquee>
         </div> -->
-    <!-- <div class="用戶端">
-            <h3 style="text-align:center;">學生</h3>
-            <div class="button">
-            <a href = "">上傳實習報告</a>
-            </div>
-            <div class="button">
-            <a href = "">編輯自傳</a>
-            </div>
-            <div class="button">
-            <a href = "">查看徵才公司資訊 </a>
-            </div>
-            <div class="button">
-            <a href = "">下載實習資訊 </a>
-            </div>
-        </div> -->
-    <!--     
-        <div class="用戶端">
-            <h3 style="text-align:center;">企業</h3>
-            <div class="button">
-            <a href = "">上傳公司徵才資訊</a>
-            </div>
-            <div class="button">
-            <a href = "">上傳公司作品集</a>
-            </div>
-            <div class="button">
-            <a href = "">獲取履歷 </a>
-            </div>
-        </div>
 
-        <div class="用戶端">
-            <h3 style="text-align:center;">教授、學長</h3>
-            <div class="button">
-            <a href = "">公告實習須知事項</a>
-            </div>
-            <div class="button">
-            <a href = "">上傳實習心得</a>
-            </div>
-        </div> -->
-
-
+    <script src="js/index.js"></script>
 </body>
 
 </html>

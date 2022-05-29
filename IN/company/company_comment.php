@@ -12,8 +12,7 @@
         ?>
 
         <div id="content">
-            <h1>申請辦法</h1>
-
+            <h1>實習評論</h1>
 
         </div> <!-- content -->
     </div> <!-- wrap -->
