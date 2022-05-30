@@ -239,8 +239,9 @@
 
 #resumeBox .profile {
   background-color: #fff;
-  border: solid 1px #DCE8F1;
-  display: inline-block;
+  border: solid 5px #DCE8F1;
+  display: inline-flex;
+  flex-direction: column;
 }
 
 #resumeBox .profile .profile-info-row {
@@ -300,6 +301,29 @@
 #resumeBox .profile .profile-info-row .profile-info-value .erTWZipcode #address {
   width: 99%;
   height: 30px;
+}
+
+#resumeBox .profile .profile-info-row .profile-info-value .PDFresume input[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#resumeBox .profile .edit {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#resumeBox .profile .edit .edit-modify, #resumeBox .profile .edit .edit-save {
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  border: solid 1px;
+  border-radius: 16px;
+  font-size: 20px;
+  padding: 10px;
+  width: 100px;
+  background-color: #DCE8F1;
+  cursor: pointer;
 }
 
 #methodBox {

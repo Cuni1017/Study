@@ -19,7 +19,7 @@
             </div>
             <div id="UserBox">
                 <p>您好 XXX</p>
-                <a href="#" style="color:blue; opacity: .7">登出</a>
+                <a href="../../login.php">登出</a>
             </div>
         </div>
         <div id="mainNav">

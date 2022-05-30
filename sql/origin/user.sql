@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- 主機: 127.0.0.1
--- 產生時間： 
--- 伺服器版本: 10.1.16-MariaDB
--- PHP 版本： 7.0.9
+-- 主機： 127.0.0.1
+-- 產生時間： 2022-05-30 08:22:34
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -35,18 +36,12 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 資料表的匯出資料 `user`
+-- 傾印資料表的資料 `user`
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_level`) VALUES
-('U2205130001', 'mikeliu900106', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130002', 'cuni', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130003', 'root', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205130004', 'rootsb', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205200005', 'r00t', '1qaz2w', 'mikeliu20010106@gmail.com', '1'),
-('U2205240006', 'r00t312', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205240007', 'r00t3122', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1'),
-('U2205240008', 'r00t31223', '1qaz2wsx', 'mikeliu20010106@gmail.com', '1');
+('U2205300001', 'root', '1qaz2wsx', 'cunie0001@gmail.com', '1');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

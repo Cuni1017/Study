@@ -104,15 +104,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="edit">
+                        <div class="edit-save">
+                            儲存
+                        </div>
+                        <div class="edit-modify">
+                            修改
+                        </div>
+                    </div>
                 </div> <!-- profile -->
-
             </div> <!-- resumeBox -->
         </div> <!-- content -->
     </div> <!-- wrap -->
 
-
-    <script src="../../js/jquery-3.6.0.min.js"></script>
-    <script src="../../js/index.js"></script>
     <script src="../../third/erTWZipcode/js/er.twzipcode.data.js"></script>
     <script src="../../third/erTWZipcode/js/er.twzipcode.min.js"></script>
     <script type="text/javascript">

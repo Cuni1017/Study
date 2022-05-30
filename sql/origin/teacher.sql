@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- 主機: 127.0.0.1
--- 產生時間： 
--- 伺服器版本: 10.1.16-MariaDB
--- PHP 版本： 7.0.9
+-- 主機： 127.0.0.1
+-- 產生時間： 2022-05-30 08:22:07
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -36,23 +37,12 @@ CREATE TABLE `teacher` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 資料表的匯出資料 `teacher`
+-- 傾印資料表的資料 `teacher`
 --
 
 INSERT INTO `teacher` (`teacher_id`, `teacher_username`, `teacher_password`, `teacher_real_name`, `teacher_email`, `teacher_level`) VALUES
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022520000', '', '', '', '', 3),
-('T2022521000', 'wqe', 'wqe', 'wqe', '', 2),
-('T2022521000', 'wqe', 'wqe', 'wqe', '', 2),
-('T2022521000', 'wqe', 'wqe', 'wqe', '', 2),
-('T2022521000', 'wqeweq', 'eqw', 'wqe', 'mikeliu20010106@gmail.com', 2),
-('T2022524000', 'wqe', '1eqwe', '???', 'mikeliu20010106@gmail.com', 2),
-('T2022524000', 'wqeWQEWQE', '1eqwe', '???', 'mikeliu20010106@gmail.com', 2);
+('T2022530000', 'TCH', '1qaz2wsx', 'TCH', 'cunie0001@gmail.com', 2);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

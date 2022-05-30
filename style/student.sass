@@ -206,6 +206,7 @@ $outer_color: #ddd
         font-size: 20px
 
 //STU_resume.php
+$prfile-info-color: #DCE8F1
 $input_size: 16px
 $input_color: black
 #resumeBox
@@ -220,8 +221,9 @@ $input_color: black
     border: solid 1px
     .profile
         background-color: #fff
-        border: solid 1px #DCE8F1
-        display: inline-block
+        border: solid 5px $prfile-info-color
+        display: inline-flex
+        flex-direction: column
         .profile-info-row
             display: flex
             margin: 5px
@@ -232,7 +234,7 @@ $input_color: black
                 align-items: center
                 border: solid 1px
                 width: 150px
-                background-color: #DCE8F1
+                background-color: $prfile-info-color
                 padding: 5px
                 p
                     margin: 0px
@@ -241,7 +243,7 @@ $input_color: black
                 display: inline-flex
                 justify-content: center
                 align-items: center
-                border: solid 1px #DCE8F1
+                border: solid 1px $prfile-info-color
                 width: 350px
                 padding: 5px
                 box-sizing: border-box
@@ -267,6 +269,24 @@ $input_color: black
                     #address
                         width: 99%
                         height: 30px
+                .PDFresume
+                    input[type="submit"]
+                        margin-left: auto
+                        margin-right: auto
+        .edit
+            margin-left: auto
+            margin-right: auto
+            .edit-modify,.edit-save
+                margin: 10px
+                display: inline-block
+                text-align: center
+                border: solid 1px
+                border-radius: 16px
+                font-size: 20px
+                padding: 10px
+                width: 100px
+                background-color: $prfile-info-color
+                cursor: pointer
 
 //STU_method.php
 #methodBox

@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- 主機: 127.0.0.1
--- 產生時間： 
--- 伺服器版本: 10.1.16-MariaDB
--- PHP 版本： 7.0.9
+-- 主機： 127.0.0.1
+-- 產生時間： 2022-05-30 08:22:18
+-- 伺服器版本： 10.4.24-MariaDB
+-- PHP 版本： 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -48,13 +49,12 @@ CREATE TABLE `company` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- 資料表的匯出資料 `company`
+-- 傾印資料表的資料 `company`
 --
 
 INSERT INTO `company` (`company_id`, `company_name`, `company_title`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level`) VALUES
-('C20225210001', '軒偉傻逼公司', '', 'eqw3', 'eqwe', 956, 'mikeliu20010106@gmail.com', 'wqe', 'weq', 'weq', 'wewq', 'qe', 'wqewe', 'qweq', 'weqewq', 'ew', 'we', '3'),
-('C20225210002', '軒偉傻逼公司', '', 'cunisbdsa', 'asd', 0, 'mikeliu20010106@gmail.com', 'dsa', 'dsa', 'ds', 'sad', 'sad', 'sad', 'ds', 'asd', 'asd', 'asd', '3'),
-('C20225240003', '軒偉傻逼公司3', '', 'wrrwer', '312', 987215364, 'mikeliu20010106@gmail.com', '231', '123', '321', '123', '123', '2312', '321', '231', '321', '321', '3');
+('C20225300001', '明偉有限公司', '', 'CPN', '1qaz2wsx', 978978978, 'Cunie0001@gmail.com', '吃自己', '做到死', '測試市測試街測試路', '前端美術設計', '無', '賤種', '國小', '無', '歡迎各位賤種', '無', '3');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

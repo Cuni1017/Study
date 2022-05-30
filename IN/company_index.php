@@ -20,7 +20,7 @@
             </div>
             <div id="UserBox">
                 <p>您好 XXX</p>
-                <a href="#">登出</a>
+                <a href="../../login.php">登出</a>
             </div>
         </div>
         <div id="mainNav">

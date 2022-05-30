@@ -9,7 +9,7 @@ var aConli = oNavCon.getElementsByTagName("li")
 aConul[0].style.display = "flex"
 
 for(var i=0;i<aTopli.length;i++){
-    aTopli[i].index=i   
+    aTopli[i].index=i
     aTopli[i].onclick = function(){
         for(var i=0;i<aConul.length;i++){
             aConul[i].style.display = "none"

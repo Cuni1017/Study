@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `login` (
-  `id` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
-  `username` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `password` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `level` varchar(2) CHARACTER SET utf8mb4 NOT NULL
+  `id` varchar(20) CHARACTER SET utf8mb4 NOT NULL COMMENT '登入id',
+  `username` varchar(30) CHARACTER SET utf8mb4 NOT NULL COMMENT '登入帳號',
+  `password` varchar(30) CHARACTER SET utf8mb4 NOT NULL COMMENT '登入密碼',
+  `level` varchar(2) CHARACTER SET utf8mb4 NOT NULL COMMENT '登入等級'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -49,7 +49,37 @@ INSERT INTO `login` (`id`, `username`, `password`, `level`) VALUES
 ('C202252000008', 'cunisb', '1qaz2wsx', '2'),
 ('C202252000009', 'mikeliu900106', '1qaz2wsx', '2'),
 ('C2022520000010', 'mikeliu900106', '1qaz2wsx', '2'),
-('C2022520000011', '', '', '2');
+('C2022520000011', '', '', '2'),
+('C2022520000012', '', '', '2'),
+('C2022520000012', '', '', '2'),
+('C2022520000012', 'cunisb', 'eqwe', '2'),
+('C20225200013', 'cunisb', 'eqwe', '2'),
+('C20225200014', '', '', '2'),
+('U2205200005', 'r00t', '1qaz2w', '1'),
+('C20225210014', '', '', '2'),
+('C20225210014', '', '', '2'),
+('C20225210015', 'qew', 'qew', '2'),
+('C20225210015', 'ertre', 'tre', '2'),
+('C20225210001', 'eqwe', 'qwe', '2'),
+('C20225210001', 'eqwe231', 'qwewq', '2'),
+('C20225210001', 'eqwe2312', 'eqwe', '2'),
+('C20225210001', 'eqwe23123', 'qwewqe', '3'),
+('C20225210001', 'eqwe231236q', 'sad', '3'),
+('C20225210001', 'eqwe231236q1', 'dasdwq', '3'),
+('C20225210001', 'eqwe231236q11', 'qwe', '3'),
+('C20225210001', 'eqw', 'ewq', '3'),
+('C20225210001', 'eqw3', 'eqwe', '3'),
+('C20225210002', 'cunisbdsa', 'asd', '3'),
+('T20225210003', 'wqe', 'wqe', '2'),
+('T20225210003', 'wqe', 'wqe', '2'),
+('T20225210003', 'wqe', 'wqe', '2'),
+('T20225210003', 'wqeweq', 'eqw', '2'),
+('U2205240006', 'r00t312', '1qaz2wsx', '1'),
+('U2205240007', 'r00t3122', '1qaz2wsx', '1'),
+('U2205240008', 'r00t31223', '1qaz2wsx', '1'),
+('C20225240003', 'wrrwer', '312', '3'),
+('T20225240004', 'wqe', '1eqwe', '2'),
+('T20225240004', 'wqeWQEWQE', '1eqwe', '2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
