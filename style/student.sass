@@ -92,6 +92,7 @@ $outer_color: #ddd
             margin: 1px
         p
             align-self: center
+            min-width: 32px
         .author,.gist
             display: inline-flex
             min-width: 100px
@@ -287,6 +288,38 @@ $input_color: black
                 width: 100px
                 background-color: $prfile-info-color
                 cursor: pointer
+//STU_reflection.php
+#reflectionBox
+    background-color: #ddd
+    margin-top: 50px
+    margin-left: auto
+    margin-right: auto
+    max-width: 1200px
+    padding: 10px
+    height: auto
+    min-height: 900px
+    border: solid 1px
+
+    .reflection
+        // width: 
+        height: 900px
+        .reflection-row
+            margin-top: 10px
+            width: 100%
+            cursor: pointer
+            display: flex
+            align-items: center
+            .reflection-img
+                img
+                    width: 120px
+            .reflection-text
+                margin-left: 30px
+                .reflection-title
+                    // display: block
+                    font-size: 24px
+                .reflection-content
+            &:hover
+                background-color: #ffffdd
 
 //STU_method.php
 #methodBox

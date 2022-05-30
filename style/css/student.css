@@ -96,6 +96,7 @@
 
 #responseBox .leavecomment p {
   align-self: center;
+  min-width: 32px;
 }
 
 #responseBox .leavecomment .author, #responseBox .leavecomment .gist {
@@ -324,6 +325,46 @@
   width: 100px;
   background-color: #DCE8F1;
   cursor: pointer;
+}
+
+#reflectionBox {
+  background-color: #ddd;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 10px;
+  height: auto;
+  min-height: 900px;
+  border: solid 1px;
+}
+
+#reflectionBox .reflection {
+  height: 900px;
+}
+
+#reflectionBox .reflection .reflection-row {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#reflectionBox .reflection .reflection-row .reflection-img img {
+  width: 120px;
+}
+
+#reflectionBox .reflection .reflection-row .reflection-text {
+  margin-left: 30px;
+}
+
+#reflectionBox .reflection .reflection-row .reflection-text .reflection-title {
+  font-size: 24px;
+}
+
+#reflectionBox .reflection .reflection-row:hover {
+  background-color: #ffffdd;
 }
 
 #methodBox {
