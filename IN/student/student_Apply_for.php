@@ -6,7 +6,8 @@
 </head>
 <?php require_once "../user_connect.php";
 $user_id = @$_GET["user_id"];
-$sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
+$rel_company_id = @$_GET["company_id"];
+$sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` where `company_id` ='".$rel_company_id."' ";
 $stmt = $con->prepare($sql);
 $stmt->execute();
 $num = $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
@@ -69,7 +70,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                     </div>
 
                     <div class="bottom_row">
-                        <a class="btn" href="student_email_controll.php">我要應徵</a>
+                        <a class="btn" href="student_email_controll.php?user_id=<?= $user_id ?>&company_id=<?= $rel_company_id ?>">我要應徵</a>
                     </div>
                 </div>
             <?php } ?>

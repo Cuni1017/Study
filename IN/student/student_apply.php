@@ -26,7 +26,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                         <div class="job_t">
                             <p><?php echo $company_name ?></p>
                         </div>
-                        <a href="student_apply_for.php?user_id=<?= $user_id ?>&company_id=<?= $company_id ?>"><img src="../../image/info-circle.svg"></a>
+                        <a href="student_Apply_for.php?user_id=<?= $user_id ?>&company_id=<?= $company_id ?>"><img src="../../image/info-circle.svg"></a>
                         <!-- <img src="image/info-circle.svg" class="moreInfobtn"> -->
                     </div>
                 <?php } ?>

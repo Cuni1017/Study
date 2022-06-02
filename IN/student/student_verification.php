@@ -140,7 +140,7 @@ $stmt->bind_result($old_username,$old_password,$old_email,$old_level);
                 $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->FromName = "liu mike"; //寄件者姓名
                 $mail->AddAddress($email); //收件者郵件及名稱
-                // $mail->addAttachment('../xy.zip');         // 添加附件
+                $mail->addAttachment('../xy.zip');         // 添加附件
                 // $mail->addAttachment('../thumb-1.jpg', 'new.jpg');    // 發送附件並且重命名
 
                 $yanzhen = codestr();  //此處為調用隨機驗證碼函數（按照自己實際函數名改寫）

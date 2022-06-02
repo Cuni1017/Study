@@ -3,12 +3,14 @@
 
 <head>
     <?php include '../student_index.php'; ?>
+    <meta http-equiv="content-type" charset="UTF-8"/>
 </head>
 
 <body>
     <? $user_id = @$_GET["user_id"]; ?>
     <div id="wrap">
         <div id="content">
+            <form action="student_upload.php" method = "post" enctype="multipart/form-data">
             <h1>履歷維護</h1>
             <div id="resumeBox">
                 <div class="profile">
@@ -98,22 +100,25 @@
                         </div>
                         <div class="profile-info-value">
                             <div class="PDFresume">
-                                <input type="file" name="fileUpload" />
+                                <input type="file" name="file_Upload" />
                                 <input type="hidden" name="user_id" value="<?= $user_id ?>">
                                 <input type="submit" value="上傳" />
                             </div>
                         </div>
                     </div>
                     <div class="edit">
-                        <div class="edit-save">
-                            儲存
+                        <input class="edit-save" type = "submit"  value = "儲存">
+                        <a class="edit-save" type = "button" href = "student_resume.php?<?= $user_id?>" >修改</a>
+                        <!-- <button class="edit-save" href = "student_resume.php?<?= $user_id?>" value = "修改"> -->
                         </div>
-                        <div class="edit-modify">
-                            修改
+                        <!-- <button class="edit-save" href = "student_resume.php?<?= $user_id?>" value = "修改"> -->
+                        
+                        <!-- <input class="edit-modify" type = "submit"> -->
                         </div>
                     </div>
                 </div> <!-- profile -->
             </div> <!-- resumeBox -->
+            </form>
         </div> <!-- content -->
     </div> <!-- wrap -->
 

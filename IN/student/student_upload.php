@@ -1,6 +1,6 @@
 <?php
 include '../user_connect.php';
-
+header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分
 $name = @$_POST["name"];
 $sex = @$_POST["sex"];
 $birthday = @$_POST["birthday"];
@@ -29,6 +29,7 @@ echo $user_id . "<br>";
 echo $_FILES["file_Upload"]["tmp_name"];
 
 $uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);
+//$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);//問題
 
 if ($_FILES["file_Upload"]["error"] == 0) {
 
@@ -37,6 +38,12 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
         echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
+        $sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `path`, `file_name` FROM `resume` WHERE `user_id` = '".$user_id."'";
+        $stmt=$con->prepare($sql);
+        $stmt->execute();
+        $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $path, $file_name);
+        $pathfile = $path.$file_name;
+
     } else {
         echo "上傳失敗! ";
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
