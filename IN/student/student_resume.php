@@ -19,7 +19,7 @@
                             <p>姓　　名</p>
                         </div>
                         <div class="profile-info-value">
-                            <input type="text">
+                            <input type="text" name= "name">
                         </div>
                     </div>
                     <div class="profile-info-row">
@@ -27,7 +27,7 @@
                             <p>性　　別</p>
                         </div>
                         <div class="profile-info-value">
-                            <select name="sex" id="">
+                            <select name="sex" id=""name= "sex">
                                 <option disabled>請選擇您的性別</option>
                                 <option value="boy">男</option>
                                 <option value="girl">女</option>
@@ -40,7 +40,7 @@
                             <p>出生日期</p>
                         </div>
                         <div class="profile-info-value">
-                            <input type="date">
+                            <input type="date" name= "birthday">
                         </div>
                     </div>
                     <div class="profile-info-row">
@@ -48,7 +48,7 @@
                             <p>電子郵件</p>
                         </div>
                         <div class="profile-info-value">
-                            <input type="text">
+                            <input type="text"  name= "email">
                         </div>
                     </div>
                     <div class="profile-info-row">
@@ -56,7 +56,7 @@
                             <p>聯絡方式</p>
                         </div>
                         <div class="profile-info-value">
-                            <input type="text" placeholder="例：以信箱或手機優先，聯絡時間: 0900:22:00">
+                            <input type="text" placeholder="例：以信箱或手機優先，聯絡時間: 0900:22:00" name= "contact">
                         </div>
                     </div>
                     <div class="profile-info-row">
@@ -64,21 +64,21 @@
                             <p>連絡電話</p>
                         </div>
                         <div class="profile-info-value">
-                            <span>手機：</span><input type="text">
+                            <span>手機：</span><input type="text" name= "phone">
                         </div>
                     </div>
                     <div class="profile-info-row">
                         <div class="profile-info-name">
                         </div>
                         <div class="profile-info-value">
-                            <span>住家：</span><input type="text">
+                            <span>住家：</span><input type="text" name= "home"> 
                         </div>
                     </div>
                     <div class="profile-info-row">
                         <div class="profile-info-name">
                         </div>
                         <div class="profile-info-value">
-                            <span>其他：</span><input type="text" placeholder="例：line ID、第二支手機號碼">
+                            <span>其他：</span><input type="text" name= "other" placeholder="例：line ID、第二支手機號碼">
                         </div>
                     </div>
                     <div class="profile-info-row">

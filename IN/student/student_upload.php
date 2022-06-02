@@ -27,19 +27,21 @@ echo $address . "<br>";
 echo $user_id . "<br>";
 
 echo $_FILES["file_Upload"]["tmp_name"];
-
-$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);
+$insert_name = $_FILES["file_Upload"]["name"];//insert 用
+$upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);//用來上傳
 //$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);//問題
+$file_path = "C:/staff_mysql/origin/upload/";
 
 if ($_FILES["file_Upload"]["error"] == 0) {
 
-    if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], "C:/staff_mysql/origin/upload/" . $uploadfile)) {
+    if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], $file_path . $upload_name)) {
         echo "上傳成功<br />";
         echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
         echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
-        $sql = "INSERT INTO `resume`(`user_id`, `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `county`, `district`, `address`, `path`, `file_name`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14]) WHERE `user_id` = '".$user_id."'";
-        $stmt=$con->prepare($sql);
+        $sql = "INSERT INTO `resume`(`user_id`, `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `county`, `district`, `address`, `path`, `file_name`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)  ";
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param("ssssssiissssss",$user_id, $name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $file_path, $insert_name);
         $stmt->execute();
        
 
