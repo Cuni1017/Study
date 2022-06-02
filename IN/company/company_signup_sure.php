@@ -10,7 +10,7 @@ if($verification_button == $ram_num){
     header("Refresh:2;url=../../login.php");
 }elseif($verification_button != $ram_num){
     echo "驗證瑪輸入錯誤,請回註冊頁面重新登入";
-    header("Refresh:2;url=company_signup_sure.php");
+    header("Refresh:2;url=company_signup.php");
     $sql2="DELETE FROM `company` WHERE company_id = '".$id."'";
     $stmt=$con->prepare($sql2);
     $stmt->execute();

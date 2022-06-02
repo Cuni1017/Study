@@ -38,11 +38,10 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
         echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
-        $sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `path`, `file_name` FROM `resume` WHERE `user_id` = '".$user_id."'";
+        $sql = "INSERT INTO `resume`(`user_id`, `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `county`, `district`, `address`, `path`, `file_name`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9],[value-10],[value-11],[value-12],[value-13],[value-14]) WHERE `user_id` = '".$user_id."'";
         $stmt=$con->prepare($sql);
         $stmt->execute();
-        $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $path, $file_name);
-        $pathfile = $path.$file_name;
+       
 
     } else {
         echo "上傳失敗! ";
