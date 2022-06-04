@@ -96,12 +96,11 @@ $pathfile = $path.$file_name;
                 $mail->Port = 465; //Gamil的SMTP主機的埠號(Gmail為465)。
                 $mail->CharSet = "utf-8"; //郵件編碼
                 $mail->Username = "mikeliu20010106@gmail.com"; //Gamil帳號
-                $mail->Password = "mikeliu900106"; //Gmail密碼
+                $mail->Password = "MIKE1QAZ2wsx"; //Gmail密碼
                 $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->FromName = "liu mike"; //寄件者姓名
                 $mail->Encoding = "base64";
                 $mail->AddAddress("mikeliu20010106@gmail.com"); //收件者郵件及名稱
-                $pdf = "ss.pdf";
                 $path_file = "C:/staff_mysql/origin/upload/";
                 //$mail_file = iconv('utf-8', 'gb2312', '專題企劃書.docx');
                 //echo $mail_file;
@@ -112,7 +111,7 @@ $pathfile = $path.$file_name;
                // $mail->addAttachment($real_project,"sb.pdf");
                 //$mail->addAttachment(,"sb.docx");
                 //$mail->addAttachment(iconv('utf-8', 'gb2312', 'C:/staff_mysql/origin/upload/ASP_NET_Core_Web_API建置教學_不含資料庫之MathBmiWebApi_.pdf'), '測試.pdf'); 
-                $mail->addAttachment($path_file.$pdf,"sss.pdf");         // 添加附件
+                $mail->addAttachment($path_file.$pdf,"upload.pdf");         // 添加附件
                 // $mail->addAttachment('../thumb-1.jpg', 'new.jpg');    // 發送附件並且重命名
 
               
