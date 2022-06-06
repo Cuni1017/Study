@@ -39,7 +39,6 @@
         box-sizing: border-box
         .job_img
             max-width: 600px
-
         a
             position: absolute
             bottom: 5px
@@ -51,6 +50,7 @@
                 border-radius: 100%
                 &:hover
                     background-color: #ddd
+
 //STU_response.php
 $outer_color: #ddd
 #responseBox
@@ -112,6 +112,14 @@ $outer_color: #ddd
                 align-self: flex-start
             textarea
                 margin: 10px
+
+//STU_pair.php
+#pairBox
+    width: 80%
+    min-width: 600px
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto
 
 //STU_apply_for.php
 #job_Content
@@ -288,6 +296,9 @@ $input_color: black
                 width: 100px
                 background-color: $prfile-info-color
                 cursor: pointer
+            a
+                text-decoration: none
+                color: black
 //STU_reflection.php
 #reflectionBox
     background-color: #ddd
@@ -318,6 +329,7 @@ $input_color: black
                     // display: block
                     font-size: 24px
                 .reflection-content
+                    opacity: .6
             &:hover
                 background-color: #ffffdd
 
