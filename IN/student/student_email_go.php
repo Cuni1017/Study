@@ -75,6 +75,9 @@ $stmt=$con->prepare($sql);
 $stmt->execute();
 $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $path, $file_name);
 $pathfile = $path.$file_name;
+while($stmt->fetch()){
+echo $path;
+echo $file_name;
 
 
             /*
@@ -100,7 +103,8 @@ $pathfile = $path.$file_name;
                 $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->FromName = "liu mike"; //寄件者姓名
                 $mail->Encoding = "base64";
-                $mail->AddAddress("mikeliu20010106@gmail.com"); //收件者郵件及名稱
+                //$mail->AddAddress("Cunie0002@gmail.com");
+                $mail->AddAddress($email); //收件者郵件及名稱
                 $path_file = "C:/staff_mysql/origin/upload/";
                 //$mail_file = iconv('utf-8', 'gb2312', '專題企劃書.docx');
                 //echo $mail_file;
@@ -111,7 +115,8 @@ $pathfile = $path.$file_name;
                // $mail->addAttachment($real_project,"sb.pdf");
                 //$mail->addAttachment(,"sb.docx");
                 //$mail->addAttachment(iconv('utf-8', 'gb2312', 'C:/staff_mysql/origin/upload/ASP_NET_Core_Web_API建置教學_不含資料庫之MathBmiWebApi_.pdf'), '測試.pdf'); 
-                $mail->addAttachment($path_file.$pdf,"upload.pdf");         // 添加附件
+                $mail->addAttachment($path.$file_name,"resume.pdf");         // 添加附件
+                //$mail->addAttachment("C:\staff_mysql\upload\sss.pdf","ssss.pdf"); 
                 // $mail->addAttachment('../thumb-1.jpg', 'new.jpg');    // 發送附件並且重命名
 
               
@@ -119,8 +124,8 @@ $pathfile = $path.$file_name;
                 //Content
                 $mail->isHTML(true);                                  // 是否以HTML文檔格式發送  發送後客戶端可直接顯示對應HTML內容
                 $mail->Subject =  '身份登錄驗證';
-                $mail->Body    = '<h1>歡迎使用傻逼往</h1><h3>您的身份驗證碼是：<span>' .  '</span></h3>' . date('Y-m-d H:i:s');
-                $mail->AltBody = '歡迎使傻逼往,您的身份驗證碼是：' . date('Y-m-d H:i:s');
+                $mail->Body    = '<h1>歡迎使用應徵</h1><h3>應徵內容：'. $email_content.'<span>' .  '</span></h3>' . date('Y-m-d H:i:s');
+                $mail->AltBody = '應徵內容：'. $email_content. date('Y-m-d H:i:s');
 
                 $mail->send();
 
@@ -141,7 +146,9 @@ $pathfile = $path.$file_name;
             } catch (Exception $e) {
                 echo '郵件發送失敗,請重試';
             }
+            }
             ?>
+        
             <!-- 回登入 回首頁 -->
             <a href="../../login.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
             <a href="../../index.php"><img src="../../image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>

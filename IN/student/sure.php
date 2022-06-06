@@ -17,7 +17,7 @@
     <body>
         
     <?php
-    require_once "user_connect.php";
+    require_once "../user_connect.php";
    
         if($verification_button == $ram_num){
             echo "驗證碼輸入成功,.3秒後回到登陸處";
