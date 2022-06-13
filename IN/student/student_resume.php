@@ -7,10 +7,10 @@
 </head>
 
 <body>
-    <? $user_id = @$_GET["user_id"]; 
-    
-    
-    
+    <? $user_id = @$_GET["user_id"];
+
+
+
     ?>
     <div id="wrap">
         <div id="content">
