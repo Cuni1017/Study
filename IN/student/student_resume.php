@@ -95,22 +95,19 @@
                             <div class="profile-info-value">
                             </div>
                         </div>
-                        <div class="edit">
-                            <div class="edit-save">
+                        <div id="edit">
+                            <div id="edit-save">
                                 <input type="submit" value="儲存">
                                 <img src="../../image/check-square.svg"></img>
                             </div>
-                            <div class="edit-modify">
-                                <a href="student_resume.php?<?= $user_id ?>">
+                            <div id="edit-modify">
+                                <!-- <a class="edit-save" type="button" href="student_resume.php?<?= $user_id ?>">修改</a> -->
+                                <a href="student_resume_modify.php?<?= $user_id ?>">
                                     修改
                                     <img src="../../image/pencil-square.svg"></img>
                                 </a>
                             </div>
-                            <!-- <button class="edit-save" href = "student_resume.php?<?= $user_id ?>" value = "修改"> -->
                         </div>
-                        <!-- <button class="edit-save" href = "student_resume.php?<?= $user_id ?>" value = "修改"> -->
-
-                        <!-- <input class="edit-modify" type = "submit"> -->
                     </div>
                 </div>
         </div> <!-- profile -->

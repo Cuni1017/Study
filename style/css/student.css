@@ -332,12 +332,12 @@
   margin-right: auto;
 }
 
-#resumeBox .profile .edit {
+#resumeBox .profile #edit {
   margin-left: auto;
   margin-right: auto;
 }
 
-#resumeBox .profile .edit .edit-modify, #resumeBox .profile .edit .edit-save {
+#resumeBox .profile #edit #edit-modify, #resumeBox .profile #edit #edit-save {
   margin: 10px;
   display: inline-block;
   text-align: center;
@@ -350,18 +350,18 @@
   cursor: pointer;
 }
 
-#resumeBox .profile .edit .edit-modify img, #resumeBox .profile .edit .edit-save img {
+#resumeBox .profile #edit #edit-modify img, #resumeBox .profile #edit #edit-save img {
   width: 16px;
 }
 
-#resumeBox .profile .edit input {
+#resumeBox .profile #edit input {
   padding: 0px;
   background-color: #DCE8F1;
   font-size: 20px;
   border: 0;
 }
 
-#resumeBox .profile .edit a {
+#resumeBox .profile #edit a {
   text-decoration: none;
   color: black;
 }

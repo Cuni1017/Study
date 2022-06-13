@@ -18,8 +18,6 @@ for(let i=0;i<aTopli.length;i++){
     }
 }
 
-let aProfile_info_row = document.getElementsByClassName('profile-info-value')
-console.log(aProfile_info_row)
 
 // for(let i=0;i<aProfile_info_row;i++){
 //     aProfile_info_row[i].onclick
