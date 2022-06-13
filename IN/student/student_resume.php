@@ -7,7 +7,11 @@
 </head>
 
 <body>
-    <? $user_id = @$_GET["user_id"]; ?>
+    <? $user_id = @$_GET["user_id"]; 
+    
+    
+    
+    ?>
     <div id="wrap">
         <div id="content">
             <form action="student_upload.php" method = "post" enctype="multipart/form-data">

@@ -27,7 +27,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
     $stmt = $con->prepare($sql);
     $stmt ->execute();
     $stmt ->bind_result($company_email);
-    $stmt->fetch();
+    
     echo $company_email;
 
     ?>
@@ -37,46 +37,26 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <form method="POST" action="student_email_go.php">
                 <div id="emailBox">
                     <div class="Towho">
+                    <?php while ($stmt->fetch()) { ?>
                         <p>公司：</p><span>公司名稱</span><br>
                         <p>信箱：</p><span><input type="email" value="<?=$company_email ;?>"></span>
                     </div>
                     <div class="Content">
                         <label for="email_content">Email 內容填寫：</label><br><br>
                         <textarea name="email_content"></textarea>
-                        <input type="file">
+                        
                         <input type="hidden" name = "user_id" value = "<?=$user_id?>">
                         <input type="hidden" name = "company_id" value = "<?=$company_id?>">
                         <input type="hidden" name = "company_email" value = "<?=$company_email?>">
-                        <input type="file">
+                        <!-- <input type="file"> -->
+                        <?php }?>
                         <br>
                     </div>
                     <input type="submit" class="btn" value="寄出">
                 </div>
             </form>
         </div> <!-- content -->
-    <div id="wrap">
-        <?php while ($stmt->fetch()) { ?>
-            <div id="content" style="background-color: #ddd">
-                <h1>寄出履歷</h1>
-                <form method="POST" action="student_email_go.php">
-                    <div id="emailBox">
-                        <div class="Towho">
-                            <p>公司：</p><span><?php echo $company_name ?></span><br>
-                            <p>信箱：</p><span><input type="email" value=<?php echo $company_email ?>></span>
-                        </div>
-                        <div class="Content">
-                            <label for="email_content">Email 內容填寫：</label><br><br>
-                            <textarea name="email_content"></textarea>
-                            <input type="file">
-                            <br>
-                        </div>
-                        <input type="submit" class="btn" value="寄出">
-                    </div>
-                </form>
-
-            </div> <!-- content -->
-        <?php } ?>
-    </div> <!-- wrap -->
+   
 </body>
 
 </html>
