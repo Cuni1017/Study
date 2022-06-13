@@ -210,8 +210,8 @@ $outer_color: #ddd
     input[type="submit"]
         position: absolute
         right: 30px
-        // transform: translateX(-50%)
-        bottom: 0px
+        border-radius: 8px
+        bottom: 10px
         font-size: 20px
 
 //STU_resume.php
@@ -236,7 +236,7 @@ $input_color: black
         .profile-info-row
             display: flex
             margin: 5px
-            // height: 40px
+            min-height: 36px
             .profile-info-name
                 display: inline-flex
                 justify-content: center
@@ -272,7 +272,13 @@ $input_color: black
                     margin-left: 5px
                     margin-right: 5px
                     color: #72828a
+            img
+                margin-left: 10px
+                width: 20px
+            .erZipcode
+                padding: 10px
                 .erTWZipcode
+                    padding: 10px
                     select
                         margin-bottom: 3px
                     #address
@@ -290,12 +296,20 @@ $input_color: black
                 display: inline-block
                 text-align: center
                 border: solid 1px
-                border-radius: 16px
+                border-radius: 10px
                 font-size: 20px
                 padding: 10px
-                width: 100px
+                width: 90px
                 background-color: $prfile-info-color
                 cursor: pointer
+                img
+                    width: 16px
+                    // background-color: #fff
+            input
+                padding: 0px
+                background-color: $prfile-info-color
+                font-size: 20px
+                border: 0
             a
                 text-decoration: none
                 color: black

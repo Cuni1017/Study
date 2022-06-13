@@ -1,22 +1,29 @@
 // 用戶切換 mainNavTop
-var oNavTop = document.getElementById("mainNavTop")
-var oNavCon = document.getElementById("mainNavCon")
-var aTopul = oNavTop.getElementsByTagName("ul")
-var aConul = oNavCon.getElementsByTagName("ul")
-var aTopli = oNavTop.getElementsByTagName("li")
-var aConli = oNavCon.getElementsByTagName("li")
+let oNavTop = document.getElementById("mainNavTop")
+let oNavCon = document.getElementById("mainNavCon")
+let aTopul = oNavTop.getElementsByTagName("ul")
+let aConul = oNavCon.getElementsByTagName("ul")
+let aTopli = oNavTop.getElementsByTagName("li")
+let aConli = oNavCon.getElementsByTagName("li")
 
 aConul[0].style.display = "flex"
 
-for(var i=0;i<aTopli.length;i++){
+for(let i=0;i<aTopli.length;i++){
     aTopli[i].index=i
     aTopli[i].onclick = function(){
-        for(var i=0;i<aConul.length;i++){
+        for(let i=0;i<aConul.length;i++){
             aConul[i].style.display = "none"
         }
         aConul[this.index].style.display = "flex"
     }
 }
+
+let aProfile_info_row = document.getElementsByClassName('profile-info-value')
+console.log(aProfile_info_row)
+
+// for(let i=0;i<aProfile_info_row;i++){
+//     aProfile_info_row[i].onclick
+// }
 
 // $(function(){
 //     $(".CPN").hide(); $(".CPN-inner").hide();
