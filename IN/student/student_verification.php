@@ -26,9 +26,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //調用PHPMailer組件，此處是你自己的目錄，需要改寫。
-require '../../PHPMailer-master/src/Exception.php';
-require '../../PHPMailer-master/src/PHPMailer.php';
-require '../../PHPMailer-master/src/SMTP.php';
+require '../../PHPMailer/src/Exception.php';
+require '../../PHPMailer/src/PHPMailer.php';
+require '../../PHPMailer/src/SMTP.php';
 require_once "../user_connect.php";
 
 $username = @$_POST['username'];
