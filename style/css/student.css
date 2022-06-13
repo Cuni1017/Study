@@ -230,7 +230,8 @@
 #emailBox input[type="submit"] {
   position: absolute;
   right: 30px;
-  bottom: 0px;
+  border-radius: 8px;
+  bottom: 10px;
   font-size: 20px;
 }
 
@@ -256,6 +257,7 @@
 #resumeBox .profile .profile-info-row {
   display: flex;
   margin: 5px;
+  min-height: 36px;
 }
 
 #resumeBox .profile .profile-info-row .profile-info-name {
@@ -303,39 +305,63 @@
   color: #72828a;
 }
 
-#resumeBox .profile .profile-info-row .profile-info-value .erTWZipcode select {
+#resumeBox .profile .profile-info-row img {
+  margin-left: 10px;
+  width: 20px;
+}
+
+#resumeBox .profile .profile-info-row .erZipcode {
+  padding: 10px;
+}
+
+#resumeBox .profile .profile-info-row .erZipcode .erTWZipcode {
+  padding: 10px;
+}
+
+#resumeBox .profile .profile-info-row .erZipcode .erTWZipcode select {
   margin-bottom: 3px;
 }
 
-#resumeBox .profile .profile-info-row .profile-info-value .erTWZipcode #address {
+#resumeBox .profile .profile-info-row .erZipcode .erTWZipcode #address {
   width: 99%;
   height: 30px;
 }
 
-#resumeBox .profile .profile-info-row .profile-info-value .PDFresume input[type="submit"] {
+#resumeBox .profile .profile-info-row .erZipcode .PDFresume input[type="submit"] {
   margin-left: auto;
   margin-right: auto;
 }
 
-#resumeBox .profile .edit {
+#resumeBox .profile #edit {
   margin-left: auto;
   margin-right: auto;
 }
 
-#resumeBox .profile .edit .edit-modify, #resumeBox .profile .edit .edit-save {
+#resumeBox .profile #edit #edit-modify, #resumeBox .profile #edit #edit-save {
   margin: 10px;
   display: inline-block;
   text-align: center;
   border: solid 1px;
-  border-radius: 16px;
+  border-radius: 10px;
   font-size: 20px;
   padding: 10px;
-  width: 100px;
+  width: 90px;
   background-color: #DCE8F1;
   cursor: pointer;
 }
 
-#resumeBox .profile .edit a {
+#resumeBox .profile #edit #edit-modify img, #resumeBox .profile #edit #edit-save img {
+  width: 16px;
+}
+
+#resumeBox .profile #edit input {
+  padding: 0px;
+  background-color: #DCE8F1;
+  font-size: 20px;
+  border: 0;
+}
+
+#resumeBox .profile #edit a {
   text-decoration: none;
   color: black;
 }
