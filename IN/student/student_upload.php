@@ -43,13 +43,15 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         $stmt = $con->prepare($sql);
         $stmt->bind_param("ssssssiissssss",$user_id, $name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $file_path, $insert_name);
         $stmt->execute();
-       
+        echo "即將顯示你的履歷,看完只需要按上一頁就好";
+        header("Refresh:5;url=resume_watch.php?user_id=$user_id");
 
     } else {
         echo "上傳失敗! ";
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     }
 }
+
 
 
 

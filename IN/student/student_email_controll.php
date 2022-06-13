@@ -44,10 +44,11 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                     <div class="Content">
                         <label for="email_content">Email 內容填寫：</label><br><br>
                         <textarea name="email_content"></textarea>
-                        <!-- <input type="file"> -->
+
                         <input type="hidden" name="user_id" value="<?= $user_id ?>">
                         <input type="hidden" name="company_id" value="<?= $company_id ?>">
                         <input type="hidden" name="company_email" value="<?= $company_email ?>">
+                        <!-- <input type="file"> -->
                     <?php } ?>
                     <br>
                     </div>
@@ -55,7 +56,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 </div>
             </form>
         </div> <!-- content -->
-
 </body>
 
 </html>
