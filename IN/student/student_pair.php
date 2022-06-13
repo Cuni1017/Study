@@ -10,7 +10,7 @@
 <body>
 <?php   $user_id = @$_GET["user_id"];
     $sql = "SELECT * FROM `pair` WHERE user_id = '".$user_id."' ";
-    if($con->query($sql)->num_rows > 0){ ?>
+    if($con->query($sql) -> num_rows <= 0) {?>
     <form action  = "student_pair_control.php" method = "Post">
         <div id="wrap">
             <div id="content">
@@ -28,7 +28,7 @@
                         echo $company_name;
                 ?>                           
                         <option value="<?=$company_name;?>"><?echo $company_name;?></option>
-                    <? } ?>
+                    <?php } ?>
                     </select>
                 <select name="choose_teacher" >
                         <option disabled>請選則實習負責老師</option>
@@ -39,8 +39,8 @@
                     $stmt->bind_result($teacher_real_name);
                     while($stmt ->fetch()){
                 ?>                           
-                        <option value="<?=$teacher_real_name;?>"><?echo $teacher_real_name;?></option>
-                    <?}?>
+                         <option value="<?=$teacher_real_name;?>"><?echo $teacher_real_name;?></option>
+                    <?php } ?>
                     </select>
                     <input type = "date" name = "start_tme">
                     <input type = "date" name = "end_tme">
@@ -50,12 +50,12 @@
                 </div>
             </div> <!-- content -->
     </form>
-    <?php }else{
+    <?php } else {
         echo "你已經填寫過實習配對兩秒後將跳轉到上傳實習心得";
         header("Refresh:3;url=student_pair_upload.php");
-
     }
     ?>
+
         </div> <!-- wrap -->
 
 </body>
