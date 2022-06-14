@@ -8,9 +8,11 @@
 
 <body>
     <? $user_id = @$_GET["user_id"];
-
-
-
+    $sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`,`county`, `district`, `address`, `path`, `file_name` FROM `resume` WHERE `user_id` = '".$user_id."'";
+    $stmt=$con->prepare($sql);
+    $stmt->execute();
+    $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $path,$file_name);
+    while($stmt->fetch()) {
     ?>
     <div id="wrap">
         <div id="content">
@@ -23,7 +25,7 @@
                                 <p>姓　　名</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $name?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -31,7 +33,7 @@
                                 <p>性　　別</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo  $sex?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -39,7 +41,7 @@
                                 <p>出生日期</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $birthday?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -47,7 +49,7 @@
                                 <p>電子郵件</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $email?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -55,7 +57,7 @@
                                 <p>聯絡方式</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $contact?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -63,21 +65,21 @@
                                 <p>連絡電話</p>
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $phone?>
                             </div>
                         </div>
                         <div class="profile-info-row">
                             <div class="profile-info-name">
                             </div>
                             <div class="profile-info-value">
-
+                                <?php echo $home?>
                             </div>
                         </div>
                         <div class="profile-info-row">
                             <div class="profile-info-name">
                             </div>
                             <div class="profile-info-value">
-
+                            <?php echo $other?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -85,13 +87,14 @@
                                 <p>聯絡地址</p>
                             </div>
                             <div class="profile-info-value">
-
+                            <?echo $county.$district.$address?>
                             </div>
                         </div>
                         <div class="profile-info-row">
                             <div class="profile-info-name">
                                 <span>PDF履歷上傳</span>
                             </div>
+                            <a href='download.php?user_id=<?=$user_id?>' target='_blank'>你的履歷下載</a>
                             <div class="profile-info-value">
                             </div>
                         </div>
@@ -110,6 +113,7 @@
                         </div>
                     </div>
                 </div>
+        <? } ?>
         </div> <!-- profile -->
     </div> <!-- resumeBox -->
     </form>
