@@ -6,7 +6,7 @@
     <?php include 'header.php'; ?>
 </head>
 <?php require_once "user_connect.php";
-$sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_Education`, `company_ department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
+$sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_work_experience`, `company_type`, `company_Education`, `company_department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
 $stmt = $con->prepare($sql);
 $stmt->execute();
 $num = $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
@@ -15,13 +15,11 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
 
 <body>
     <div id="wrap">
-
         <div id="header">
             <div id="LogoBox">
                 <a href="https://www.pccu.edu.tw/"><img src="image/skyLogo.png" /></a>
                 <span>實習平台</span>
             </div>
-
             <div id="UserBox">
                 <a href="login.php" class="button btnGray">
                     Login
@@ -31,7 +29,6 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 </a>
             </div>
         </div>
-
         <div id="mainNav">
             <div id="mainNavTop">
                 <ul>
@@ -110,17 +107,14 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                     </div>
                 <?php } ?>
             </div>
-
         </div> <!-- content -->
     </div> <!-- wrap -->
-
     <!-- <div class="跑馬燈">
         <marquee>
             <img src="image/cowba.jpg" height="300px">
             <img src="image/PogU.jpg" height="300px">
         </marquee>
         </div> -->
-
     <script src="js/index.js"></script>
 </body>
 

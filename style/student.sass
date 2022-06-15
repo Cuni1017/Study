@@ -38,7 +38,8 @@
         overflow: hidden
         box-sizing: border-box
         .job_img
-            max-width: 600px
+            img
+                width: 100%
         a
             position: absolute
             bottom: 5px
@@ -57,6 +58,7 @@ $outer_color: #ddd
     width: 80%
     min-width: 600px
     max-width: 1200px
+    margin-top: 20px
     margin-left: auto
     margin-right: auto
     ul
@@ -114,12 +116,60 @@ $outer_color: #ddd
                 margin: 10px
 
 //STU_pair.php
+$pair_row_color: #b2e22c
+// #BDF1FE
 #pairBox
     width: 80%
     min-width: 600px
     max-width: 1200px
+    min-height: 700px
+    margin-top: 20px
     margin-left: auto
     margin-right: auto
+    border: solid 1px
+    background-color: #ddd
+    .pair-fill-in
+        position: relative
+        display: inline-block
+        background-color: #fff
+        border: solid 5px $pair_row_color
+        min-height: 220px
+        .pair-row
+            display: flex
+            margin: 5px
+            span
+                display: inline-block
+                width: 100px
+                text-align: center
+                letter-spacing: 2px
+                background-color: $pair_row_color
+                border: solid 1px
+                min-width: 200px
+                padding: 5px
+            select
+                margin-left: 5px
+                height: 35px
+                width: 150px
+                text-align: center
+            input[type="date"]
+                text-align: center
+                margin-left: 5px
+                height: 30px
+                width: 145px
+        input[type="image"]
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            background-color: $pair_row_color
+            text-align: center
+            border: solid 1px
+            border-radius: 10px
+            font-size: 10px
+            padding: 5px
+            width: 25px
+            cursor: pointer
+            &:hover
+                background-color: #1dc91d
 
 //STU_apply_for.php
 #job_Content
@@ -220,7 +270,7 @@ $input_size: 16px
 $input_color: black
 #resumeBox
     background-color: #ddd
-    margin-top: 50px
+    margin-top: 20px
     margin-left: auto
     margin-right: auto
     max-width: 1200px
@@ -305,18 +355,21 @@ $input_color: black
                 img
                     width: 16px
                     // background-color: #fff
+                &:hover
+                    background-color: #3d91d1
             input
                 padding: 0px
-                background-color: $prfile-info-color
+                background-color: inherit
                 font-size: 20px
                 border: 0
+                cursor: pointer
             a
                 text-decoration: none
                 color: black
 //STU_reflection.php
 #reflectionBox
     background-color: #ddd
-    margin-top: 50px
+    margin-top: 20px
     margin-left: auto
     margin-right: auto
     max-width: 1200px
@@ -350,7 +403,7 @@ $input_color: black
 //STU_method.php
 #methodBox
     background-color: #ddd
-    margin-top: 50px
+    margin-top: 20px
     margin-left: auto
     margin-right: auto
     max-width: 1200px
