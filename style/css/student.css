@@ -446,6 +446,7 @@
 
 #reflectionBox .reflection {
   height: 900px;
+  display: block;
 }
 
 #reflectionBox .reflection .reflection-row {
@@ -474,6 +475,30 @@
 
 #reflectionBox .reflection .reflection-row:hover {
   background-color: #ffffdd;
+}
+
+#reflectionBox dialog {
+  width: 60%;
+  min-width: 600px;
+  min-height: 600px;
+  padding: 0;
+}
+
+#reflectionBox dialog h3 {
+  margin: 0px;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+#reflectionBox dialog p {
+  padding: 10px;
+}
+
+#reflectionBox dialog .closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
 }
 
 #methodBox {
