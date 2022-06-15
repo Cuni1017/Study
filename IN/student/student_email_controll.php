@@ -19,17 +19,17 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
     <?php //require_once "user_connect.php";
     $user_id = @$_GET["user_id"];
     $company_id = @$_GET["company_id"];
-    echo     $user_id;
-    echo $company_id;
+    $company_name = @$_GET["company_name"];
+    // echo $user_id;
+    // echo $company_id;
+    // echo $company_name;
 
     $con->query("SET NAMES UTF8");
-    $sql = "SELECT `company_email` FROM `company` WHERE company_id = '" . $company_id . "'";
+    $sql = "SELECT `company_email`,`company_name` FROM `company` WHERE company_id = '" . $company_id . "'";
     $stmt = $con->prepare($sql);
     $stmt->execute();
-    $stmt->bind_result($company_email);
-
-    echo $company_email;
-
+    $stmt->bind_result($company_email, $company_name);
+    // echo $company_email;
     ?>
     <div id="wrap">
         <div id="content" style="background-color: #ddd">
@@ -38,7 +38,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
                 <div id="emailBox">
                     <div class="Towho">
                         <?php while ($stmt->fetch()) { ?>
-                            <p>公司：</p><span>公司名稱</span><br>
+                            <p>公司：</p><span><? echo $company_name; ?></span><br>
                             <p>信箱：</p><span><input type="email" value="<?= $company_email; ?>"></span>
                     </div>
                     <div class="Content">

@@ -33,10 +33,9 @@
         let oReflectionBox = document.getElementById('reflectionBox')
         let aReflection = document.getElementsByClassName("reflection-row")
         let aReflection_content = document.getElementsByClassName("reflection-content")
-        console.log(aReflection_content)
         for (let i = 0; i < aReflection.length; i++) {
-            aReflection_content[i].innerHTML = aReflection_content[i].innerHTML.substring(0, 100)
-            aReflection[i].index = i
+            aReflection_content[i].innerHTML = aReflection_content[i].innerHTML.substring(0, 100) + "..."
+            aReflection[i].index = i //編號
             aReflection[i].onclick = function(ev) {
                 ev = event || ev
                 ev.stopPropogation ? ev.stopPropogation() : ev.cancelBubble = true
@@ -63,7 +62,7 @@
                 document.onclick = function(ev) {
                     ev = event || ev
                     self = event.target || event.srcElement
-                    if (!container.contains(ev.target)) {
+                    if (!container.contains(self)) {
                         _dialog.close()
                     }
                 }

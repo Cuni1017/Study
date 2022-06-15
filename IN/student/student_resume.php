@@ -102,15 +102,15 @@
                                     <div class="profile-info-name">
                                         <span>PDF履歷上傳</span>
                                     </div>
-                                    <a href='download.php?user_id=<?= $user_id ?>' target='_blank'>你的履歷下載</a>
                                     <div class="profile-info-value">
+                                        <a href='download.php?user_id=<?= $user_id ?>' target='_blank'>你的履歷下載</a>
                                     </div>
                                 </div>
                                 <div id="edit">
                                     <!-- <div id="edit-save">
-                                <input type="submit" value="儲存">
-                                <img src="../../image/check-square.svg"></img> 
-                            </div> -->
+                                        <input type="submit" value="儲存">
+                                        <img src="../../image/check-square.svg"></img> 
+                                    </div> -->
                                     <div id="edit-modify">
                                         <!-- <a class="edit-save" type="button" href="student_resume.php?<?= $user_id ?>">修改</a> -->
                                         <a href="student_resume_modify.php?<?= $user_id ?>">
