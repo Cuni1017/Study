@@ -19,19 +19,20 @@ while($stmt -> fetch()){
         // header("Content-Transfer-Encoding: binary");
         
         // // Read the file
-        // readfile($real_file);
-        // header("Expires: 0");
-        // header("Cache-Control: no-cache, no-store, must-revalidate");
-        // header('Cache-Control: pre-check=0, post-check=0, max-age=0', false);
-        // header("Pragma: no-cache");
-        // header("Content-type: application/octet-stream");
-        // header("Content-Disposition: attachment; filename={$file_name}");
-        // header('Content-Length: ' . filesize("C:/staff_mysql/origin/upload/ss (1).pdf"));
+        //readfile($real_file);
+        header("Expires: 0");
+        header("Cache-Control: no-cache, no-store, must-revalidate");
+        header('Cache-Control: pre-check=0, post-check=0, max-age=0', false);
+        header("Pragma: no-cache");
+        header("Content-type: application/octet-stream");
+        header("Content-Disposition: attachment; filename={$file_name}");
+        header('Content-Length: ' . filesize("C:/staff_mysql/origin/upload/ss(1).pdf"));
 
-        // readfile("{C:/staff_mysql/origin/upload/ss (1).pdf}");
-        header('Content-type: application/pdf');
-        header('Content-Disposition: attachment; filename='$file_name.');
-        readfile($real_file);
+        // readfile("{C:/staff_mysql/origin/upload/ss(1).pdf}");
+        // header('Content-type: application/pdf');
+        // header("Content-Disposition: attachment; filename={$file_name}");
+        readfile("{C:/staff_mysql/origin/upload/ss(1).pdf}");
+        //readfile($real_file);
         exit;
     }else{
         echo 'The file does not exist.';

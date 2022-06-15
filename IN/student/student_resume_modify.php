@@ -113,7 +113,7 @@
                             </div>
                             <div id="edit-modify">
                                 <!-- <a class="edit-save" type="button" href="student_resume.php?<?= $user_id ?>">修改</a> -->
-                                <a href="student_resume_modify.php?<?= $user_id ?>">
+                                <a href="student_resume_modify.php?user_id=<?= $user_id ?>">
                                     修改
                                     <img src="../../image/pencil-square.svg"></img>
                                 </a>

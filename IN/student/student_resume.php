@@ -7,12 +7,20 @@
 </head>
 
 <body>
-    <? $user_id = @$_GET["user_id"];
+    <?php $user_id = @$_GET["user_id"];
     $sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`,`county`, `district`, `address`, `path`, `file_name` FROM `resume` WHERE `user_id` = '".$user_id."'";
-    $stmt=$con->prepare($sql);
-    $stmt->execute();
-    $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $path,$file_name);
-    while($stmt->fetch()) {
+    $sql1 = "SELECT * FROM `resume` WHERE `user_id` = '".$user_id."'";
+    //$num = $con->query($sql1);
+    ///var_dump( $num );
+    // $stmt=$con->prepare($sql);
+    // $stmt->execute();
+    // $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $path,$file_name);
+    //echo count($num);
+ 
+    if( $con->query($sql1)->num_rows > 0){
+        $stmt = $con->query($sql1);
+        foreach($stmt as $value) {
+            var_dump($value);
     ?>
     <div id="wrap">
         <div id="content">
@@ -25,7 +33,7 @@
                                 <p>姓　　名</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $name?>
+                                <?php echo $value["name"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -33,7 +41,7 @@
                                 <p>性　　別</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo  $sex?>
+                                <?php echo  $value["sex"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -41,7 +49,7 @@
                                 <p>出生日期</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $birthday?>
+                                <?php echo $value["birthday"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -49,7 +57,7 @@
                                 <p>電子郵件</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $email?>
+                                <?php echo $value["email"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -57,7 +65,7 @@
                                 <p>聯絡方式</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $contact?>
+                                <?php echo $value["contact"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -65,21 +73,21 @@
                                 <p>連絡電話</p>
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $phone?>
+                                <?php echo $value["phone"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
                             <div class="profile-info-name">
                             </div>
                             <div class="profile-info-value">
-                                <?php echo $home?>
+                                <?php echo $value["home"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
                             <div class="profile-info-name">
                             </div>
                             <div class="profile-info-value">
-                            <?php echo $other?>
+                            <?php echo $value["other"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -87,7 +95,7 @@
                                 <p>聯絡地址</p>
                             </div>
                             <div class="profile-info-value">
-                            <?echo $county.$district.$address?>
+                            <?echo $value["county"].$value["district"].$value["address"]?>
                             </div>
                         </div>
                         <div class="profile-info-row">
@@ -99,10 +107,10 @@
                             </div>
                         </div>
                         <div id="edit">
-                            <div id="edit-save">
-                                <input type="submit" value="儲存">
-                                <img src="../../image/check-square.svg"></img>
-                            </div>
+                            <!-- <div id="edit-save">
+                                 <input type="submit" value="儲存">
+                                <img src="../../image/check-square.svg"></img> 
+                            </div> -->
                             <div id="edit-modify">
                                 <!-- <a class="edit-save" type="button" href="student_resume.php?<?= $user_id ?>">修改</a> -->
                                 <a href="student_resume_modify.php?<?= $user_id ?>">
@@ -113,7 +121,13 @@
                         </div>
                     </div>
                 </div>
-        <? } ?>
+        <?php }
+
+        }else{
+            header("Refresh:1;url=student_resume_modify.php?user_id=".$user_id );
+
+
+    }?>
         </div> <!-- profile -->
     </div> <!-- resumeBox -->
     </form>
