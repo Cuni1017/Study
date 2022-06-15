@@ -484,17 +484,21 @@
   padding: 0;
 }
 
-#reflectionBox dialog h3 {
+#reflectionBox .reflection-info {
+  min-height: 600px;
+}
+
+#reflectionBox .reflection-info h3 {
   margin: 0px;
   padding: 10px;
   background-color: #ddd;
 }
 
-#reflectionBox dialog p {
+#reflectionBox .reflection-info p {
   padding: 10px;
 }
 
-#reflectionBox dialog .closeBtn {
+#reflectionBox .reflection-info .closeBtn {
   position: absolute;
   top: 10px;
   right: 10px;

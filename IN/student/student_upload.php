@@ -30,7 +30,7 @@ echo $_FILES["file_Upload"]["tmp_name"];
 $insert_name = $_FILES["file_Upload"]["name"]; //insert 用
 $upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //用來上傳
 //$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //問題
-$file_path = "C:\Users\H270\Downloads\WEB\Study/upload/";
+$file_path = "C:\Users\H270\Downloads\WEB\Study/upload/"; //此行為絕對路徑
 
 if ($_FILES["file_Upload"]["error"] == 0) {
     if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], $file_path . $upload_name)) {
