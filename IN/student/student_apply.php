@@ -5,6 +5,7 @@
     <?php include '../student_index.php'; ?>
 </head>
 <?php require_once "../user_connect.php";
+header("Content-Type:text/html; charset=utf-8");
 $user_id = @$_GET["user_id"];
 $sql = "SELECT `company_id`, `company_name`  FROM `company` Limit  10";
 $stmt = $con->prepare($sql);

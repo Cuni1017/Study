@@ -1,6 +1,6 @@
 <?php
 include '../user_connect.php';
-//header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分
+header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分
 ?>
 
 <?php

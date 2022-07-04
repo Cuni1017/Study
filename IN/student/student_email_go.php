@@ -15,6 +15,7 @@ use PHPMailer\PHPMailer\Exception;
 
 //調用PHPMailer組件，此處是你自己的目錄，需要改寫。
 require '../../PHPMailer/src/Exception.php';
+
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
 require_once "../user_connect.php";
@@ -98,17 +99,11 @@ echo $file_name;
                 $mail->Host = "smtp.gmail.com"; //Gamil的SMTP主機
                 $mail->Port = 465; //Gamil的SMTP主機的埠號(Gmail為465)。
                 $mail->CharSet = "utf-8"; //郵件編碼
-                //$mail->Username = "mikeliu20010106@gmail.com"; //Gamil帳號
-                //$mail->Password = "MIKE1QAZ2wsx"; //Gmail密碼
-                //$mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->Username = "mikeliu20010106@gmail.com"; //Gamil帳號
-                $mail->Password = "MIKE1QAZ2wsx";
+                $mail->Password = "1qaz2wsx3edc4rfv5tgb"; //Gmail密碼
                 $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
                 $mail->FromName = "liu mike"; //寄件者姓名
-                $mail->Encoding = "base64";
-           
-                //$mail->AddAddress("Cunie0002@gmail.com");
-                $mail->AddAddress("mikeliu20010106@gmail.com"); //收件者郵件及名稱
+                $mail->AddAddress($company_email); //收件者郵件及名稱
                 $path_file = "C:/staff_mysql/origin/upload/";
                 //$mail_file = iconv('utf-8', 'gb2312', '專題企劃書.docx');
                 //echo $mail_file;
