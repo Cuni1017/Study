@@ -1,6 +1,6 @@
 <?php
 include '../user_connect.php';
-header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分
+header("Content-Type:text/html; charset=utf-8"); //重要顯示中文ˊ重要部分
 $name = @$_POST["name"];
 $sex = @$_POST["sex"];
 $birthday = @$_POST["birthday"];
@@ -27,13 +27,12 @@ echo $address . "<br>";
 echo $user_id . "<br>";
 
 echo $_FILES["file_Upload"]["tmp_name"];
-$insert_name = $_FILES["file_Upload"]["name"];//insert 用
-$upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);//用來上傳
-//$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]);//問題
-$file_path = "C:/staff_mysql/origin/upload/";
+$insert_name = $_FILES["file_Upload"]["name"]; //insert 用
+$upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //用來上傳
+//$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //問題
+$file_path = "C:\Users\H270\Downloads\WEB\Study/upload/"; //此行為絕對路徑
 
 if ($_FILES["file_Upload"]["error"] == 0) {
-
     if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], $file_path . $upload_name)) {
         echo "上傳成功<br />";
         echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
@@ -41,19 +40,15 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
         $sql = "INSERT INTO `resume`(`user_id`, `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `county`, `district`, `address`, `path`, `file_name`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)  ";
         $stmt = $con->prepare($sql);
-        $stmt->bind_param("ssssssiissssss",$user_id, $name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $file_path, $insert_name);
+        $stmt->bind_param("ssssssiissssss", $user_id, $name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $file_path, $insert_name);
         $stmt->execute();
         echo "即將顯示你的履歷,看完只需要按上一頁就好";
         header("Refresh:5;url=resume_watch.php?user_id=$user_id");
-
     } else {
         echo "上傳失敗! ";
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     }
 }
-
-
-
 
 /*
 # 檢查檔案是否上傳成功
