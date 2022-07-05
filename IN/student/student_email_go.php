@@ -1,158 +1,124 @@
-<?PHP
-//$password = md5(trim($_POST['password'])); //加密密碼
-//$email = trim($_POST['email']); //郵箱
-?>
-<?php
-//生成6位隨機驗證碼
+<html>
 
+<head>
+    <link rel="stylesheet" href="../../style/css/register.css">
+</head>
 
-
-//[*郵件發送邏輯處理過程*系統核心配置文件*]
-
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-//調用PHPMailer組件，此處是你自己的目錄，需要改寫。
+<body>
+    <?php
 require '../../PHPMailer/src/Exception.php';
-
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
-require_once "../user_connect.php";
+require '../../PHPMailer/vendor/autoload.php';
+include "../user_connect.php";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 $user_id = @$_POST['user_id'];
 $company_id = @$_POST['company_id'];
 $company_email = @$_POST['company_email'];
 $email_content = @$_POST['email_content'];
 
-echo $user_id;
+echo $user_id ;
+echo$company_id ;
+echo$company_email ;
+echo $email_content;
+echo "</br>";
+function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = "",$user_id){
+    $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+    echo $sql;
+    $stmt = con()->query($sql);
+    //$num_row = $stmt -> num_rows > 0 ;
+    //var_dump( $stmt);
+    if($stmt -> num_rows <=0 ){
+       echo "並沒有填履歷跳往履歷頁面,";
+       header("Refresh:3;url=student_resume_modify.php?user_id=".$user_id);
+    }else{
+        return $stmt;
+    }
+}
+ 
+function mail_go($company_email,$email_content,$real_file){
+    $mail = new PHPMailer();
+    $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
+    $mail->IsSMTP();                  //设定使用SMTP服务
+    $mail->SMTPAuth = true;           //启用SMTP验证功能
+    $mail->SMTPSecure = "tls";        //启用SSL
+    $mail->SMTPDebug = 2;
+    $mail->Host = "smtp.gmail.com";    //SMTP服务器
+    $mail->Port = 587;                //SMTP服务器的端口号
+    $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
+    $mail->Password = "tlfmdusbamsvvpuz";                                     //SMTP服务器密码
+    $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
+    $mail->AddReplyTo("mikeliu20010106@gmail.com");                    //设置邮件回复人地址和名称
+    $mail->Subject =  '應徵';
+    $mail->Body    = '<h1>歡迎使用應徵</h1><h3>應徵內容：'. $email_content.'<span>' .  '</span></h3>' . date('Y-m-d H:i:s');
+    $mail->AltBody = '應徵內容：'. $email_content. date('Y-m-d H:i:s');//可选项，向下兼容考虑
+    $mail->MsgHTML('<html>helo</html>');                             //设置邮件内容
+    $mail->AddAddress($company_email);
+    //$mail->AddAttachment("C:/staff_mysql/origin/0616+暑修第3次公告.pdf");                    //附件
+    $mail->AddAttachment($real_file);
+    if(!$mail->Send()) {
+        echo "发送失败：" . $mail->ErrorInfo;
+    } else {
+        echo "恭喜,郵件發送成功！";
+    }
+}
 
-//查詢語句，幫助協助查詢當前註冊使用者名稱是否存在於資料庫當中
-/*
-$sql = "select * from `user` where user_name='".$username."'";
-$stmt=$con->prepare($sql);
-$stmt->execute();
-$stmt->store_result();
-$result = $stmt ->num_rows;
-var_dump($result);
-*/
-//第一個'username'為資料庫內已存在的username值，將其與第二個'POST'方法傳遞過來的username值做對比
-//$rs =$con->query($sql);
+if ($email_content == "") {
+    echo "內容沒填,五秒後返回註冊畫面";
+    header("Refresh:3;url=student_email_controll.php?user_id=".$user_id."&company_id=".$company_id );
 
-//var_dump($rs);
-//  $result = $rs->get_result();
+} else 
+{   //"SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}
+    $fields = "`path`, `file_name`";
+    $table = "`resume`";
+    $condition = "`user_id` = '".$user_id."'";
+    $resume_select = select_me( $table, $condition , $order_by = "1", $fields, $limit = "",$user_id);
 
-//$rs = $con->query($sql);
+    while($result = $resume_select -> fetch_array()){
+        if(is_object($result)){
+            echo "資料為空直";
+         }else{
+            $path = $result["path"] ;
+            $file_name = $result["file_name"];
+            $real_file = $path .$file_name;
+            echo $real_file;
+            mail_go($company_email,$email_content,$real_file);
+         }
+
+        //mail_go($company_email,$email_content,$real_file);
+    }
+}
+//創建一個實例；傳遞 `true` 啟用異常
+//include("PHPMailerAutoload.php"); //匯入PHPMailer類別       
+// $mail = new PHPMailer();
+
+// $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
+// $mail->IsSMTP();                  //设定使用SMTP服务
+// $mail->SMTPAuth = true;           //启用SMTP验证功能
+// $mail->SMTPSecure = "tls";        //启用SSL
+// $mail->SMTPDebug = 2;
+// $mail->Host = "smtp.gmail.com";    //SMTP服务器
+// $mail->Port = 587;                //SMTP服务器的端口号
+// $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
+// $mail->Password = "tlfmdusbamsvvpuz";                                     //SMTP服务器密码
+// $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
+// $mail->AddReplyTo("mikeliu20010106@gmail.com");                    //设置邮件回复人地址和名称
+// $mail->Subject = '邮件标题';                                      //设置邮件标题
+// $mail->AltBody = "为了查看该邮件，请切换到支持HTML的邮件客户端"; //可选项，向下兼容考虑
+// $mail->MsgHTML('<html>helo</html>');                             //设置邮件内容
+// $mail->AddAddress('mikeliu20010106@gmail.com');
+// $mail->AddAttachment("C:/staff_mysql/origin/0616+暑修第3次公告.pdf");                    //附件
+// if(!$mail->Send()) {
+//     echo "发送失败：" . $mail->ErrorInfo;
+// } else {
+//     echo "恭喜，邮件发送成功！";
+// }
+
 ?>
-<html>
 
-<head>
-    <link rel="stylesheet" href="../../style/css/account.css">
-    <link rel="stylesheet" href="../../style/css/style.css">
-<?header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分?>
-</head>
-
-<body>
-            <?php
-
-            if ($email_content == "") {
-                echo "內容沒填,五秒後返回註冊畫面";
-               header("Refresh:3;url=student_email_controll.php?user_id=".$user_id."&company_id=".$company_id );
-            
-            } else //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
-            {
-                
-            }
-
-            //顯示註冊成功資訊
-            //header("Refresh:1;url=login.php");//一秒後重新整理進入登入頁
-            ?>
-
-            <?php
-            
-
-$sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `path`, `file_name` FROM `resume` WHERE `user_id` = '".$user_id."'";
-$stmt=$con->prepare($sql);
-$stmt->execute();
-$stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $path, $file_name);
-$pathfile = $path.$file_name;
-while($stmt->fetch()){
-echo $path;
-echo $file_name;
-
-
-            /*
-        $one = "1";
-        //$sql1 = "INSERT INTO `user`(`user_name`, `user_password`, `user_email`, `user_level`) VALUES (?,?,?,?)";
-        $sql1 = "INSERT INTO `user`(`user_name`, `user_password`, `user_email`, `user_level`) VALUES ('".$username."','".$password."','".$email."','".$one. "')";
-        $stmt1=$con->prepare($sql1);
-    // $stmt->bind_param("sssi",$username,$password,$email,$one);
-        $stmt1->execute();
-*/
-            //
-            $mail = new PHPMailer(true);       // Passing `true` enables exceptions
-            try {
-                //服務器配置
-                $mail->IsSMTP(); //設定使用SMTP方式寄信
-                $mail->SMTPAuth = true; //設定SMTP需要驗證
-                $mail->SMTPSecure = "ssl"; // Gmail的SMTP主機需要使用SSL連線
-                $mail->Host = "smtp.gmail.com"; //Gamil的SMTP主機
-                $mail->Port = 465; //Gamil的SMTP主機的埠號(Gmail為465)。
-                $mail->CharSet = "utf-8"; //郵件編碼
-                $mail->Username = "mikeliu20010106@gmail.com"; //Gamil帳號
-                $mail->Password = "1qaz2wsx3edc4rfv5tgb"; //Gmail密碼
-                $mail->From = "mikeliu20010106@gmail.com"; //寄件者信箱
-                $mail->FromName = "liu mike"; //寄件者姓名
-                $mail->AddAddress($company_email); //收件者郵件及名稱
-                $path_file = "C:/staff_mysql/origin/upload/";
-                //$mail_file = iconv('utf-8', 'gb2312', '專題企劃書.docx');
-                //echo $mail_file;
-                //$real_file = "C:/staff_mysql/origin/";
-                //$upload_file = iconv('utf-8', 'gb2312', 'ASP_NET_Core_Web_API建置教學_不含資料庫之MathBmiWebApi_.pdf');
-                //$real_project =  $real_file . $upload_file;
-                //C:/staff_mysql/origin/upload/
-               // $mail->addAttachment($real_project,"sb.pdf");
-                //$mail->addAttachment(,"sb.docx");
-                //$mail->addAttachment(iconv('utf-8', 'gb2312', 'C:/staff_mysql/origin/upload/ASP_NET_Core_Web_API建置教學_不含資料庫之MathBmiWebApi_.pdf'), '測試.pdf'); 
-                $mail->addAttachment($path.$file_name,"resume.pdf");         // 添加附件
-                //$mail->addAttachment("C:\staff_mysql\upload\sss.pdf","ssss.pdf"); 
-                // $mail->addAttachment('../thumb-1.jpg', 'new.jpg');    // 發送附件並且重命名
-
-              
-
-                //Content
-                $mail->isHTML(true);                                  // 是否以HTML文檔格式發送  發送後客戶端可直接顯示對應HTML內容
-                $mail->Subject =  '身份登錄驗證';
-                $mail->Body    = '<h1>歡迎使用應徵</h1><h3>應徵內容：'. $email_content.'<span>' .  '</span></h3>' . date('Y-m-d H:i:s');
-                $mail->AltBody = '應徵內容：'. $email_content. date('Y-m-d H:i:s');
-
-                $mail->send();
-
-            ?>
-
-                <!-- 註冊資料輸入欄 -->
-
-                <!-- 登入 提交 -->
-                <div class="bottom_row">
-                    <input type="hidden" value="<? echo $username ?>" name="username">
-                    <input type="hidden" value="<? echo $password ?>" name="password">
-                    <input type="hidden" value="<? echo $yanzhen ?>" name="ram_num">
-                    <input type="hidden" value="<? echo $email ?>" name="email">
-                    <input class="Submit_button" type="submit" value="驗證" />
-                </div>
-            <?php
-                echo '驗證郵件發送成功，請注意查收！';
-            } catch (Exception $e) {
-                echo '郵件發送失敗,請重試';
-            }
-            }
-            ?>
-        
-            <!-- 回登入 回首頁 -->
-            <a href="../../login.php"><img src="../../image/return.png" style="position: absolute; top: 5px; left: 5px;" width="30px"></a>
-            <a href="../../index.php"><img src="../../image/homeLogo.png" style="position: absolute; top: 5px; right: 5px;" width="30px"></a>
-        </div>
-    </form>
 </body>
 
 </html>

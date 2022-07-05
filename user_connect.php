@@ -21,22 +21,22 @@ function con()
     }
 }
 
-function select($sql)
-{
-    $result = con()->query($sql);
-    return $result;
-}
-function f_array($result)
-{
-    return $result->fetch_array();
-}
-function f_assoc($result)
-{
-    return $result->fetch_assoc();
-}
+// function select($sql)
+// {
+//     $result = con()->query($sql);
+//     return $result;
+// }
+// function f_array($result)
+// {
+//     return $result->fetch_array();
+// }
+// function f_assoc($result)
+// {
+//     return $result->fetch_assoc();
+// }
 
-function totalnums($sql)
-{
-    $result = con()->query($sql);
-    return $result->num_rows;
-}
+// function totalnums($sql)
+// {
+//     $result = con()->query($sql);
+//     return $result->num_rows;
+// }

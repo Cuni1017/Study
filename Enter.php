@@ -40,13 +40,13 @@
 
         switch ($level) {
             case 1:
-                header('location:IN\student\student_method.php?user_id=' . $user_id);
+                header('location:IN\student\student_method.php?user_id=' . $user_id."&user_name=".$username);
                 break;
             case 2:
                 header("location:IN\\teacher\\teacher_announcement.php?user_id=" . $user_id);
                 break;
             case 3:
-                header("location:IN\company\company_method.php?user_id=" . $user_id);
+                header("location:IN\company\company_method.php?user_id=" . $user_id."&user_name=".$username);
                 break;
         }
     }

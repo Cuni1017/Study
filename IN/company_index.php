@@ -11,6 +11,7 @@
     <?php
     require_once "../user_connect.php";
     $user_id = @$_GET["user_id"];
+    $user_name = @$_GET["user_name"];
     ?>
     <div id="wrap">
         <div id="header">
@@ -19,7 +20,7 @@
                 <span style="border-left: solid 1px; padding-left: 10px ; font-size: 42px">實習平台</span>
             </div>
             <div id="UserBox">
-                <p>您好 XXX</p>
+                <p>您好 <?echo $user_name?></p>
                 <a href="../../login.php">登出</a>
             </div>
         </div>

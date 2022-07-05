@@ -17,6 +17,10 @@ function con()
         echo "MySQL資料庫連接錯誤!<br/>";
         exit();
     } else {
+        $con->query("SET NAMES utf8");
+        $con->query("SET CHARACTER_SET_database= utf8");
+        $con->query("SET CHARACTER_SET_CLIENT= utf8");
+        $con->query("SET CHARACTER_SET_RESULTS= utf8");
         return $con;
     }
 }
