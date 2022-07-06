@@ -20,18 +20,22 @@ $company_id = @$_POST['company_id'];
 $company_email = @$_POST['company_email'];
 $email_content = @$_POST['email_content'];
 
+//測試資料傳直
 echo $user_id ;
 echo$company_id ;
 echo$company_email ;
 echo $email_content;
 echo "</br>";
+
+
+
 function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = "",$user_id){
     $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
     echo $sql;
     $stmt = con()->query($sql);
     //$num_row = $stmt -> num_rows > 0 ;
     //var_dump( $stmt);
-    if($stmt -> num_rows <=0 ){
+    if($stmt -> num_rows <=0 ){ //計算資料是否存在資料庫
        echo "並沒有填履歷跳往履歷頁面,";
        header("Refresh:3;url=student_resume_modify.php?user_id=".$user_id);
     }else{
@@ -49,7 +53,7 @@ function mail_go($company_email,$email_content,$real_file){
     $mail->Host = "smtp.gmail.com";    //SMTP服务器
     $mail->Port = 587;                //SMTP服务器的端口号
     $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
-    $mail->Password = "tlfmdusbamsvvpuz";                                     //SMTP服务器密码
+    $mail->Password = "tlfmdusbamsvvpuz";      //google應用密碼
     $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
     $mail->AddReplyTo("mikeliu20010106@gmail.com");                    //设置邮件回复人地址和名称
     $mail->Subject =  '應徵';
@@ -58,7 +62,7 @@ function mail_go($company_email,$email_content,$real_file){
     $mail->MsgHTML('<html>helo</html>');                             //设置邮件内容
     $mail->AddAddress($company_email);
     //$mail->AddAttachment("C:/staff_mysql/origin/0616+暑修第3次公告.pdf");                    //附件
-    $mail->AddAttachment($real_file);
+    //$mail->AddAttachment($real_file);
     if(!$mail->Send()) {
         echo "发送失败：" . $mail->ErrorInfo;
     } else {
@@ -86,6 +90,7 @@ if ($email_content == "") {
             $real_file = $path .$file_name;
             echo $real_file;
             mail_go($company_email,$email_content,$real_file);
+            header("Refresh:3;url=email_connect.php?user_id=".$user_id);
          }
 
         //mail_go($company_email,$email_content,$real_file);

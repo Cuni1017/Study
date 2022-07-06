@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <?php include '../company_index.php'; ?>
-</head>
-
-<body>
-    <div id="wrap">
-        <?php
-        $user_id = @$_GET["user_id"];
-        ?>
-
-<form method="post" action="recuit_input.php">
+<form method="post" action="company_verification.php">
         <?php /*
         require_once "../../user_connect.php";
         $today = date("Ynj");
@@ -30,6 +17,38 @@
             <!-- 註冊資料輸入欄 -->
             <!-- 基本資料 -->
             <ul class="Section">
+                <h3>公司基本資料</h3>
+                <li>
+                    <label for="compamny_name">公司名稱</label>
+                    <input type="text" name="company_name" class="Account_text" style="width: 500px" placeholder="請輸入您的公司名稱">
+                </li>
+                <li class="li-inline" style="margin-left: -25px">
+                    <label calss="" for="company_type">行業類別</label>
+                    <input type="text" name="company_type" class="Account_text" placeholder="請輸入公司行業類別">
+                </li>
+                <li class="li-inline">
+                    <label for="company_number">公司電話</label>
+                    <input type="text" name="company_number" class="Account_text" placeholder="請輸入公司電話">
+                </li>
+                <li>
+                    <label for="company_place">公司地點</label>
+                    <input type="text" name="company_place" class="Account_text" style="width: 500px" placeholder="請輸入地址">
+                </li>
+
+                <li>
+                    <label for="company_email">電子信箱</label>
+                    <input type="text" name="company_email" class="Account_text" placeholder="請輸入您的 E-mail/電子信箱">
+                </li>
+                <li class="li-inline" style="margin-left: -25px">
+                    <label for="company_username">帳號</label>
+                    <input type="text" name="company_username" class="Account_text" placeholder="請輸入帳號">
+                </li>
+                <li class="li-inline">
+                    <label for="company_password">密碼</label> <!-- 之後做按鈕讓密碼可以暫時顯示 -->
+                    <input type="password" name="company_password" class="Account_text" placeholder="請輸入密碼">
+                </li>
+                <!-- 需求 -->
+                <hr>
                 <h3>徵才需求</h3>
                 <li>
                     <label for="company_content">工作內容</label>
@@ -64,12 +83,9 @@
                     <textarea type="text" name="company_other" class="Account_text" placeholder="其他補充事項"></textarea>
                 </li>
             </ul>
-            <input type="hidden" name="user_id" value = "<?=$user_id?>">
+
             <!-- <input type="submit" value="新增公司"> -->
             <!-- 登入 提交 -->
             <div class="bottom_row">
                 <input class="submit_button" type="submit" value="提交" />
             </div>
-</body>
-
-</html>
