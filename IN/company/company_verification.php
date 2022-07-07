@@ -87,13 +87,13 @@
             $mail->IsSMTP();                  //设定使用SMTP服务
             $mail->SMTPAuth = true;           //启用SMTP验证功能
             $mail->SMTPSecure = "tls";        //启用SSL
-            $mail->SMTPDebug = 2;
+            //$mail->SMTPDebug = 2;
             $mail->Host = "smtp.gmail.com";    //SMTP服务器
             $mail->Port = 587;                //SMTP服务器的端口号
             $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
             $mail->Password = "tlfmdusbamsvvpuz";      //google應用密碼
             $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
-            $mail->AddReplyTo("mikeliu20010106@gmail.com");          
+            //$mail->AddReplyTo("mikeliu20010106@gmail.com");          
             $mail->isHTML(true);  
             //$yanzhen = codestr();  //此處為調用隨機驗證碼函數（按照自己實際函數名改寫）                               // 是否以HTML文檔格式發送  發送後客戶端可直接顯示對應HTML內容
             $mail->Subject = $company_name . '身份登錄驗證';
@@ -124,6 +124,7 @@
             //主程式
             check_int($company_number);//檢查是不是數字(int)
             check_email($company_email);//檢查是不是email(int)
+
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == ""  ) {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
