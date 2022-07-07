@@ -60,7 +60,7 @@
                 <!-- 需求 -->
                 <hr>
                 <h3>徵才需求</h3>
-                <li>
+                <!-- <li>
                     <label for="company_content">工作內容</label>
                     <input type="text" name="company_content" class="Account_text" style="width: 500px" placeholder="請輸入工作內容">
                 </li>
@@ -91,7 +91,7 @@
                 <li>
                     <label for="company_other">其他補充事項</label>
                     <textarea type="text" name="company_other" class="Account_text" placeholder="其他補充事項"></textarea>
-                </li>
+                </li> -->
             </ul>
 
             <!-- <input type="submit" value="新增公司"> -->
