@@ -38,14 +38,10 @@
             }
         }
 
-        function check_enmail($check){
+        function check_email($check){
             if(!filter_var($check, FILTER_VALIDATE_EMAIL)){
                 echo "E-mail 填寫錯誤";
                 header("Refresh:3;url=company_signup.php");
-            }
-            if(!ctype_digit($check)){
-                echo "只能輸入數字";
-                header("Refresh:3;url=company_signup.php");   
             }
         }
 
@@ -106,11 +102,12 @@
             $mail->AddAddress($company_email);
             if(!$mail->Send()) {
                 echo "发送失败：" . $mail->ErrorInfo;
-                header("Refresh:3;url=company_signup.php");
+                //header("Refresh:3;url=company_signup.php");
             } else {
                 echo "恭喜,郵件發送成功！";
                 insert_me($table1,$array1);
                 insert_me($table2,$array2);
+               
             }
         }
 ?>
@@ -126,7 +123,7 @@
             <?php
             //主程式
             check_int($company_number);//檢查是不是數字(int)
-            check_enmail($check_email);//檢查是不是email(int)
+            check_email($company_email);//檢查是不是email(int)
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == ""  ) {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
