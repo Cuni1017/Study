@@ -18,19 +18,24 @@
                 <ul>
                     <?php
                     // include "../../user_connect.php";
-                    $sql1 = "SELECT `chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date` FROM `chat`  ";
-                    $total = select($sql1);
-
+                    function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
+                        $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+                        echo $sql;
+                        $stmt = con()->query($sql);
+                        if(is_object($stmt===null))return "資料查詢錯誤";
+                            return $stmt;
+                    }
                     $sql = "SELECT `chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date` FROM `chat`  ";
-                    $total = select($sql);
-                    while ($num = f_array($total)) {
+                    $chat_data = select_me($table = "`chat`", $condition = "1", $order_by = "1", $fields = "`chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date`", $limit = "");
+                    
+                    foreach ($chat_data as $vlaue) {
                     ?>
                         <li>
-                            <div class="author">作者：<? echo $num["chat_maker"] ?></div>
-                            <div class="article">主旨：<? echo $num["chat_subject"] ?></div>
-                            <div class="time">時間：<? echo $num["chat_date"] ?></div>
+                            <div class="author">作者：<? echo $vlaue["chat_maker"] ?></div>
+                            <div class="article">主旨：<? echo $vlaue["chat_subject"] ?></div>
+                            <div class="time">時間：<? echo $vlaue["chat_date"] ?></div>
                             <hr>
-                            <div class="message"><? echo $num["chat_content"] ?></div>
+                            <div class="message"><? echo $vlaue["chat_content"] ?></div>
                         </li>
                     <?php } ?>
                 </ul>

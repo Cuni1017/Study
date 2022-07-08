@@ -18,7 +18,24 @@
         
     <?php
     require_once "../user_connect.php";
-   
+
+    function insert_me($table = null,$data_array = array()){
+        if($table === NULL)return false;
+        if(count($data_array) == 0) return false;
+        $col = array();
+        $dat = array();
+        foreach ($data_array as $key => $value) {
+            //$value  = $value -> real_escape_string();
+           $col[] = $key;
+           $dat[] = "'$value'";
+           $columns = join(",",$col );
+           $data = join(",",$dat);
+        }
+        $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
+        echo $sql;
+        con()->query($sql);
+    }
+
         if($verification_button == $ram_num){
             echo "驗證碼輸入成功,.3秒後回到登陸處";
             $date = date("ymd");
@@ -32,15 +49,24 @@
             $one = '1';    
             echo $id;
 
-            $sql1="INSERT INTO `user`(`user_id`, `user_name`, `user_password`, `user_email`, `user_level`) VALUES (?,?,?,?,?)";
-            $stmt=$con->prepare($sql1);
-            $stmt->bind_param('sssss',$id,$username,$password,$email,$one);
-            $stmt->execute();
+            $user_data = array
+            (
+                'user_id'      =>   $id,
+                'user_name'    =>   $username,
+                'user_password'=>   $password,
+                'user_email'   =>   $email,
+                'user_level'   =>   $one
+            );
+            $login_data = array
+            (
+                'id'      =>    $id,
+                'username'=>    $username,
+                'password'=>    $password,
+                'level'   =>    $one
+            );
+            insert_me($table = "`login`",$login_data);
+            insert_me($table = "`user`",$user_data);
 
-            $sql2="INSERT INTO `login`(`id`, `username`, `password`, `level`) VALUES (?,?,?,?)";
-            $stmt=$con->prepare($sql2);
-            $stmt->bind_param('ssss',$id,$username,$password,$one);
-            $stmt->execute();
             header("Refresh:3;url=../../login.php");
         }
         elseif($verification_button != $ram_num){

@@ -57,6 +57,7 @@
             }
             return $res;
         }
+
         function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
             $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
             echo $sql;
@@ -81,6 +82,7 @@
             echo $sql;
             con()->query($sql);
         }
+        
         function mail_go($company_email,$yanzhen,$company_name,$table1,$table2,$array1,$array2){
             $mail = new PHPMailer();
             $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8

@@ -14,32 +14,33 @@ include "../user_connect.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-function insert_me($table = null,$data_array = array()){
-    if($table === NULL)return false;
-    if(count($data_array) == 0) return false;
-    $col = array();
-    $dat = array();
-    foreach ($data_array as $key => $value) {
-        //$value  = $value -> real_escape_string();
-       $col[] = $key;
-       $dat[] = "'$value'";
-       $columns = join(",",$col );
-       $data = join(",",$dat);
-    }
-    $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-    echo $sql;
-    $stmt = con()->query($sql);
-}
+// function insert_me($table = null,$data_array = array()){
+//     if($table === NULL)return false;
+//     if(count($data_array) == 0) return false;
+//     $col = array();
+//     $dat = array();
+//     foreach ($data_array as $key => $value) {
+//         //$value  = $value -> real_escape_string();
+//        $col[] = $key;
+//        $dat[] = "'$value'";
+//        $columns = join(",",$col );
+//        $data = join(",",$dat);
+//     }
+//     $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
+//     echo $sql;
+//     $stmt = con()->query($sql);
+// }
 
-$company_data = array(
-    'company_id'       =>  "ss",
-    'company_name'      =>  "ss",
-    'company_username'  =>  "ss",
-    'company_password'  =>  "ss",
-    'company_number'    =>  "ss",
-    'company_email'     =>  "ss"
-);
-insert_me($table = "company",$company_data );
+// $company_data = array(
+//     'company_id'       =>  "ss",
+//     'company_name'      =>  "ss",
+//     'company_username'  =>  "ss",
+//     'company_password'  =>  "ss",
+//     'company_number'    =>  "ss",
+//     'company_email'     =>  "ss"
+// );
+// insert_me($table = "company",$company_data );
+
 // function insert_me($table = null,$data_array = array()){
 //     if($table === NULL)return false;
     
@@ -51,19 +52,14 @@ insert_me($table = "company",$company_data );
 // $company_email = @$_POST['company_email'];
 // $email_content = @$_POST['email_content']
 // $today = date("Ynj");;
-// function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-//     $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-//     echo $sql;
-//     $stmt = con()->query($sql);
-    //$num_row = $stmt -> num_rows > 0 ;
-    //var_dump( $stmt);
-    // if($stmt -> num_rows >0 ){ //計算資料是否存在資料庫
-    //    echo "帳號已經存在,";
-    //    header("Refresh:3;url=student_resume_modify.php?user_id=".$user_id);
-    // }else{
-       // return $stmt;
-    //}
-
+function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
+    $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+    echo $sql;
+    $stmt = con()->query($sql);
+    $num_row = $stmt -> num_rows > 0 ;
+    var_dump( $stmt);
+       return $stmt;
+}
 // $nums = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
 //                 var_dump($nums);
 //                 $num = $nums->fetch_assoc();
@@ -76,7 +72,20 @@ insert_me($table = "company",$company_data );
 //     $stmt = con()->query($sql);
 //     return $stmt;
 // }
+    $date = date("ymd");
+    $datetime =  date("Y-m-d H:i:s");
+    $chat_nums = select_me($table = "chat", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
+    $num = $chat_nums->fetch_array();
+    $row_num = $num["num"];
+    //echo $row_num;
+    //var_dump($date);
+    $pro_num = $row_num + 1;
+    //echo $pro_num;
+    $id = ($date * 10000) + $pro_num;
 
+   
+    $rel_id = "CH". $id;
+    echo "<br>" . $rel_id;
 // function mail_go($company_email,$email_content,$real_file){
 //     $mail = new PHPMailer();
 //     $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8

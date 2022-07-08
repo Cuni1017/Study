@@ -34,3 +34,11 @@
                 
             }
         }
+
+
+        function delete_me($table = null, $column = null, $id = null){
+    if ($table===null) return false;
+    if($id===null) return false;
+    if($column===null) return false;
+    con()->query("DELETE FROM $table WHERE " . $column . " = " . "\"" . $id . "\"");
+}

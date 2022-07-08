@@ -7,8 +7,16 @@
 </head>
 
 <body>
-<?php $sql = "SELECT  `company_name`  FROM `company` ";
-    if($con->query($sql)->num_rows > 0){?>
+<?php 
+function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
+    $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+    echo $sql;
+    $stmt = con()->query($sql);
+    if(is_object($stmt===null))return "資料查詢錯誤";
+        return $stmt;
+}
+$sql = "SELECT  `company_name`  FROM `company` ";
+    if(select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "`company_name`", $limit = "") -> num_rows > 0){?>
     <form action  = "student_pair_control.php" method = "Post">
         
     </form>

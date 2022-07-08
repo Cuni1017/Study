@@ -27,21 +27,54 @@ echo $address . "<br>";
 echo $user_id . "<br>";
 
 echo $_FILES["file_Upload"]["tmp_name"];
+
+function insert_me($table = null,$data_array = array()){
+    if($table === NULL)return false;
+    if(count($data_array) == 0) return false;
+    $col = array();
+    $dat = array();
+    foreach ($data_array as $key => $value) {
+        //$value  = $value -> real_escape_string();
+       $col[] = $key;
+       $dat[] = "'$value'";
+       $columns = join(",",$col );
+       $data = join(",",$dat);
+    }
+    $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
+    echo $sql;
+    con()->query($sql);
+}
+
 $insert_name = $_FILES["file_Upload"]["name"]; //insert 用
 $upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //用來上傳
 //$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //問題
 $file_path = "C:/staff_mysql/origin/upload/"; //此行為絕對路徑
 
 if ($_FILES["file_Upload"]["error"] == 0) {
+    
     if (move_uploaded_file($_FILES["file_Upload"]["tmp_name"], $file_path . $upload_name)) {
         echo "上傳成功<br />";
         echo "檔案名稱：" . $_FILES["file_Upload"]["name"] . "<br />";
         echo "檔案類型：" . $_FILES["file_Upload"]["type"] . "<br />";
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
-        $sql = "INSERT INTO `resume`(`user_id`, `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`, `county`, `district`, `address`, `path`, `file_name`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("ssssssiissssss", $user_id, $name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $file_path, $insert_name);
-        $stmt->execute();
+
+        $resume_data = array(
+            'user_id'  =>   $user_id,
+            'name'     =>   $name,
+            'sex'      =>   $sex,
+            'birthday' =>   $birthday,
+            'email'    =>   $email,
+            'contact'  =>   $contact,
+            'phone'    =>   $phone, 
+            'home'     =>   $home, 
+            'other'    =>   $other, 
+            'county'   =>   $county, 
+            'district' =>   $district, 
+            'address'  =>   $address, 
+            'path'     =>   $file_path,
+            'file_name'=>   $insert_name
+        );
+        insert_me($table = "`resume`", $resume_data);
         echo "即將顯示你的履歷,看完只需要按上一頁就好";
         //header("Refresh:5;url=resume_watch.php?user_id=$user_id");
     } else {

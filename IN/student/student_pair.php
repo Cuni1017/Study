@@ -8,9 +8,17 @@
 </head>
 
 <body>
-    <?php $user_id = @$_GET["user_id"];
-    $sql = "SELECT * FROM `pair` WHERE user_id = '" . $user_id . "' ";
-    if ($con->query($sql)->num_rows <= 0) {
+    <?php 
+    $user_id = @$_GET["user_id"];
+
+    function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
+        $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+        echo $sql;
+        $stmt = con()->query($sql);
+        if(is_object($stmt===null))return "資料查詢錯誤";
+            return $stmt;
+    }
+    if ( select_me($table = "`pair`", $condition = "user_id = '" . $user_id . "'", $order_by = "1", $fields = "*", $limit = "") -> num_rows <= 0) {
     ?>
         <form action="student_pair_control.php" method="Post">
             <div id="wrap">
@@ -23,15 +31,11 @@
                                 <select name="choose_company">
                                     <option disabled>請選擇配對成功的廠商</option>
                                     <?php
-                                    $user_id = @$_GET["user_id"];
-                                    $sql = "SELECT  `company_name`  FROM `company` ";
-                                    $stmt = $con->prepare($sql);
-                                    $stmt->execute();
-                                    $stmt->bind_result($company_name);
-                                    while ($stmt->fetch()) {
-                                        echo $company_name;
+                                    $company_data = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "`company_name`", $limit = "");
+                                    foreach ($company_data as $value) {
+                                        echo $value["company_name"];
                                     ?>
-                                        <option value="<?= $company_name; ?>"><? echo $company_name; ?></option>
+                                        <option value="<?= $value["company_name"]; ?>"><? echo $value["company_name"]; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -40,13 +44,11 @@
                                 <select name="choose_teacher">
                                     <option disabled>請選擇實習負責老師</option>
                                     <?php
-                                    $sql = "SELECT `teacher_real_name` FROM `teacher` ";
-                                    $stmt = $con->prepare($sql);
-                                    $stmt->execute();
-                                    $stmt->bind_result($teacher_real_name);
-                                    while ($stmt->fetch()) {
+
+                                    $ceacher_data = select_me($table = "`teacher`", $condition = "1", $order_by = "1", $fields = "`teacher_real_name`", $limit = "");
+                                    foreach ($ceacher_data as $value) {
                                     ?>
-                                        <option value="<?= $teacher_real_name; ?>"><? echo $teacher_real_name; ?></option>
+                                        <option value="<?= $value["teacher_real_name"]; ?>"><? echo $value["teacher_real_name"]; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

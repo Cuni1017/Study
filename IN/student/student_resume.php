@@ -8,8 +8,15 @@
 
 <body>
     <?php $user_id = @$_GET["user_id"];
+        function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
+            $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
+            echo $sql;
+            $stmt = con()->query($sql);
+            if(is_object($stmt===null))return "資料查詢錯誤";
+                return $stmt;
+        }
     $sql = "SELECT  `name`, `sex`, `birthday`, `email`, `contact`, `phone`, `home`, `other`,`county`, `district`, `address`, `path`, `file_name` FROM `resume` WHERE `user_id` = '" . $user_id . "'";
-    $sql1 = "SELECT * FROM `resume` WHERE `user_id` = '" . $user_id . "'";
+    //$sql1 = "SELECT * FROM `resume` WHERE `user_id` = '" . $user_id . "'";
     //$num = $con->query($sql1);
     ///var_dump( $num );
     // $stmt=$con->prepare($sql);
@@ -17,9 +24,9 @@
     // $stmt->bind_result($name, $sex, $birthday, $email, $contact, $phone, $home, $other, $county, $district, $address, $path,$file_name);
     //echo count($num);
 
-    if ($con->query($sql1)->num_rows > 0) {
-        $stmt = $con->query($sql1);
-        foreach ($stmt as $value) {
+    if (select_me($table = "`resume`", $condition = "`user_id` = '" . $user_id . "'", $order_by = "1", $fields = "*", $limit = "") -> num_rows > 0) {
+        $chat_data = select_me($table = "`resume`", $condition = "1", $order_by = "1", $fields = "*", $limit = "");
+        foreach ($chat_data as $value) {
             var_dump($value);
     ?>
             <div id="wrap">
