@@ -2,7 +2,10 @@
 <html>
 
 <head>
-    <?php include '../student_index.php'; ?>
+    <?php 
+        include '../student_index.php';
+        include '../../sql_function.php';
+    ?>
     <? header("Content-Type:text/html; charset=utf-8"); //重要顯示中文ˊ重要部分
     ?>
 </head>
@@ -10,15 +13,8 @@
 <body>
     <?php 
     $user_id = @$_GET["user_id"];
-
-    function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-        $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-        echo $sql;
-        $stmt = con()->query($sql);
-        if(is_object($stmt===null))return "資料查詢錯誤";
-            return $stmt;
-    }
-    if ( select_me($table = "`pair`", $condition = "user_id = '" . $user_id . "'", $order_by = "1", $fields = "*", $limit = "") -> num_rows <= 0) {
+    $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+    if ($sql_function -> select_me($table = "`pair`", $condition = "user_id = '" . $user_id . "'", $order_by = "1", $fields = "*", $limit = "") -> num_rows <= 0) {
     ?>
         <form action="student_pair_control.php" method="Post">
             <div id="wrap">
@@ -31,7 +27,7 @@
                                 <select name="choose_company">
                                     <option disabled>請選擇配對成功的廠商</option>
                                     <?php
-                                    $company_data = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "`company_name`", $limit = "");
+                                    $company_data = $sql_function -> select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "`company_name`", $limit = "");
                                     foreach ($company_data as $value) {
                                         echo $value["company_name"];
                                     ?>
@@ -45,7 +41,7 @@
                                     <option disabled>請選擇實習負責老師</option>
                                     <?php
 
-                                    $ceacher_data = select_me($table = "`teacher`", $condition = "1", $order_by = "1", $fields = "`teacher_real_name`", $limit = "");
+                                    $ceacher_data = $sql_function -> select_me($table = "`teacher`", $condition = "1", $order_by = "1", $fields = "`teacher_real_name`", $limit = "");
                                     foreach ($ceacher_data as $value) {
                                     ?>
                                         <option value="<?= $value["teacher_real_name"]; ?>"><? echo $value["teacher_real_name"]; ?></option>

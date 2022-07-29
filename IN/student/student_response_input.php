@@ -8,36 +8,12 @@
     <input type="button" name="register" value="註冊" onclick="window.location.href='login.php'" />
 </body>
 <?php
-include "../../user_connect.php";
+include '../../sql_function.php';
 $maker = @$_POST['maker'];
 $subject = @$_POST['subject'];
 $content = @$_POST['content'];
 
-function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-    $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-    echo $sql;
-    $stmt = con()->query($sql);
-    if(is_object($stmt===null))return "資料查詢錯誤";
-        return $stmt;
-}
-
-function insert_me($table = null,$data_array = array()){
-    if($table === NULL)return false;
-    if(count($data_array) == 0) return false;
-    $col = array();
-    $dat = array();
-    foreach ($data_array as $key => $value) {
-        //$value  = $value -> real_escape_string();
-       $col[] = $key;
-       $dat[] = "'$value'";
-       $columns = join(",",$col );
-       $data = join(",",$dat);
-    }
-    $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-    echo $sql;
-    con()->query($sql);
-}
-
+$sql_function = new sql_function('localhost','root','1qaz2wsx','study');
 if ($maker == "" && $subject == "" &&  $content == "") {
     echo "全部沒填,五秒後返回註冊畫面";
     header("Refresh:5;url=student_response.php");
@@ -54,7 +30,7 @@ if ($maker == "" && $subject == "" &&  $content == "") {
 {
     $date = date("ymd");
     $datetime =  date("Y-m-d H:i:s");
-    $chat_nums = select_me($table = "chat", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
+    $chat_nums = $sql_function -> select_me($table = "chat", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
     $num = $chat_nums->fetch_array();
     $row_num = $num["num"];
     //echo $row_num;
@@ -77,7 +53,7 @@ if ($maker == "" && $subject == "" &&  $content == "") {
         'chat_content'  =>  $content,
         'chat_date'     =>  $date   
     );
-    insert_me($table = "`chat`",$data_array = array());
+    $sql_function -> insert_me($table = "`chat`",$data_array = $chat_data);
     header("location:student_response.php");
 }
 ?>

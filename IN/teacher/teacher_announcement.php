@@ -2,7 +2,9 @@
 <html>
 
 <head>
-    <?php include '../teacher_index.php'; ?>
+    <?php 
+        include '../teacher_index.php'; 
+        ?>
 </head>
 
 <body>

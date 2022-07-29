@@ -4,18 +4,17 @@
 <head>
     <link rel="stylesheet" href="style/css/index.css">
     <?php include 'header.php'; ?>
+    <?php include 'sql_function.php'; ?>
 </head>
 <?php require_once "user_connect.php";
-$sql = "SELECT `company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_work_experience`, `company_type`, `company_Education`, `company_department`, `company_other`, `company_safe`, `level` FROM `company` Limit  10";
-$stmt = $con->prepare($sql);
-$stmt->execute();
-$num = $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_department, $company_other, $company_safe, $level);
+$sql = new sql_function('localhost','root','1qaz2wsx','study');
+$company_data = $sql -> select_me($table = '`company`', $condition = "1", $order_by = "1", $fields = "`company_id`, `company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `level`", $limit = "limit 10");
 
 ?>
 
 <body>
     <div id="wrap">
-        <div id="header">
+        <div id="h-eader">
             <div id="LogoBox">
                 <a href="https://www.pccu.edu.tw/"><img src="image/skyLogo.png" /></a>
                 <span>實習平台</span>
@@ -94,13 +93,13 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
         <div id="content">
             <h1>最新徵才消息</h1>
             <div class="news">
-                <?php while ($stmt->fetch()) { ?>
+                <?php foreach ($company_data as $value) { ?>
                     <div class="newscont">
                         <div class="news_img">
                             <img style="max-width: 500px;" src="image/content2.jpg"></img>
                         </div>
                         <div class="news_t">
-                            <h5><?php echo $company_name ?></h5>
+                            <h5><?php echo $value["company_name"] ;?></h5>
                             <p></p>
                         </div>
                         <a href="login.php"><img src="image/info-circle.svg" class="moreInfobtn"></a>

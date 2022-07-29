@@ -2,7 +2,10 @@
 <html>
 
 <head>
-    <?php include '../student_index.php'; ?>
+    <?php include '../student_index.php';
+        include '../../sql_function.php'; 
+    ?>
+    
 </head>
 
 <body>
@@ -17,16 +20,9 @@
             <div id="responseBox">
                 <ul>
                     <?php
-                    // include "../../user_connect.php";
-                    function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-                        $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-                        echo $sql;
-                        $stmt = con()->query($sql);
-                        if(is_object($stmt===null))return "資料查詢錯誤";
-                            return $stmt;
-                    }
+                    $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
                     $sql = "SELECT `chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date` FROM `chat`  ";
-                    $chat_data = select_me($table = "`chat`", $condition = "1", $order_by = "1", $fields = "`chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date`", $limit = "");
+                    $chat_data = $sql_function -> select_me($table = "`chat`", $condition = "1", $order_by = "1", $fields = "`chat_id`, `chat_maker`, `chat_subject`, `chat_content`, `chat_date`", $limit = "");
                     
                     foreach ($chat_data as $vlaue) {
                     ?>

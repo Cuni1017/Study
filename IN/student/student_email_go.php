@@ -10,7 +10,8 @@ require '../../PHPMailer/src/Exception.php';
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
 require '../../PHPMailer/vendor/autoload.php';
-include "../user_connect.php";
+include "../../sql_function.php";
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -44,6 +45,7 @@ function select_me($table = null, $condition = "1", $order_by = "1", $fields = "
 }
  
 function mail_go($company_email,$email_content,$real_file){
+    $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
     $mail = new PHPMailer();
     $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
     $mail->IsSMTP();                  //设定使用SMTP服务
@@ -79,7 +81,8 @@ if ($email_content == "") {
     $fields = "`path`, `file_name`";
     $table = "`resume`";
     $condition = "`user_id` = '".$user_id."'";
-    $resume_select = select_me( $table, $condition , $order_by = "1", $fields, $limit = "",$user_id);
+    $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+    $resume_select = $sql_function -> select_me( $table, $condition , $order_by = "1", $fields, $limit = "",$user_id);
 
     while($result = $resume_select -> fetch_array()){
         if(is_object($result)){

@@ -3,10 +3,19 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //調用PHPMailer組件，此處是你自己的目錄，需要改寫。
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
-require_once "user_connect.php";
+// require 'PHPMailer-master/src/Exception.php';
+// require 'PHPMailer-master/src/PHPMailer.php';
+// require 'PHPMailer-master/src/SMTP.php';
+// require_once "user_connect.php";
+
+$DB_HOST= 'localhost';
+$DB_USER= 'root';
+$DB_PWD= '1qaz2wsx';
+$DB_NAME= 'studu';
+mysqli_connect($DB_HOST,$DB_USER,$DB_PWD,$DB_NAME);
+if(mysqli_connect_errno()){
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
 
 $mail = new PHPMailer(true);       // Passing `true` enables exceptions
             try {

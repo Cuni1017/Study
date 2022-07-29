@@ -17,25 +17,8 @@
     <body>
         
     <?php
-    require_once "../user_connect.php";
-
-    function insert_me($table = null,$data_array = array()){
-        if($table === NULL)return false;
-        if(count($data_array) == 0) return false;
-        $col = array();
-        $dat = array();
-        foreach ($data_array as $key => $value) {
-            //$value  = $value -> real_escape_string();
-           $col[] = $key;
-           $dat[] = "'$value'";
-           $columns = join(",",$col );
-           $data = join(",",$dat);
-        }
-        $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-        echo $sql;
-        con()->query($sql);
-    }
-
+    include '../../sql_function.php'; 
+        $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
         if($verification_button == $ram_num){
             echo "驗證碼輸入成功,.3秒後回到登陸處";
             $date = date("ymd");
@@ -64,8 +47,8 @@
                 'password'=>    $password,
                 'level'   =>    $one
             );
-            insert_me($table = "`login`",$login_data);
-            insert_me($table = "`user`",$user_data);
+            $sql_function -> insert_me($table = "`login`",$login_data);
+            $sql_function -> insert_me($table = "`user`",$user_data);
 
             header("Refresh:3;url=../../login.php");
         }

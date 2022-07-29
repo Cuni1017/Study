@@ -31,6 +31,7 @@
             // $company_department = @$_POST["company_department"];
             // $company_other = @$_POST["company_other"];
             // $company_safe = @$_POST["company_safe"];
+        $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
         function check_int($check){
             if(!ctype_digit($check)){
                 echo "只能輸入數字";
@@ -57,7 +58,7 @@
             }
             return $res;
         }
-
+        
         function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
             $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
             echo $sql;
@@ -66,24 +67,25 @@
                 return $stmt;
         }
 
-        function insert_me($table = null,$data_array = array()){
-            if($table === NULL)return false;
-            if(count($data_array) == 0) return false;
-            $col = array();
-            $dat = array();
-            foreach ($data_array as $key => $value) {
-                //$value  = $value -> real_escape_string();
-               $col[] = $key;
-               $dat[] = "'$value'";
-               $columns = join(",",$col );
-               $data = join(",",$dat);
-            }
-            $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-            echo $sql;
-            con()->query($sql);
-        }
+        // function insert_me($table = null,$data_array = array()){
+        //     if($table === NULL)return false;
+        //     if(count($data_array) == 0) return false;
+        //     $col = array();
+        //     $dat = array();
+        //     foreach ($data_array as $key => $value) {
+        //         //$value  = $value -> real_escape_string();
+        //        $col[] = $key;
+        //        $dat[] = "'$value'";
+        //        $columns = join(",",$col );
+        //        $data = join(",",$dat);
+        //     }
+        //     $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
+        //     echo $sql;
+        //     con()->query($sql);
+        // }
         
         function mail_go($company_email,$yanzhen,$company_name,$table1,$table2,$array1,$array2){
+            $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
             $mail = new PHPMailer();
             $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
             $mail->IsSMTP();                  //设定使用SMTP服务
@@ -107,8 +109,8 @@
                 //header("Refresh:3;url=company_signup.php");
             } else {
                 echo "恭喜,郵件發送成功！";
-                insert_me($table1,$array1);
-                insert_me($table2,$array2);
+                $sql_function -> insert_me($table1,$array1);
+                $sql_function -> insert_me($table2,$array2);
                
             }
         }
@@ -124,20 +126,23 @@
             </div>
             <?php
             //主程式
+
+           
+
             check_int($company_number);//檢查是不是數字(int)
             check_email($company_email);//檢查是不是email(int)
 
             if ($company_name == "" ||  $company_username == "" || $company_password == "" || $company_number == "" || $company_email == ""  ) {
                 echo "有東西沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=company_signup.php");
-            } elseif (select_me($table = "`login`", $condition = "`username` ='" . $company_username . "'", $order_by = "1", $fields = "*", $limit = "")-> num_rows >0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
+            } elseif ($sql_function -> select_me($table = "`login`", $condition = "`username` ='" . $company_username . "'", $order_by = "1", $fields = "*", $limit = "")-> num_rows >0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
                 echo "帳號名稱已存在,三秒後版回註冊畫面，請重新註冊！";
                 echo "<a href=company_signup.php>[註冊]<br></a>";
                 header("Refresh:3;url=company_signup.php");
 
-            } elseif (select_me($table = "`company`", $condition = "`company_name` ='" . $company_name . "'", $order_by = "1", $fields = "*", $limit = "")->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
+            } elseif ($sql_function -> select_me($table = "`company`", $condition = "`company_name` ='" . $company_name . "'", $order_by = "1", $fields = "*", $limit = "")->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
                 echo "公司名稱已存在,三秒後版回註冊畫面，請重新註冊！";
@@ -147,7 +152,7 @@
             }else{
 
                 $today = date("Ynj");
-                $nums = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
+                $nums = $sql_function -> select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
                 var_dump($nums);
                 $num = $nums->fetch_assoc();
                 $row_num = $num["num"];

@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once "../user_connect.php";
+    include '../../sql_function.php';
     $user_id = @$_GET["user_id"];
     ?>
     <div id="wrap">
@@ -42,7 +42,7 @@
                     <ul>
                         <li><a href="<?php echo "teacher_announcement.php?user_id=" . $user_id ?>">實習資訊公告</a></li>
                         <li><a href="<?php echo "teacher_pair.php?user_id=" . $user_id ?>">學生實習配對</a></li>
-                        <li><a href="<?php echo "teacher_joblist.php?user_id=" . $user_id ?>">實習職務列表</a></li>
+                        <li><a href="<?php echo "vacancies_controll.php?user_id=" . $user_id ?>">實習職務列表</a></li>
                     </ul>
                 </div>
                 <!-- US -->

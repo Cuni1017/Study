@@ -27,24 +27,7 @@ echo $address . "<br>";
 echo $user_id . "<br>";
 
 echo $_FILES["file_Upload"]["tmp_name"];
-
-function insert_me($table = null,$data_array = array()){
-    if($table === NULL)return false;
-    if(count($data_array) == 0) return false;
-    $col = array();
-    $dat = array();
-    foreach ($data_array as $key => $value) {
-        //$value  = $value -> real_escape_string();
-       $col[] = $key;
-       $dat[] = "'$value'";
-       $columns = join(",",$col );
-       $data = join(",",$dat);
-    }
-    $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-    echo $sql;
-    con()->query($sql);
-}
-
+$sql_function = new sql_function('localhost','root','1qaz2wsx','study');
 $insert_name = $_FILES["file_Upload"]["name"]; //insert 用
 $upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //用來上傳
 //$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //問題
@@ -74,7 +57,7 @@ if ($_FILES["file_Upload"]["error"] == 0) {
             'path'     =>   $file_path,
             'file_name'=>   $insert_name
         );
-        insert_me($table = "`resume`", $resume_data);
+        $sql_function -> insert_me($table = "`resume`", $resume_data);
         echo "即將顯示你的履歷,看完只需要按上一頁就好";
         //header("Refresh:5;url=resume_watch.php?user_id=$user_id");
     } else {

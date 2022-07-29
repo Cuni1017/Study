@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once "../user_connect.php";
+    require "../sql_function.php";
     $user_id = @$_GET["user_id"];
     $user_name = @$_GET["user_name"];
     ?>

@@ -60,6 +60,7 @@ function select_me($table = null, $condition = "1", $order_by = "1", $fields = "
     var_dump( $stmt);
        return $stmt;
 }
+
 // $nums = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
 //                 var_dump($nums);
 //                 $num = $nums->fetch_assoc();
@@ -86,6 +87,46 @@ function select_me($table = null, $condition = "1", $order_by = "1", $fields = "
    
     $rel_id = "CH". $id;
     echo "<br>" . $rel_id;
+
+
+    function update_me($table = null, $rows_array = null, $key_column = null, $id = null){
+        if($table == null){
+            echo "table is null";
+            return false;
+        }
+        //if($id == null) return false;
+        if($rows_array == null) return false;
+        if(count($rows_array) == 0) return false;
+
+        foreach($rows_array as $k => $v) {
+         // $sql = "UPDATE $table SET $k='$v' WHERE '".$key."' = '".$id."'" ;
+          con()->query($sql);
+        }
+
+      }
+      function update_you($table,$rows_array = null,$key,$id){
+        if($table == null){
+            echo "table is null";
+            return false;
+        }
+        if($id == null) return false;
+        if($rows_array == null) return false;
+        if(count($rows_array) == 0) return false;
+        $set = [];
+        foreach($rows_array as $k => $v) {
+            $set[] = "$k='$v'";
+        }
+        $sql = "UPDATE $table SET ". implode(', ', $set) ." WHERE '".$key."'= '".$id."' ";
+        echo $sql ;
+      }
+      $resume_data = array(
+        'user_id'  =>   "sb",
+        'name'     =>   "ss",
+        'sex'      =>   "ss",
+
+    );
+    update_me("company",$resume_data,"company_id");
+    update_you( "company",$resume_data,"sb","ss")
 // function mail_go($company_email,$email_content,$real_file){
 //     $mail = new PHPMailer();
 //     $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8

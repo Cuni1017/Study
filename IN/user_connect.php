@@ -1,5 +1,5 @@
 <?php
-
+include "../sql_function.php";
 
 
 define('DB_HOST', 'localhost');

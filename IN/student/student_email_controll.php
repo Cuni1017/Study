@@ -23,16 +23,8 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
     // echo $user_id;
     // echo $company_id;
     // echo $company_name;
-
-    function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-        $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-        echo $sql;
-        $stmt = con()->query($sql);
-        if(is_object($stmt===null))return "資料查詢錯誤";
-            return $stmt;
-    }
-
-    $data = select_me($table = "`company`", $condition = "company_id = '" . $company_id . "'", $order_by = "1", $fields = "`company_email`,`company_name`", $limit = "");
+    $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+    $company_data = $sql_function -> select_me($table = "`company`", $condition = "company_id = '" . $company_id . "'", $order_by = "1", $fields = "`company_email`,`company_name`", $limit = "");
     $sql = "SELECT `company_email`,`company_name` FROM `company` WHERE company_id = '" . $company_id . "'";
 
     // echo $company_email;
@@ -43,7 +35,7 @@ $num = $stmt->bind_result($company_id, $company_name, $company_username, $compan
             <form method="POST" action="student_email_go.php">
                 <div id="emailBox">
                     <div class="Towho">
-                        <?php foreach($data as $value) { ?>
+                        <?php foreach($company_data as $value) { ?>
                             <p>公司：</p><span><? echo  $value["company_name"]; ?></span><br>
                             <p>信箱：</p><span><input type="email" value="<?= $value["company_email"]; ?>"></span>
                     </div>

@@ -9,10 +9,8 @@
     <form method="post" action="">
         <?php
         require_once "../../sell_connect.php";
-        $sql = "SELECT  `company_id`,`company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_category`, `company_Education`, `company_ department`, `company_other`, `company_safe` FROM `company` ";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_result($company_id, $company_name, $company_username, $company_password, $company_number, $company_email, $company_money, $company_time, $company_place, $company_content, $company_work_experience, $company_type, $company_Education, $company_category, $company_department, $company_other, $company_safe);
-        $stmt->execute();
+        $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+        $company_data = $sql_function -> select_me($table = '`company`', $condition = "1", $order_by = "1", $fields = " `company_id`,`company_name`, `company_username`, `company_password`, `company_number`, `company_email`, `company_money`, `company_time`, `company_place`, `company_content`, `company_ work_experience`, `company_type`, `company_category`, `company_Education`, `company_ department`, `company_other`, `company_safe`", $limit = "");
         ?>
         <?php while ($stmt->fetch()) {
 
