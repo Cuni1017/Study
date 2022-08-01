@@ -1,5 +1,5 @@
 <?php
-include '../sql_function.php';
+include '../../sql_function.php';
 header("Content-Type:text/html; charset=utf-8");//重要顯示中文ˊ重要部分
 ?>
 

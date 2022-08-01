@@ -10,7 +10,7 @@ $user_id = @$_GET["user_id"];
 $rel_company_id = @$_GET["company_id"];
 $company_name = @$_GET["company_name"];
 $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
-$vacancies_data = $sql_function -> select_me($table = "`vacancies`", $condition = "1",$order_by = "1", $fields = "*", $limit = "");
+$vacancies_data = $sql_function -> select_me($table = "`vacancies`", $condition = "company_id = '$rel_company_id'",$order_by = "1", $fields = "*", $limit = "");
 //SELECT `company_id`, `company_money`, `company_time`, `company_place`, `company_content`, `company_work_experience`, `company_type`, `company_Education`, `company_department`, `company_other`, `company_safe`, where `company_id` ='".$rel_company_id."' ";
 
 ?>

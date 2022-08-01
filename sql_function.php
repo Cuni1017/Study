@@ -62,9 +62,9 @@ class sql_function{
             if(count($rows_array) == 0) return false;
             $set = [];
             foreach($rows_array as $k => $v) {
-                $set[] = "$k='$v'";
+                $set[] = " `$k`='$v'";
             }
-            $upsate_sql = "UPDATE $table SET ". implode(', ', $set) ." WHERE '".$key."'= '".$id."' ";
+            $upsate_sql = "UPDATE $table SET ". implode(', ', $set) ." WHERE $key= '" .$id. "' ";
             echo $upsate_sql ;
             mysqli_query($this->link, $upsate_sql);
         }

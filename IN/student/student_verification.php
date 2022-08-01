@@ -4,18 +4,7 @@
 ?>
 <?php
 //生成6位隨機驗證碼
-function codestr()
-{
-    $arr = array_merge(range('a', 'b'), range('A', 'B'), range('0', '9'));
-    shuffle($arr);
-    $arr = array_flip($arr);
-    $arr = array_rand($arr, 6);
-    $res = '';
-    foreach ($arr as $v) {
-        $res .= $v;
-    }
-    return $res;
-}
+
 ?>
 <?php
 
@@ -29,16 +18,26 @@ use PHPMailer\PHPMailer\Exception;
 require '../../PHPMailer/src/Exception.php';
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
-require_once "../user_connect.php";
+require_once "../../sql_function.php";
 
 $username = @$_POST['username'];
 $password = @$_POST['password'];
-
 $email = @$_POST['email'];
-
 echo $username;
 echo $password;
 echo $email;
+function codestr()
+{
+    $arr = array_merge(range('a', 'b'), range('A', 'B'), range('0', '9'));
+    shuffle($arr);
+    $arr = array_flip($arr);
+    $arr = array_rand($arr, 6);
+    $res = '';
+    foreach ($arr as $v) {
+        $res .= $v;
+    }
+    return $res;
+}
 //查詢語句，幫助協助查詢當前註冊使用者名稱是否存在於資料庫當中
 /*
 $sql = "select * from `user` where user_name='".$username."'";
@@ -75,8 +74,8 @@ var_dump($result);
             </div>
             <?php
             $sql = "SELECT * FROM `user` where `user_name` ='" . $username . "'";
-            $rs = $con->query($sql)->num_rows > 0;
-            echo ($rs);
+            $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+            $user_num = $sql_function -> select_me($table = "`user`", $condition = " `user_name` ='" . $username . "'", $order_by = "1", $fields = "*", $limit = "");
             if ($email == "" && $password == "" && $username == "") {
                 echo "全部沒填,五秒後返回註冊畫面";
                 header("Refresh:5;url=student_signup.php");
@@ -92,40 +91,16 @@ var_dump($result);
             } elseif ($email == "") {
                 echo "信箱為空,五秒後返回註冊畫面";
                 header("Refresh:5;url=student_signup.php");
-            } elseif ($con->query($sql)->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
+            } elseif ($user_num->num_rows > 0) //如果資料庫記憶體在相同使用者名稱，則'$rs'接收到的變數為'true'所以大於1為真，則返回'使用者名稱已存在'
             {
                 //var_dump($con);
                 echo "使用者名稱已存在,三秒後版回註冊畫面，請重新註冊！";
 
                 echo "<a href=student_signup.php>[註冊]<br></a>";
                 header("Refresh:3;url=student_signup.php");
-            } elseif (!$con->query($sql)) {
-                die('Error: ' . $con->error);
-            }
-
+            } 
             //顯示註冊成功資訊
             //header("Refresh:1;url=login.php");//一秒後重新整理進入登入頁
-            ?>
-
-            <?php
-            /*
-
-$sql = "SELECT `user_name`, `user_password`, `user_email`, `user_level` FROM `user` ";
-$stmt=$con->prepare($sql);
-$stmt->execute();
-$stmt->bind_result($old_username,$old_password,$old_email,$old_level);
-*/
-
-
-            /*
-        $one = "1";
-        //$sql1 = "INSERT INTO `user`(`user_name`, `user_password`, `user_email`, `user_level`) VALUES (?,?,?,?)";
-        $sql1 = "INSERT INTO `user`(`user_name`, `user_password`, `user_email`, `user_level`) VALUES ('".$username."','".$password."','".$email."','".$one. "')";
-        $stmt1=$con->prepare($sql1);
-    // $stmt->bind_param("sssi",$username,$password,$email,$one);
-        $stmt1->execute();
-*/
-            //
             $mail = new PHPMailer(true);       // Passing `true` enables exceptions
             try {
                 //服務器配置
@@ -179,3 +154,4 @@ $stmt->bind_result($old_username,$old_password,$old_email,$old_level);
 </body>
 
 </html>
+?>

@@ -27,7 +27,7 @@ echo $address . "<br>";
 echo $user_id . "<br>";
 
 echo $_FILES["file_Upload"]["tmp_name"];
-$sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+
 $insert_name = $_FILES["file_Upload"]["name"]; //insert 用
 $upload_name = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //用來上傳
 //$uploadfile = iconv("utf-8", "big5", $_FILES["file_Upload"]["name"]); //問題
@@ -42,7 +42,7 @@ if ($_FILES["file_Upload"]["error"] == 0) {
         echo "檔案大小：" . $_FILES["file_Upload"]["size"] . "<br />";
 
         $resume_data = array(
-            'user_id'  =>   $user_id,
+            'user_id'  => $user_id,
             'name'     =>   $name,
             'sex'      =>   $sex,
             'birthday' =>   $birthday,
@@ -57,10 +57,12 @@ if ($_FILES["file_Upload"]["error"] == 0) {
             'path'     =>   $file_path,
             'file_name'=>   $insert_name
         );
-        $sql_function -> insert_me($table = "`resume`", $resume_data);?>
+        $sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+        $sql_function -> update_me($table= "`resume`",$rows_array = $resume_data,$key= "user_id",$id = $user_id);?>
         <br>
-        <a href = "resume_watch.php?user_id=<?=$user_id?>" target="_blank">顯示你的履歷</a>
+        <a href = "resume_watch.php?user_id=<?=$user_id?>" target="_blank">顯示你的履歷</a>   
     <?php
+        header("Refresh:2;url=student_resume.php?user_id=".$user_id);
         echo "<a href='javascript:window.history.back();'>回上一頁</a>";
     } else {
         echo "上傳失敗! ";

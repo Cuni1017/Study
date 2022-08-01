@@ -10,195 +10,27 @@ require '../../PHPMailer/src/Exception.php';
 require '../../PHPMailer/src/PHPMailer.php';
 require '../../PHPMailer/src/SMTP.php';
 require '../../PHPMailer/vendor/autoload.php';
-include "../user_connect.php";
+include "../../sql_function.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-// function insert_me($table = null,$data_array = array()){
-//     if($table === NULL)return false;
-//     if(count($data_array) == 0) return false;
-//     $col = array();
-//     $dat = array();
-//     foreach ($data_array as $key => $value) {
-//         //$value  = $value -> real_escape_string();
-//        $col[] = $key;
-//        $dat[] = "'$value'";
-//        $columns = join(",",$col );
-//        $data = join(",",$dat);
-//     }
-//     $sql = "INSERT INTO " . $table . "(" . $columns . ")VALUES(" . $data . ")";
-//     echo $sql;
-//     $stmt = con()->query($sql);
-// }
-
-// $company_data = array(
-//     'company_id'       =>  "ss",
-//     'company_name'      =>  "ss",
-//     'company_username'  =>  "ss",
-//     'company_password'  =>  "ss",
-//     'company_number'    =>  "ss",
-//     'company_email'     =>  "ss"
-// );
-// insert_me($table = "company",$company_data );
-
-// function insert_me($table = null,$data_array = array()){
-//     if($table === NULL)return false;
-    
-//     //}
-// }
-// insert_me($table = null,$data_array = array());
-// $user_id = @$_POST['user_id'];
-// $company_id = @$_POST['company_id'];
-// $company_email = @$_POST['company_email'];
-// $email_content = @$_POST['email_content']
-// $today = date("Ynj");;
-function select_me($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-    $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-    echo $sql;
-    $stmt = con()->query($sql);
-    $num_row = $stmt -> num_rows > 0 ;
-    var_dump( $stmt);
-       return $stmt;
-}
-
-// $nums = select_me($table = "`company`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
-//                 var_dump($nums);
-//                 $num = $nums->fetch_assoc();
-//                 $row_num = $num["num"];
-//                 $com_num = "C" . (($today * 10000) + ($row_num + 1));
-//                 echo $com_num;
-        //echo "即將顯示你的履歷,看完只需要按上一頁就好";
-// function select($table = null, $condition = "1", $order_by = "1", $fields = "*", $limit = ""){
-//     $sql = "SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}";
-//     $stmt = con()->query($sql);
-//     return $stmt;
-// }
-    $date = date("ymd");
-    $datetime =  date("Y-m-d H:i:s");
-    $chat_nums = select_me($table = "chat", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
-    $num = $chat_nums->fetch_array();
-    $row_num = $num["num"];
-    //echo $row_num;
-    //var_dump($date);
-    $pro_num = $row_num + 1;
-    //echo $pro_num;
-    $id = ($date * 10000) + $pro_num;
-
-   
-    $rel_id = "CH". $id;
-    echo "<br>" . $rel_id;
-
-
-    function update_me($table = null, $rows_array = null, $key_column = null, $id = null){
-        if($table == null){
-            echo "table is null";
-            return false;
-        }
-        //if($id == null) return false;
-        if($rows_array == null) return false;
-        if(count($rows_array) == 0) return false;
-
-        foreach($rows_array as $k => $v) {
-         // $sql = "UPDATE $table SET $k='$v' WHERE '".$key."' = '".$id."'" ;
-          con()->query($sql);
-        }
-
-      }
-      function update_you($table,$rows_array = null,$key,$id){
-        if($table == null){
-            echo "table is null";
-            return false;
-        }
-        if($id == null) return false;
-        if($rows_array == null) return false;
-        if(count($rows_array) == 0) return false;
-        $set = [];
-        foreach($rows_array as $k => $v) {
-            $set[] = "$k='$v'";
-        }
-        $sql = "UPDATE $table SET ". implode(', ', $set) ." WHERE '".$key."'= '".$id."' ";
-        echo $sql ;
-      }
-      $resume_data = array(
-        'user_id'  =>   "sb",
-        'name'     =>   "ss",
-        'sex'      =>   "ss",
-
-    );
-    update_me("company",$resume_data,"company_id");
-    update_you( "company",$resume_data,"sb","ss")
-// function mail_go($company_email,$email_content,$real_file){
-//     $mail = new PHPMailer();
-//     $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
-//     $mail->IsSMTP();                  //设定使用SMTP服务
-//     $mail->SMTPAuth = true;           //启用SMTP验证功能
-//     $mail->SMTPSecure = "tls";        //启用SSL
-//     $mail->SMTPDebug = 2;
-//     $mail->Host = "smtp.gmail.com";    //SMTP服务器
-//     $mail->Port = 587;                //SMTP服务器的端口号
-//     $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
-//     $mail->Password = "tlfmdusbamsvvpuz";                                     //SMTP服务器密码
-//     $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
-//     $mail->AddReplyTo("mikeliu20010106@gmail.com");                    //设置邮件回复人地址和名称
-//     $mail->Subject =  '應徵';
-//     $mail->Body    = '<h1>歡迎使用應徵</h1><h3>應徵內容：'. $email_content.'<span>' .  '</span></h3>' . date('Y-m-d H:i:s');
-//     $mail->AltBody = '應徵內容：'. $email_content. date('Y-m-d H:i:s');//可选项，向下兼容考虑
-//     $mail->MsgHTML('<html>helo</html>');                             //设置邮件内容
-//     $mail->AddAddress($company_email);
-//     $mail->AddAttachment("C:/staff_mysql/origin/0616+暑修第3次公告.pdf");                    //附件
-//     //$mail->AddAttachment($real_file);
-//     if(!$mail->Send()) {
-//         echo "发送失败：" . $mail->ErrorInfo;
-//     } else {
-//         echo "恭喜,郵件發送成功！";
-//     }
-// }
-
-// if ($email_content == "") {
-//     echo "內容沒填,五秒後返回註冊畫面";
-//     header("Refresh:3;url=student_email_controll.php?user_id=".$user_id."&company_id=".$company_id );
-
-// } else 
-// {   //"SELECT {$fields} FROM {$table} WHERE {$condition} ORDER BY {$order_by} {$limit}
-//     $filed = "`path`, `file_name`";
-//     $table = "`resume`";
-//     $condition = "`user_id` = '".$user_id."'";
-//     $resume_select = select( $filed,$table,$condition,$order_by = "1", $limit = "");
-//     while($result = $resume_select -> fetch_array()){
-//         $path = $result["path"] ;
-//         $file_name = $result["file_name"];
-//         $real_file = $path .$file_name;
-//         mail_go($company_email,$email_content,$real_file);
-//     }
-// }
-//創建一個實例；傳遞 `true` 啟用異常
-//include("PHPMailerAutoload.php"); //匯入PHPMailer類別       
-// $mail = new PHPMailer();
-
-// $mail->CharSet="UTF-8";           //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置为 UTF-8
-// $mail->IsSMTP();                  //设定使用SMTP服务
-// $mail->SMTPAuth = true;           //启用SMTP验证功能
-// $mail->SMTPSecure = "tls";        //启用SSL
-// $mail->SMTPDebug = 2;
-// $mail->Host = "smtp.gmail.com";    //SMTP服务器
-// $mail->Port = 587;                //SMTP服务器的端口号
-// $mail->Username = "mikeliu20010106@gmail.com";                                      //SMTP服务器用户名
-// $mail->Password = "tlfmdusbamsvvpuz";                                     //SMTP服务器密码
-// $mail->SetFrom('mikeliu20010106@gmail.com');                      //设置发件人地址和名称
-// $mail->AddReplyTo("mikeliu20010106@gmail.com");                    //设置邮件回复人地址和名称
-// $mail->Subject = '邮件标题';                                      //设置邮件标题
-// $mail->AltBody = "为了查看该邮件，请切换到支持HTML的邮件客户端"; //可选项，向下兼容考虑
-// $mail->MsgHTML('<html>helo</html>');                             //设置邮件内容
-// $mail->AddAddress('mikeliu20010106@gmail.com');
-// $mail->AddAttachment("C:/staff_mysql/origin/0616+暑修第3次公告.pdf");                    //附件
-// if(!$mail->Send()) {
-//     echo "发送失败：" . $mail->ErrorInfo;
-// } else {
-//     echo "恭喜，邮件发送成功！";
-// }
-
-?>
-
-</body>
-
-</html>
+$user_id = "U2206020002";
+$sql_function = new sql_function('localhost','root','1qaz2wsx','study');
+        $resume_data = array(
+            'user_id'  =>   $user_id,
+            'name'     =>   $name,
+            'sex'      =>   $sex,
+            'birthday' =>   $birthday,
+            'email'    =>   $email,
+            'contact'  =>   $contact,
+            'phone'    =>   $phone, 
+            'home'     =>   $home, 
+            'other'    =>   $other, 
+            'county'   =>   $county, 
+            'district' =>   $district, 
+            'address'  =>   $address, 
+            'path'     =>   $file_path,
+            'file_name'=>   $insert_name
+        );
+        $sql_function -> update_me($table= "`resume`",$rows_array = $resume_data,$key= "user_id",$id = $user_id);?>
+        <br>

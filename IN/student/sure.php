@@ -23,9 +23,8 @@
             echo "驗證碼輸入成功,.3秒後回到登陸處";
             $date = date("ymd");
             $sql = " select count( * ) as num from user";
-            $stmt=$con->prepare($sql);
-            $stmt->execute();
-            $num = $stmt->get_result()->fetch_assoc();
+            $user_num = $sql_function -> select_me($table = "`user`", $condition = "1", $order_by = "1", $fields = "count( * ) as num", $limit = "");
+            $num = $user_num ->fetch_assoc();
             $row_num = $num["num"];
             $pro_num = $row_num +1;
             $id = "U".(($date * 10000) + $pro_num);
