@@ -45,6 +45,7 @@
                 <div class="CPN">
                     <ul>
                         <li><a href="<?php echo "company_method.php?user_id=" . $user_id ?>">申請辦法</a></li>
+                        <li><a href="<?php echo "recruit_controll.php?user_id=" . $user_id ?>">徵才修改</a></li>
                         <li><a href="<?php echo "company_recruit.php?user_id=" . $user_id ?>">刊登徵才</a></li>
                         <li><a href="<?php echo "company_comment.php?user_id=" . $user_id ?>">實習評論</a></li>
                         <li><a href="<?php echo "company_response.php?user_id=" . $user_id ?>">學生意見反應</a></li>
