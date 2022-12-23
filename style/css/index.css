@@ -1,0 +1,422 @@
+* {
+  font-family: "Open Sans", "Noto Sans TC", serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+nav {
+  background: #1c1c1c;
+  align-content: stretch;
+  width: 100%;
+}
+
+nav .logo {
+  font-size: 50px;
+  cursor: pointer;
+  margin: 0;
+  min-width: 150px;
+  color: white;
+}
+
+nav .logo:hover {
+  color: #1e90ff;
+}
+
+nav .account .bi,
+nav .account .bi-person {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+}
+
+nav a {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 244px) {
+  nav {
+    justify-content: center !important;
+  }
+  nav .navbar-toggler {
+    width: 80%;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-toggler {
+  margin-right: 5px;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, .8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-nav li {
+  min-width: 130px;
+  padding: 5px;
+}
+
+.navbar-nav li ul {
+  width: 100%;
+}
+
+.navbar-nav li a.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  color: white;
+}
+
+.navbar-nav li a.nav-link:hover {
+  color: #1e90ff;
+}
+
+.navbar-nav li a.nav-link i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav li a.nav-link ul.dropdown-menu {
+    transition: 1s;
+  }
+}
+
+.navbar-nav li a.dropdown-item {
+  margin: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-nav li {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .navbar-nav li:hover ul.dropdown-menu {
+    display: block;
+  }
+}
+
+.main {
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+  min-height: 800px;
+}
+
+.footer {
+  position: relative;
+  flex-grow: 2;
+  background: #1c1c1c;
+  border-top: black 1px;
+}
+
+.swiper {
+  height: 60vw;
+  width: 100%;
+  max-height: 800px;
+  max-width: 1400px;
+}
+
+.swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  margin: 30px auto;
+}
+
+@media (min-width: 768px) {
+  #container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  #container {
+    width: 92%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #container {
+    width: 1180px;
+  }
+}
+
+#container h1 {
+  font-weight: bold;
+}
+
+.Response-Box {
+  border: solid 5px #1e90ff;
+  border-radius: 1rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Response-Box h1 {
+  margin: 5px;
+}
+
+.Response-Box .Responses {
+  padding: 10px;
+}
+
+.Response-Box .Response-Card {
+  background-color: #f5f5f5;
+  margin: 5px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  padding: 10px;
+}
+
+.Response-Box .Response-Card .Message-Detail {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.Response-Box .Response-Card .Message-Detail .article {
+  flex-grow: 1;
+}
+
+.Response-Box .Response-Card .Message-Detail .author {
+  margin-right: 10px;
+}
+
+@media (max-width: 576px) {
+  .Response-Box .Response-Card .Message-Detail {
+    flex-direction: column;
+  }
+}
+
+.Response-Box .Leave-Comment {
+  width: 100%;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.Response-Box .Leave-Comment .author,
+.Response-Box .Leave-Comment .gist,
+.Response-Box .Leave-Comment .content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+
+.Response-Box .Leave-Comment .author span,
+.Response-Box .Leave-Comment .gist span,
+.Response-Box .Leave-Comment .content span {
+  margin-right: 5px;
+}
+
+.Response-Box .Leave-Comment .author input,
+.Response-Box .Leave-Comment .gist input,
+.Response-Box .Leave-Comment .content input {
+  flex-grow: 1;
+  min-width: 50px !important;
+}
+
+.Response-Box .Leave-Comment .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.Response-Box .Leave-Comment .content span {
+  align-self: flex-start;
+}
+
+.Response-Box .Leave-Comment .content textarea {
+  align-self: stretch;
+}
+
+.Response-Box .Leave-Comment input {
+  font-size: 20px;
+}
+
+.Response-Box ul {
+  list-style: none;
+}
+
+.Response-Box button {
+  margin: 0 15px 5px 15px;
+}
+
+.Response-Box nav {
+  background-color: white;
+  margin: 0;
+}
+
+.Response-Box .pagination {
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.Response-Box .pagination .page-item .page-link {
+  line-height: 37.5px;
+  font-size: 25px;
+  font-weight: 700;
+  height: 50px;
+}
+
+.CheckUser-Box {
+  border: solid 5px #1e90ff;
+  border-radius: 1rem;
+  padding: 10px;
+  overflow: auto;
+}
+
+.CheckUser-Box form {
+  display: flex;
+  min-width: 350px;
+  height: 40px;
+}
+
+.CheckUser-Box table tr {
+  text-align: center;
+}
+
+.CheckUser-Box table th {
+  font-size: 18px;
+  word-break: keep-all;
+}
+
+.CheckUser-Box table td {
+  font-size: 18px;
+  line-height: 36px;
+  word-break: keep-all;
+}
+
+.CheckUser-Box table td a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 992px) {
+  .CheckUser-Box table thead {
+    display: none;
+  }
+  .CheckUser-Box table tbody,
+  .CheckUser-Box table tr,
+  .CheckUser-Box table td {
+    text-align: right !important;
+    display: block;
+    min-height: 48px;
+  }
+  .CheckUser-Box table tbody:before,
+  .CheckUser-Box table tr:before,
+  .CheckUser-Box table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    text-align: left;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .CheckUser-Box table td {
+    min-width: 350px;
+  }
+  .CheckUser-Box table tr {
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+
+.content-Box {
+  border: solid 5px #1e90ff;
+  padding: 10px;
+  border-radius: 1rem;
+}
+
+.Vacancies-Input-Box {
+  border: solid 5px #1e90ff;
+  padding: 10px;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+}
+
+.Vacancies-Input-Box h1 {
+  font-weight: bold;
+}
+
+.Vacancies-Input-Box .form-group {
+  padding: 5px;
+}
+
+.Vacancies-Input-Box textarea {
+  overflow: auto;
+  max-height: 300px;
+}
+
+.Vacancies-Input-Box .Vacancies-Submit {
+  margin: 5px;
+}
+
+.Announcement-Box {
+  border: solid 5px #1e90ff;
+  padding: 10px;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  overflow: auto;
+}
+
+.Announcement-Box h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.Announcement-Box table {
+  border: 1px rgba(0, 0, 0, 0.3) solid;
+  width: 100%;
+  overflow: auto;
+}
+
+.Announcement-Box table thead,
+.Announcement-Box table tbody {
+  text-align: center;
+}
+
+.Announcement-Box table th:first-child,
+.Announcement-Box table td:first-child {
+  text-align: left;
+}
+
+.Announcement-Box table th,
+.Announcement-Box table td {
+  min-width: 90px;
+}
+
+.Announcement-Box table td:first-child {
+  min-width: 200px;
+}
+
+.Announcement-Box h1,
+.Announcement-Box .btn-primary {
+  width: 100%;
+  min-width: 565px;
+}
+/*# sourceMappingURL=index.css.map */
